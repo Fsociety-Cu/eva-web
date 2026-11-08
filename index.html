@@ -254,7 +254,6 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 </style>
 </head>
 <body>
-
 <header class="barra">
   <div class="ancho">
     <a class="marca" href="#inicio" aria-label="EVA, inicio">
@@ -264,6 +263,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     <nav aria-label="Secciones">
       <a href="#que-es">Qué es</a>
       <a href="#como-funciona">Cómo funciona</a>
+      <a href="#calidad">Calidad</a>
       <a href="#manual">Manual</a>
       <a href="#entrar">Instalación</a>
       <a href="#movil">App móvil</a>
@@ -348,6 +348,53 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       </div>
       <figure class="fig" style="margin:0" data-callouts='[[91.5,32.2,"Cumple las reglas",-14,-12],[26,64.2,"Aprobar",-4,16],[37.5,64.2,"Pedir cambios",14,16]]'>
         <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta de planificación lista para aprobar, con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALIDAD ============ -->
+<section class="bloque" id="calidad">
+  <div class="ancho">
+    <p class="etq">Calidad del material</p>
+    <h2>EVA mejora y aprende con cada ejecución.</h2>
+    <p class="sub">EVA coordina varios componentes. Algunos son servicios externos, como Digen, que genera los clips en los que el concursante habla y canta con su propia voz (lipsync). Como cualquier servicio externo, a veces falla: por eso EVA no da ningún clip por bueno sin revisarlo y toma medidas para que el material final sea el mejor posible.</p>
+    <div class="ventajas">
+      <article class="ventaja">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 11l2 2 4-4"/></svg></div>
+        <h3>Revisa cada clip</h3>
+        <p>Que la boca siga a la voz, que la cara sea siempre la misma, que la cámara no gire de más, que no haya cortes dentro del clip y que los clips cubran todo el audio.</p>
+      </article>
+      <article class="ventaja">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></div>
+        <h3>Rehace lo que falla, con tope</h3>
+        <p>Si un clip sale mal, EVA pide a Digen que lo repita en su mismo tramo. Como Digen puede volver a fallar, hay un tope de unos <b>10 clips por vídeo</b> para no gastar créditos de más; lo que no se arregla se tapa con otra toma.</p>
+      </article>
+      <article class="ventaja">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
+        <h3>Una skill propia para el realismo</h3>
+        <p>Los clips se generan con <b>Talent Show Studio</b>, una skill de desarrollo propio para Digen pensada para que el concursante hable y cante con el máximo realismo, siempre la misma persona en el mismo escenario.</p>
+      </article>
+      <article class="ventaja">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg></div>
+        <h3>Tú tienes la última palabra</h3>
+        <p>Con <b>Solo clips</b>, EVA genera y revisa los clips sin editar y te avisa: los miras con sonido, rehaces los que no te convenzan y das el visto bueno para editar.</p>
+      </article>
+    </div>
+    <div class="dos" style="margin-top:72px">
+      <div>
+        <p class="etq">Aprende de cada fallo</p>
+        <h3 style="font-size:28px;letter-spacing:-.02em">Cada error real se convierte en una regla nueva.</h3>
+        <p class="t2" style="margin-top:14px">Cuando un vídeo sale con un fallo que se escapó, se estudia y EVA lo vigila desde entonces. Un ejemplo: unos clips con lipsync casi perfecto pasaron la revisión aunque, escuchándolos, se notaba que la boca no acompañaba bien a la voz. Desde entonces:</p>
+        <ul class="lista">
+          <li><span><b>Mira la boca junto a la voz</b>, fotograma a fotograma, en los clips que la revisión automática no puede dar por buenos del todo.</span></li>
+          <li><span><b>Pide a Digen lo que evita esos fallos:</b> el micrófono nunca delante de los labios, nada de sonrisa amplia mientras habla y una articulación clara de cada palabra.</span></li>
+          <li><span><b>Te marca los dudosos</b> («Revisar con sonido») para que, si usas Solo clips, sepas cuáles mirar primero.</span></li>
+        </ul>
+      </div>
+      <figure class="fig" style="margin:0" id="fig-talent">
+        <div class="lienzo"><img src="img/talent_show_studio.webp" width="1490" height="1030" alt="La skill Talent Show Studio en Digen, con sus clips de ejemplo" loading="lazy"></div>
+        <figcaption class="t3" style="margin-top:10px;font-size:14px">Talent Show Studio, la skill propia de EVA en Digen, con sus clips de ejemplo.</figcaption>
       </figure>
     </div>
   </div>
@@ -661,7 +708,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <table class="accesos comparar">
             <thead><tr><th>Etapa</th><th>Qué pasa</th><th>¿Te necesita?</th></tr></thead>
             <tbody>
-              <tr><td>Clips de Digen</td><td>Se generan los clips de la narración y la canción en tu cuenta de Digen (los sigues en la sección Digen).</td><td>No</td></tr>
+              <tr><td>Clips de Digen</td><td>Se generan los clips de la narración y la canción en tu cuenta de Digen (los sigues en la sección Digen). EVA los revisa y rehace los que salen mal, con su tope.</td><td>No (con Solo clips, das tú el visto bueno)</td></tr>
               <tr><td>Edición</td><td>Guion, revisión de clips, plan de montaje, verificación, montaje en DaVinci Resolve, render y revisión final.</td><td>No; solo si aparece «Te espera»</td></tr>
               <tr><td>Terminado</td><td>El vídeo final queda en la carpeta del vídeo.</td><td>Lo revisas y lo subes a YouTube</td></tr>
             </tbody>
@@ -680,6 +727,20 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">6</span><span><b>Editar vídeo.</b> Lanza (o retoma) la edición de ese vídeo.</span></li>
               <li><span class="c">7</span><span><b>Ediciones en paralelo</b>, cada una en su ventana.</span></li>
             </ol></figcaption>
+          </figure>
+          <h4>Solo clips: revisa los clips antes de editar</h4>
+          <p><span class="boton-ui claude">Editar vídeo</span> lo hace todo de principio a fin sin esperarte. Si prefieres ver los clips de Digen antes de que se edite, pulsa <span class="boton-ui">Solo clips</span>, al lado:</p>
+          <ol class="pasos">
+            <li><span>EVA lanza los clips en Digen (si aún no están), los descarga y los revisa, sin editar nada. Los que salen mal los rehace, con el mismo tope de créditos.</span></li>
+            <li><span>Cuando están listos te llega un aviso a la campana (también en la app móvil) y la tarjeta del vídeo dice <b>Te espera · Revisar clips</b>.</span></li>
+            <li><span>Pulsa <span class="boton-ui">Revisar clips</span>: los ves y los escuchas uno a uno. Los marcados <b>Revisar con sonido</b> son los que conviene mirar primero.</span></li>
+            <li><span>Marca los que haya que rehacer y escribe qué falla («el micrófono tapa la boca», «sonríe mientras habla»): EVA los vuelve a pedir a Digen y te avisa otra vez. O pulsa <b>Dar el visto bueno y editar</b> y empieza la edición, sin volver a rehacerlos.</span></li>
+          </ol>
+          <figure class="fig" data-callouts='[[84,54.9,"Revisar clips",-10,-14],[52.2,23.8,"Te espera · Revisar clips",-10,26]]'>
+            <div class="lienzo"><img src="img/porrevisar.webp" width="3200" height="2000" alt="Tarjeta de vídeo con los clips listos para revisar y el botón Revisar clips" loading="lazy"></div>
+          </figure>
+          <figure class="fig" data-callouts='[[56.8,36.6,"Revisar con sonido",8,-14],[51.4,44.6,"Rehacer este clip",-14,10],[57.3,48,"Qué falla",16,12],[60.6,95.4,"Rehacer marcados",-16,-12],[72,95.4,"Dar el visto bueno y editar",-6,-12]]'>
+            <div class="lienzo"><img src="img/revisarclips.webp" width="3200" height="2000" alt="Ventana Revisar clips con los clips de la narración, uno marcado para rehacer" loading="lazy"></div>
           </figure>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Díselo a Claude en la ventana de ese vídeo y lo corrige, o retócalo tú: el proyecto queda en DaVinci Resolve.</span></div>
         </article>
@@ -977,5 +1038,6 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
   document.querySelectorAll(".cap").forEach(c => obs.observe(c));
 })();
 </script>
+
 </body>
 </html>
