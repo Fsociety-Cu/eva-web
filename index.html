@@ -155,6 +155,41 @@ figcaption{margin-top:14px}
 .pasos>li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--panel);border:2px solid var(--violeta);color:var(--violeta);font-weight:800;font-size:14px;display:grid;place-items:center}
 .pasos>li b{color:var(--t1)}
 
+.formas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px;max-width:760px}
+.forma{display:flex;flex-direction:column;gap:4px;background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:18px 20px;color:var(--t2);font-size:15px}
+.forma:hover{text-decoration:none;border-color:var(--violeta)}
+.forma strong{color:var(--t1);font-size:18px}
+.etq-forma{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--violeta)}
+.pie{font-size:15px;color:var(--t2)}
+table.comparar td:not(:first-child){white-space:normal}
+table.comparar td:first-child{white-space:normal;min-width:180px}
+.ejemplo{margin-top:16px;max-width:74ch;background:var(--panel);border:1px solid var(--linea);border-left:3px solid var(--verde);border-radius:12px;padding:14px 16px;color:var(--t2);font-size:15.5px}
+.ejemplo span{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde);margin-bottom:4px}
+.ejemplo b{color:var(--t1)}
+.ruta{list-style:none;counter-reset:r;display:grid;gap:8px;margin-top:22px;max-width:820px}
+.ruta li{counter-increment:r}
+.ruta a{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:11px 14px;color:var(--t2);font-size:15.5px}
+.ruta a::before{content:counter(r);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:var(--grad)}
+.ruta a:hover{text-decoration:none;border-color:var(--violeta)}
+.ruta b{color:var(--t1)}
+.indice-movil{display:none;margin-top:18px;background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:12px 16px}
+.indice-movil summary{cursor:pointer;font-weight:700}
+.indice-movil ol{list-style:none;display:grid;gap:2px;margin-top:10px}
+.indice-movil a{display:block;padding:6px 0;color:var(--t2)}
+.indice-movil a span{color:var(--t3);margin-right:8px;font-size:13px}
+@media (max-width:1000px){.indice-movil{display:block}}
+.leyenda.solo-movil{display:none}
+@media (max-width:820px){.leyenda.solo-movil{display:grid}}
+figure.fig.estrecha{max-width:420px}
+@media (max-width:640px){
+  table.accesos thead{display:none}
+  table.accesos,table.accesos tbody,table.accesos tr,table.accesos td{display:block;width:100%}
+  table.accesos tr{padding:10px 0;border-bottom:1px solid var(--linea)}
+  table.accesos tr:last-child{border-bottom:0}
+  table.accesos td{border:0;padding:3px 14px;white-space:normal!important}
+  table.accesos td:first-child{color:var(--t1);font-size:16px}
+  table.accesos td[data-l]::before{content:attr(data-l) " ";font-weight:700;color:var(--t1)}
+}
 /* Roles */
 .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 .rol{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:20px}
@@ -251,11 +286,11 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       <article class="ventaja">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg></div>
         <h3>Sin cortar clips</h3>
-        <p>EVA encuentra los fragmentos de cada actuación, elige las mejores tomas y descarta las que no encajan. No tienes que preparar nada a mano.</p>
+        <p>EVA encuentra los fragmentos de cada actuación, elige las mejores tomas y descarta las que no encajan. No tienes que cortar nada a mano.</p>
       </article>
       <article class="ventaja">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
-        <h3>Sin decisiones editoriales</h3>
+        <h3>El montaje, decidido por EVA</h3>
         <p>Qué va primero, dónde entra cada reacción del jurado y cómo sube la emoción hasta el final: EVA lo decide como lo haría un editor del oficio.</p>
       </article>
       <article class="ventaja">
@@ -276,13 +311,13 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 <section class="bloque" id="como-funciona">
   <div class="ancho">
     <p class="etq">Cómo funciona</p>
-    <h2>Cinco pasos, y tu parte se reduce a decidir.</h2>
+    <h2>Cinco pasos: tú decides, EVA hace el trabajo pesado.</h2>
     <div class="flujo">
       <div class="paso"><div class="n">1</div><h3>Planificar</h3><p>Pulsas <b>Planificar</b> y EVA propone los vídeos de la semana con su historia, título y miniatura.</p></div>
       <div class="paso"><div class="n">2</div><h3>Aprobar</h3><p>Revisas la propuesta y la apruebas, o pides cambios con tus palabras.</p></div>
-      <div class="paso"><div class="n">3</div><h3>Producir</h3><p>Cada vídeo aprobado aparece en Producción con su ficha, narración, canción y concursante.</p></div>
+      <div class="paso"><div class="n">3</div><h3>Producir</h3><p>Cada vídeo aprobado pasa a Producción. Tú haces la imagen del concursante y apruebas la narración; EVA prepara el resto.</p></div>
       <div class="paso"><div class="n">4</div><h3>Editar</h3><p>Pulsas <b>Editar vídeo</b> y EVA monta, verifica y renderiza en DaVinci Resolve.</p></div>
-      <div class="paso"><div class="n">5</div><h3>Publicar</h3><p>El vídeo terminado queda en la carpeta del canal, listo para subir el día previsto.</p></div>
+      <div class="paso"><div class="n">5</div><h3>Listo para publicar</h3><p>El vídeo terminado queda en su carpeta, dentro de la del canal. Lo subes tú a YouTube el día previsto.</p></div>
     </div>
 
     <div class="dos" style="margin-top:72px">
@@ -340,43 +375,58 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
   <div class="ancho">
     <p class="etq">Manual</p>
     <h2>Todo EVA, sección por sección.</h2>
-    <p class="sub">Sigue el orden: primero instala y entra, después recorre cada sección. Los números naranjas de las capturas señalan los botones de los que habla cada texto.</p>
+    <p class="sub">Los números naranjas de las capturas señalan los botones de los que habla cada texto. Si es tu primera vez, sigue esta ruta:</p>
+    <ol class="ruta">
+      <li><a href="#entrar"><b>Instala EVA y entra.</b> El administrador te da el instalador y autoriza tu cuenta de Google y tu PC.</a></li>
+      <li><a href="#instalar"><b>Instala Claude Code</b> e inicia sesión con tu cuenta de Claude.</a></li>
+      <li><a href="#otras"><b>Comprueba que todo está en verde</b> en Comprobación del sistema.</a></li>
+      <li><a href="#roles"><b>Mira tu rol</b> y qué canales tienes.</a></li>
+      <li><a href="#canales"><b>Crea tu canal y conecta sus métricas</b>, si trabajas con canales propios.</a></li>
+      <li><a href="#planificacion"><b>Planifica tu primera semana</b> y apruébala.</a></li>
+      <li><a href="#produccion"><b>Produce y edita</b> tu primer vídeo.</a></li>
+    </ol>
+    <details class="indice-movil"><summary>Ir a una sección del manual</summary><ol></ol></details>
 
     <div class="manual">
       <aside class="indice" aria-label="Índice del manual">
         <ol>
-          <li><a href="#instalar"><span>01</span>Antes de empezar</a></li>
+          <li><a href="#instalar"><span>01</span>Instalar Claude Code</a></li>
           <li><a href="#entrar"><span>02</span>Entrar en EVA</a></li>
-          <li><a href="#roles"><span>03</span>Roles y accesos</a></li>
-          <li><a href="#dashboard"><span>04</span>Dashboard</a></li>
+          <li><a href="#roles"><span>03</span>Tu rol</a></li>
+          <li><a href="#dashboard"><span>04</span>Dashboard e ingresos</a></li>
           <li><a href="#planificacion"><span>05</span>Planificación</a></li>
-          <li><a href="#ajustes"><span>06</span>Pedir ajustes</a></li>
-          <li><a href="#produccion"><span>07</span>Producción</a></li>
-          <li><a href="#claude-code"><span>08</span>Claude Code en EVA</a></li>
-          <li><a href="#calendario"><span>09</span>Calendario</a></li>
-          <li><a href="#canales"><span>10</span>Canales</a></li>
-          <li><a href="#metricas"><span>11</span>Métricas de YouTube</a></li>
-          <li><a href="#cuenta"><span>12</span>Mi cuenta</a></li>
-          <li><a href="#movil"><span>13</span>App móvil</a></li>
-          <li><a href="#avisos"><span>14</span>Avisos y feedback</a></li>
-          <li><a href="#dudas"><span>15</span>Preguntas frecuentes</a></li>
+          <li><a href="#ajustes"><span>06</span>Aprobar o pedir cambios</a></li>
+          <li><a href="#semana"><span>07</span>Tu semana planificada</a></li>
+          <li><a href="#produccion"><span>08</span>Producción</a></li>
+          <li><a href="#claude-code"><span>09</span>Claude Code en EVA</a></li>
+          <li><a href="#calendario"><span>10</span>Calendario</a></li>
+          <li><a href="#canales"><span>11</span>Canales</a></li>
+          <li><a href="#metricas"><span>12</span>Métricas de YouTube</a></li>
+          <li><a href="#cuenta"><span>13</span>Mi cuenta</a></li>
+          <li><a href="#otras"><span>14</span>Más secciones</a></li>
+          <li><a href="#movil"><span>15</span>App móvil</a></li>
+          <li><a href="#avisos"><span>16</span>Avisos y feedback</a></li>
+          <li><a href="#dudas"><span>17</span>Preguntas frecuentes</a></li>
         </ol>
       </aside>
 
       <div>
-        <!-- 01 -->
-        <article class="cap" id="instalar">
-          <header><span class="num">01</span><h3>Antes de empezar</h3></header>
-          <p>Necesitas cuatro cosas antes de abrir EVA por primera vez:</p>
-          <ul class="lista">
-            <li><span><b>Una invitación.</b> El administrador autoriza tu cuenta de Google. Sin ella, EVA no te deja entrar.</span></li>
-            <li><span><b>Un PC con Windows</b> con el instalador de EVA y DaVinci Resolve instalados.</span></li>
-            <li><span><b>Una cuenta de Claude con plan de pago</b> (Pro o Max). Es la que usan las ediciones y la planificación; cada persona usa la suya.</span></li>
-            <li><span><b>Claude Code</b> instalado en ese PC. Abajo tienes cómo.</span></li>
-          </ul>
+                <article class="cap" id="instalar">
+          <header><span class="num">01</span><h3>Instalar Claude Code</h3></header>
+          <p>EVA trabaja con <strong>Claude Code</strong>: es el editor que planifica y monta tus vídeos. Se instala una sola vez en tu PC y lo usas con tu propia cuenta de Claude (hace falta un plan de pago, Pro o Max). Hay dos formas de instalarlo; elige una.</p>
+          <div class="formas">
+            <a class="forma" href="#forma-eva"><span class="etq-forma">Forma 1 · Recomendada</span><strong>Desde EVA</strong><span>Un clic en el botón «Instalar Claude Code». EVA usa el instalador oficial.</span></a>
+            <a class="forma" href="#forma-ps"><span class="etq-forma">Forma 2</span><strong>Desde PowerShell</strong><span>Con un comando, si prefieres hacerlo a mano.</span></a>
+          </div>
 
-          <h4>Instalar Claude Code</h4>
-          <p>La forma más sencilla es desde el propio EVA: si falta, Producción te muestra el botón <span class="boton-ui azul">Instalar Claude Code</span> y lo instala con un clic con el instalador oficial. Si prefieres hacerlo a mano:</p>
+          <h4 id="forma-eva">Forma 1 · Desde EVA</h4>
+          <p>Si falta Claude Code, EVA te lo avisa nada más abrirla (en la comprobación inicial), en <strong>Comprobación del sistema</strong> y en <strong>Producción</strong>, siempre con el botón <span class="boton-ui azul">Instalar Claude Code</span>. Púlsalo: tarda uno o dos minutos y puedes seguir usando EVA mientras tanto. La primera vez que EVA abra Claude Code te pedirá entrar con tu cuenta de Claude en el navegador.</p>
+          <figure class="fig" data-callouts='[[51.5,73.8,"Instalar con un clic",-16,10],[62.8,73.8,"Comprobar de nuevo",14,10],[91.9,54.8,"Editar vídeo",-4,-12]]'>
+            <div class="lienzo"><img src="img/instalarcc.webp" width="3200" height="2000" alt="Aviso de Producción cuando falta Claude Code, con el botón Instalar Claude Code" loading="lazy"></div>
+            <figcaption><ol class="leyenda"><li><span class="c">1</span><span><b>Instalar Claude Code.</b> Lo descarga e instala por ti.</span></li><li><span class="c">2</span><span><b>Comprobar de nuevo.</b> Úsalo si lo instalaste a mano o si el aviso no desaparece solo.</span></li><li><span class="c">3</span><span><b>Editar vídeo.</b> Se activa en cuanto Claude Code está listo.</span></li></ol></figcaption>
+          </figure>
+
+          <h4 id="forma-ps">Forma 2 · Desde PowerShell</h4>
           <ol class="pasos">
             <li>Abre el menú Inicio, escribe <b>PowerShell</b> y ábrelo (no hace falta como administrador).</li>
             <li>Pega este comando y pulsa <span class="kbd">Enter</span>:
@@ -386,14 +436,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li>Se abrirá el navegador: <b>inicia sesión con tu cuenta de Claude</b> y acepta. Vuelve a PowerShell; cuando veas el cuadro de bienvenida de Claude Code, ya está.</li>
             <li>En EVA, pulsa <span class="boton-ui">Comprobar de nuevo</span>. El aviso desaparece y ya puedes editar.</li>
           </ol>
-          <figure class="fig" data-callouts='[[51.5,73.8,"Instalar con un clic",-16,10],[62.8,73.8,"Comprobar de nuevo",14,10],[91.9,54.8,"Editar vídeo",-4,-12]]'>
-            <div class="lienzo"><img src="img/instalarcc.webp" width="3200" height="2000" alt="Aviso de Producción cuando falta Claude Code, con el botón Instalar Claude Code" loading="lazy"></div>
-            <figcaption><ol class="leyenda"><li><span class="c">1</span><span><b>Instalar Claude Code.</b> Lo descarga e instala por ti.</span></li><li><span class="c">2</span><span><b>Comprobar de nuevo.</b> Úsalo después de instalarlo a mano o de iniciar sesión.</span></li><li><span class="c">3</span><span><b>Editar vídeo.</b> Se activa en cuanto Claude Code está listo.</span></li></ol></figcaption>
-          </figure>
         </article>
 
-        <!-- 02 -->
-        <article class="cap" id="entrar">
+                <article class="cap" id="entrar">
           <header><span class="num">02</span><h3>Entrar en EVA</h3></header>
           <p>Abre EVA y pulsa <span class="boton-ui">Entrar con Google</span> con la cuenta que autorizó el administrador. Por seguridad, cada PC nuevo debe aprobarlo el administrador la primera vez; después la sesión queda guardada.</p>
           <figure class="fig" data-callouts='[[76.1,49.4,"Entrar con Google",-12,-12],[76,64.6,"Tema claro, sistema u oscuro",-6,12]]'>
@@ -405,35 +450,42 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <div class="lienzo"><img src="img/bienvenida3.webp" width="3200" height="2000" alt="Paso Carpetas del asistente de bienvenida" loading="lazy"></div>
             <figcaption><ol class="leyenda"><li><span class="c">1</span><span><b>Progreso.</b> Tú, Carpetas, Claves y Listo.</span></li><li><span class="c">2</span><span><b>Elegir carpeta</b> o <b>Pegar ruta</b>. La marca verde <i>Existe</i> confirma que EVA la encuentra.</span></li><li><span class="c">3</span><span><b>Siguiente.</b> Lo que elijas se aplica al momento.</span></li></ol></figcaption>
           </figure>
-        </article>
-
-        <!-- 03 -->
-        <article class="cap" id="roles">
-          <header><span class="num">03</span><h3>Roles y accesos</h3></header>
-          <p>Cada persona tiene un rol, y cada canal del equipo tiene su nivel de acceso. Así cada uno ve justo lo que necesita.</p>
-          <div class="roles">
-            <div class="rol"><h4><span class="punto" style="background:#2F6FEB"></span>Administrador</h4><p>Autoriza a las personas, aprueba los PC, decide los permisos y publica las versiones de EVA.</p></div>
-            <div class="rol"><h4><span class="punto" style="background:#8B5CF6"></span>Colaborador</h4><p>Planifica, produce y edita en los canales del equipo que le asignen, y en sus canales propios.</p></div>
-            <div class="rol"><h4><span class="punto" style="background:#0E9F6E"></span>Invitado</h4><p>Trabaja solo con sus canales propios. No ve nada del equipo; lo suyo se queda en lo suyo.</p></div>
-          </div>
-          <div class="tabla-scroll">
-          <table class="accesos">
-            <thead><tr><th>Acceso a un canal</th><th>Qué permite</th></tr></thead>
-            <tbody>
-              <tr><td>Colabora</td><td>Ve y cambia sus paquetes, planifica, produce y edita.</td></tr>
-              <tr><td>Solo planificar</td><td>Ve su calendario y sus resultados para no repetir, sin ver paquetes ni planes.</td></tr>
-              <tr><td>Oculto</td><td>No ve el canal ni nada de él. Es el valor por defecto.</td></tr>
-            </tbody>
-          </table>
-          </div>
-          <p style="margin-top:16px">Además, el administrador puede dar o quitar a cada colaborador el acceso a las <strong>métricas de YouTube</strong> y a <strong>ver ingresos</strong> (solo de los canales en los que colabora). En <strong>Equipo</strong> ves quién forma parte del equipo, su rol y los canales que compartís.</p>
-          <figure class="fig" data-callouts='[[27.3,23.8,"Personas del equipo",8,-12],[52.7,28,"Tu rol",14,-12],[44.5,41.5,"Canales a los que accedes",22,14],[93.1,17.1,"Solo lectura",-6,-8]]'>
-            <div class="lienzo"><img src="img/equipo.webp" width="3200" height="2000" alt="Sección Equipo con la lista de personas, el rol y los canales a los que accede cada una" loading="lazy"></div>
+          <h4>La interfaz, en claro o en oscuro</h4>
+          <p>A la izquierda está el menú con todas las secciones y tus canales. Arriba a la derecha tienes el <strong>selector de tema</strong> (claro, el del sistema u oscuro), la <strong>campana</strong> de avisos y tu <strong>avatar</strong>, que abre tu cuenta. Tocar el logo de EVA abre <strong>Acerca de EVA</strong>.</p>
+          <figure class="fig" data-callouts='[[82.9,2.6,"Claro · Sistema · Oscuro",-14,12],[88.1,2.6,"Avisos",-2,22],[3.2,2.2,"Acerca de EVA",9,9],[6,46,"Menú de secciones",14,0]]'>
+            <div class="lienzo"><img src="img/dashboard_claro.webp" width="3200" height="2000" alt="EVA en tema claro, con el selector de tema arriba a la derecha" loading="lazy"></div>
           </figure>
         </article>
 
-        <!-- 04 -->
-        <article class="cap" id="dashboard">
+                <article class="cap" id="roles">
+          <header><span class="num">03</span><h3>Tu rol y lo que puedes hacer</h3></header>
+          <p>El administrador te da uno de estos dos roles. Tu rol aparece en tu ficha de <strong>Equipo</strong> y en la ventana <strong>Acerca de EVA</strong>.</p>
+          <div class="roles">
+            <div class="rol"><h4><span class="punto" style="background:#8B5CF6"></span>Colaborador</h4><p>Trabajas con los <strong>canales del equipo</strong> que te asigne el administrador y, además, con tus canales propios. Planificas, produces y editas sus vídeos, y ves quién forma parte del equipo.</p></div>
+            <div class="rol"><h4><span class="punto" style="background:#0E9F6E"></span>Invitado</h4><p>Trabajas con <strong>tus propios canales</strong>: los creas en EVA, conectas sus métricas, los planificas y editas sus vídeos. Lo del equipo no te aparece.</p></div>
+          </div>
+          <div class="tabla-scroll">
+          <table class="accesos comparar">
+            <thead><tr><th>Qué tienes</th><th>Colaborador</th><th>Invitado</th></tr></thead>
+            <tbody>
+              <tr><td>Canales propios</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Canales del equipo</td><td>Los que te asignen</td><td>No</td></tr>
+              <tr><td>Planificación, Producción y Calendario</td><td>De tus canales y los del equipo asignados</td><td>De tus canales</td></tr>
+              <tr><td>Dashboard e ingresos</td><td>De tus canales; de los del equipo, si te dan permiso</td><td>De tus canales</td></tr>
+              <tr><td>Equipo</td><td>Sí, de solo lectura</td><td>No</td></tr>
+              <tr><td>Digen, Skills, Prompts, Modelos y Actualizaciones</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Mi cuenta, Feedback y app móvil</td><td>Sí</td><td>Sí</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>¿Echas en falta un canal del equipo o ver sus ingresos? Pídeselo al administrador: él decide a qué tiene acceso cada persona. Al final del menú, en <b>Soporte</b>, tienes Comprobación del sistema, Incidencias y Feedback.</span></div>
+          <figure class="fig" data-callouts='[[27.3,23.8,"Personas del equipo",8,-12],[52.7,28,"Tu rol",14,-12],[44.5,41.5,"Canales a los que accedes",22,14],[93.1,17.1,"Solo lectura",-6,-8]]'>
+            <div class="lienzo"><img src="img/equipo.webp" width="3200" height="2000" alt="Sección Equipo con la lista de personas, el rol y los canales a los que accede cada una" loading="lazy"></div>
+            <figcaption><p class="pie">Equipo (solo colaboradores): quién forma parte del equipo, su rol y los canales que compartís.</p></figcaption>
+          </figure>
+        </article>
+
+                <article class="cap" id="dashboard">
           <header><span class="num">04</span><h3>Dashboard</h3></header>
           <p>Tu resumen del mes: lo que tienes por cobrar, lo que llevas este mes, suscriptores y vistas, con la comparación frente al mes anterior. La gráfica muestra los ingresos de cada día por canal y, a la derecha, cuánto te tocaría a final de mes si sigue el ritmo actual.</p>
           <figure class="fig" data-callouts='[[23.4,20.4,"Por cobrar del mes pasado",4,-12],[68.8,33.4,"Elige el mes",-6,-12],[81.7,78.6,"Tu parte estimada",-14,10],[93.4,10.2,"Actualizar",-6,10],[21.9,93.2,"Ver como tabla",14,-4]]'>
@@ -446,12 +498,67 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">5</span><span><b>Ver como tabla.</b> Los mismos datos, día a día.</span></li>
             </ol></figcaption>
           </figure>
+          <h4>Cómo se calculan tus ingresos</h4>
+          <ol class="pasos">
+            <li><b>Bruto.</b> Lo que YouTube informa que generó cada canal cada día. YouTube lo entrega con 2 o 3 días de retraso, así que los últimos días aparecen después.</li>
+            <li><b>Descuentos.</b> Al bruto se le resta primero el <b>% de impuestos</b> (en EVA, «taxes») y después el <b>% de envío</b> (lo que cuesta enviarte el dinero). Tú decides los dos valores.</li>
+            <li><b>Tu parte.</b> En tus <b>canales propios</b> es todo lo que queda. En los <b>canales del equipo</b> es la mitad.</li>
+          </ol>
+          <div class="ejemplo"><span>Ejemplo</span>Un canal del equipo genera <b>100 USD</b>. Con 10 % de impuestos quedan 90; con 10 % de envío, 81. Tu parte: <b>40,50 USD</b>. Si fuera un canal propio: <b>81 USD</b>.</div>
+          <ul class="lista">
+            <li><span><b>Por cobrar</b> es tu parte del mes pasado. <b>Este mes</b>, lo que llevas hasta el último día con datos.</span></li>
+            <li><span><b>Tu parte estimada</b> proyecta el mes completo: toma la media diaria de cada canal y la multiplica por los días que faltan.</span></li>
+            <li><span>Los <b>ingresos de los canales del equipo</b> solo aparecen si el administrador te da permiso para verlos; los de tus canales, en cuanto conectes sus métricas.</span></li>
+          </ul>
+          <figure class="fig estrecha" data-callouts='[[50,69,"Tu parte estimada",0,-12],[24.8,94.4,"% de impuestos",22,-8],[59.1,94.4,"% de envío",20,-15]]'>
+            <div class="lienzo"><img src="img/ingresos_ajustes_recorte.webp" width="680" height="1276" alt="Tu parte estimada con el desglose por canal y los campos de taxes y envío" loading="lazy"></div>
+            <figcaption><p class="pie">Cambia los porcentajes de impuestos y envío y todo se recalcula al momento. Se guardan en tu PC.</p></figcaption>
+          </figure>
         </article>
 
-        <!-- 05 -->
-        <article class="cap" id="planificacion">
-          <header><span class="num">05</span><h3>Planificación</h3></header>
-          <p>Aquí nace cada semana. Arriba eliges el canal; en el menú lateral, cada canal tiene <strong>Nueva planificación</strong> y la lista de sus semanas. Al pulsar <span class="boton-ui azul">Planificar</span>, EVA analiza los resultados, mira el calendario de los demás canales y te propone los vídeos de la semana.</p>
+                <article class="cap" id="planificacion">
+          <header><span class="num">05</span><h3>Planificación: cómo se crea tu semana</h3></header>
+          <p>Aquí nace cada semana de un canal. En esta etapa EVA hace el trabajo de un estratega de contenido: <strong>estudia las métricas de tu canal</strong> y, con ese análisis, te propone el mejor plan posible para los próximos días. Tu papel es revisar y decidir; si EVA necesita algo de ti, te lo pregunta.</p>
+          <h4>Qué analiza EVA antes de proponerte nada</h4>
+          <ul class="lista">
+            <li><span><b>Qué funcionó y qué no.</b> Vistas, retención, clics y qué títulos y miniaturas ganaron en las últimas semanas, vídeo a vídeo.</span></li>
+            <li><span><b>Tu audiencia.</b> Qué días y a qué horas responde mejor tu público, con la hora de España y de América.</span></li>
+            <li><span><b>El resto de canales.</b> El calendario de todo el equipo, para no repetir artistas ni canciones ni pisar los mismos días.</span></li>
+            <li><span><b>Las reglas de tu canal.</b> Su estilo, su formato y sus límites; la propuesta se comprueba contra ellas.</span></li>
+            <li><span><b>Una segunda revisión.</b> Antes de enseñártela, la propuesta pasa un control como el de un editor jefe exigente; si algo no cumple, se corrige.</span></li>
+          </ul>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Tu canal es nuevo?</b> La primera vez, EVA te pregunta por el enfoque y el público que quieres. Para que analice tus resultados, guarda la captura de YouTube Studio → Contenido en la carpeta de tu canal y díselo en la conversación.</span></div>
+          <h4>Cómo lanzarla</h4>
+          <ol class="pasos">
+            <li>En el menú lateral, abre <b>Planificación</b> y, debajo del canal, pulsa <b>Nueva planificación</b>.</li>
+            <li>Pulsa <span class="boton-ui azul">Planificar</span>. EVA empieza el estudio; tarda unos minutos y puedes seguir usando EVA.</li>
+            <li>Mientras trabaja, ves su conversación dentro de la propia semana. Si necesita tu opinión, aparece la etiqueta <b>Te espera</b>: contéstale ahí mismo o desde la app de Claude.</li>
+          </ol>
+          <figure class="fig" data-callouts='[[8.9,26.3,"Nueva planificación",10,14],[22,16.2,"Elige el canal",4,-10],[26.4,22,"La semana siguiente",16,16],[92.7,23.5,"Planificar",-6,12]]'>
+            <div class="lienzo"><img src="img/nuevaplan.webp" width="3200" height="2000" alt="Nueva planificación de un canal con el botón Planificar" loading="lazy"></div>
+          </figure>
+          <figure class="fig" data-callouts='[[37.5,38,"Conversación de la planificación",-12,15],[52.5,30.8,"Te espera",8,-10],[94.6,30.8,"Ampliar",-6,12]]'>
+            <div class="lienzo"><img src="img/propuesta.webp" width="3200" height="2000" alt="Conversación de planificación dentro de la semana, esperando tu respuesta" loading="lazy"></div>
+          </figure>
+        </article>
+
+                <article class="cap" id="ajustes">
+          <header><span class="num">06</span><h3>Aprobar o pedir cambios</h3></header>
+          <p>Cuando el estudio termina, EVA te enseña la propuesta: los vídeos de la semana con su día y su hora, la idea general y la señal <strong>Cumple las reglas</strong>. Nada se produce hasta que tú lo apruebas.</p>
+          <ul class="lista">
+            <li><span><b>Aprobar planificación</b> crea los vídeos de la semana y los pasa a Producción.</span></li>
+            <li><span><b>Pedir cambios</b> te deja escribir con tus palabras qué quieres distinto («cambia el artista del jueves», «sube la publicación a las 19:00»). EVA rehace la propuesta y te la vuelve a enseñar.</span></li>
+            <li><span><b>Eliminar planificación</b> descarta la semana; los vídeos que aún no se empezaron se descartan con ella.</span></li>
+          </ul>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Cuándo pedir cambios y cómo?</b> Antes de aprobar: <b>Pedir cambios</b>. Con la semana ya aprobada, para un solo vídeo: <b>Ajustar con Claude</b>. Durante una edición: escríbelo en su ventana de Claude Code.</span></div>
+          <figure class="fig" data-callouts='[[26,64.2,"Aprobar planificación",-6,14],[37.5,64.2,"Pedir cambios",12,14],[91.5,32.2,"Cumple las reglas",-8,10],[91.4,23.4,"Eliminar planificación",-14,-10]]'>
+            <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta lista con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
+          </figure>
+        </article>
+
+                <article class="cap" id="semana">
+          <header><span class="num">07</span><h3>Tu semana planificada</h3></header>
+          <p>Una vez aprobada, la semana queda en tarjetas: una por vídeo, con su día, artista y estado. Toca una para ver todo su paquete en las pestañas de abajo.</p>
           <figure class="fig" data-callouts='[[21.5,16,"Canales",12,-11],[9.6,22.8,"Nueva planificación",1,24],[30,40,"Un vídeo de la semana",12,12],[78,23.4,"Exportar",-6,10],[90.5,23.4,"Ajustar con Claude",-4,-10],[90.6,55.6,"Informe de la semana",-8,10],[37.5,62.6,"Pestañas del vídeo",10,10]]'>
             <div class="lienzo"><img src="img/planificacion.webp" width="3200" height="2000" alt="Planificación de una semana aprobada con tres tarjetas de vídeo" loading="lazy"></div>
             <figcaption><ol class="leyenda">
@@ -459,9 +566,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">2</span><span><b>Nueva planificación.</b> Empieza la semana siguiente de ese canal.</span></li>
               <li><span class="c">3</span><span><b>Tarjeta del vídeo.</b> Día, artista, estado y última modificación. Tócala para ver su paquete.</span></li>
               <li><span class="c">4</span><span><b>Exportar planificación.</b> Guarda los paquetes de la semana (un documento por vídeo) en la carpeta que elijas.</span></li>
-              <li><span class="c">5</span><span><b>Ajustar con Claude.</b> Abre la conversación para cambiar algo del plan.</span></li>
-              <li><span class="c">6</span><span><b>Informe de la semana.</b> Cómo rindieron los vídeos publicados.</span></li>
-              <li><span class="c">7</span><span><b>Pestañas.</b> Resumen, Miniaturas, Narración, Canción y Concursante del vídeo elegido.</span></li>
+              <li><span class="c">5</span><span><b>Ajustar con Claude.</b> Abre la conversación para retocar un vídeo concreto sin rehacer la semana.</span></li>
+              <li><span class="c">6</span><span><b>Informe de la semana.</b> Cómo rindieron los vídeos ya publicados.</span></li>
+              <li><span class="c">7</span><span><b>Pestañas.</b> Todo el paquete del vídeo elegido.</span></li>
             </ol></figcaption>
           </figure>
           <h4>Qué hay en cada pestaña</h4>
@@ -477,33 +584,25 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             </tbody>
           </table>
           </div>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Mientras planificas, la conversación con Claude aparece dentro de la propia semana. Puedes contestarle ahí o seguirla en la app de Claude.</span></div>
-          <figure class="fig" data-callouts='[[37.5,38,"Conversación de la planificación",-12,15],[52.5,30.8,"Te espera",8,-10],[94.6,30.8,"Ampliar",-6,12]]'>
-            <div class="lienzo"><img src="img/propuesta.webp" width="3200" height="2000" alt="Conversación de planificación dentro de la semana, esperando tu respuesta" loading="lazy"></div>
-          </figure>
         </article>
 
-        <!-- 06 -->
-        <article class="cap" id="ajustes">
-          <header><span class="num">06</span><h3>Aprobar o pedir ajustes</h3></header>
-          <p>Cuando la propuesta está lista, verás la lista de vídeos con sus días y horas, un resumen de la idea de la semana y la señal <strong>Cumple las reglas</strong>.</p>
-          <ul class="lista">
-            <li><span><b>Aprobar planificación</b> crea los vídeos y los pasa a Producción.</span></li>
-            <li><span><b>Pedir cambios</b> te deja escribir con tus palabras qué quieres distinto («cambia el artista del jueves», «sube la publicación a las 19:00»). EVA rehace la propuesta y te la vuelve a enseñar.</span></li>
-            <li><span><b>Ajustar con Claude</b>, en una semana ya aprobada, abre la conversación para retocar un vídeo concreto sin rehacer toda la semana.</span></li>
-            <li><span><b>Eliminar planificación</b> descarta la semana; los vídeos que aún no se empezaron se descartan con ella.</span></li>
-          </ul>
-          <figure class="fig" data-callouts='[[26,64.2,"Aprobar planificación",-6,14],[37.5,64.2,"Pedir cambios",12,14],[91.5,32.2,"Cumple las reglas",-8,10],[91.4,23.4,"Eliminar planificación",-14,-10]]'>
-            <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta lista con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
-          </figure>
-        </article>
-
-        <!-- 07 -->
-        <article class="cap" id="produccion">
-          <header><span class="num">07</span><h3>Producción</h3></header>
-          <p>Todos tus vídeos de la semana en tarjetas. Toca una para ver su avance por etapas: <strong>Producción, Guion, Clips, Plan, Verificación, Montaje, Render, Revisión</strong> y <strong>Terminado</strong>. El reloj marca el tiempo activo de trabajo.</p>
-          <p>Para editar, toca la tarjeta del vídeo y pulsa <span class="boton-ui claude">Editar vídeo</span>. EVA abre su ventana de Claude Code y se pone a trabajar. Puedes lanzar <strong>hasta tres ediciones a la vez</strong>: cada una tiene su ventana y comparten DaVinci Resolve por turnos, sin pisarse.</p>
-          <figure class="fig" data-callouts='[[38,17,"Tarjeta del vídeo",10,12],[77.8,10.2,"Ocultar terminados",-22,8],[90.3,10.2,"Filtrar por canal",-6,12],[65.8,45.6,"Etapa actual",-4,-12],[91.9,54.8,"Editar vídeo",-4,-12],[37.5,77,"Edición 1",-20,-9],[77.5,77,"Edición 2",8,10],[32.5,94,"Edición 3",16,-3]]'>
+                <article class="cap" id="produccion">
+          <header><span class="num">08</span><h3>Producción</h3></header>
+          <p>Todos tus vídeos de la semana en tarjetas. Toca uno para ver en qué etapa está; el reloj marca el tiempo activo de trabajo. Cada vídeo pasa por dos fases:</p>
+          <div class="tabla-scroll">
+          <table class="accesos comparar">
+            <thead><tr><th>Etapa</th><th>Qué pasa</th><th>¿Te necesita?</th></tr></thead>
+            <tbody>
+              <tr><td>Imagen</td><td>La imagen del concursante, hecha con el texto que EVA te prepara en la pestaña Concursante.</td><td>Sí, la haces tú</td></tr>
+              <tr><td>Narración</td><td>EVA genera la voz del narrador.</td><td>Sí, la escuchas y la apruebas</td></tr>
+              <tr><td>Canción y clips</td><td>Se prepara la canción y se generan los clips en tu cuenta de Digen (los sigues en la sección Digen).</td><td>No</td></tr>
+              <tr><td>Edición</td><td>Guion, revisión de clips, plan de montaje, verificación, montaje en DaVinci Resolve, render y revisión final.</td><td>No; solo si aparece «Te espera»</td></tr>
+              <tr><td>Terminado</td><td>El vídeo final queda en su carpeta, dentro de la carpeta del canal.</td><td>Lo revisas y lo subes a YouTube</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p style="margin-top:16px">Para editar, toca la tarjeta del vídeo y pulsa <span class="boton-ui claude">Editar vídeo</span>. EVA abre su ventana de Claude Code y se pone a trabajar; mientras edita puedes seguir con otras cosas. Puedes lanzar <strong>hasta tres ediciones a la vez</strong>: cada una tiene su ventana y comparten DaVinci Resolve por turnos, sin pisarse.</p>
+          <figure class="fig" data-callouts='[[38,17,"Tarjeta del vídeo",10,12],[77.8,10.2,"Ocultar terminados",-22,8],[90.3,10.2,"Filtrar por canal",-6,12],[65.8,45.6,"Etapa actual",-4,-12],[91.9,54.8,"Editar vídeo",-4,-12],[77.5,77,"Otras ediciones a la vez",6,12]]'>
             <div class="lienzo"><img src="img/produccion.webp" width="3200" height="2000" alt="Producción con tres ediciones en paralelo y la barra de etapas" loading="lazy"></div>
             <figcaption><ol class="leyenda">
               <li><span class="c">1</span><span><b>Tarjetas.</b> Una por vídeo, con su estado y día de salida.</span></li>
@@ -511,36 +610,49 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">3</span><span><b>Filtro de canales.</b> Todos tus canales o solo uno.</span></li>
               <li><span class="c">4</span><span><b>Etapas.</b> En verde lo hecho; la que parpadea es la actual.</span></li>
               <li><span class="c">5</span><span><b>Editar vídeo.</b> Lanza (o retoma) la edición de ese vídeo.</span></li>
-              <li><span class="c">6–8</span><span><b>Tres ediciones a la vez</b>, cada una en su ventana.</span></li>
+              <li><span class="c">6</span><span><b>Ediciones en paralelo</b>, cada una en su ventana.</span></li>
             </ol></figcaption>
           </figure>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Díselo a Claude en la ventana de ese vídeo y lo corrige, o retócalo tú: el proyecto queda en DaVinci Resolve.</span></div>
         </article>
 
-        <!-- 08 -->
-        <article class="cap" id="claude-code">
-          <header><span class="num">08</span><h3>Claude Code dentro de EVA</h3></header>
+                <article class="cap" id="claude-code">
+          <header><span class="num">09</span><h3>Claude Code dentro de EVA</h3></header>
           <p>Cada edición y cada planificación tiene su propia ventana de Claude Code dentro de EVA. Ahí ves lo que va haciendo en lenguaje claro y puedes escribirle si quieres cambiar algo. No necesitas saber programar: le hablas como a un editor.</p>
+          <p><strong>Quién es quién:</strong> <b>EVA</b> es la aplicación de tu PC. <b>Claude Code</b> es el editor que trabaja dentro de ella, con una ventana por vídeo. La <b>app de Claude</b> (móvil o navegador) te deja seguir y contestar esas conversaciones desde fuera. La <b>app móvil de EVA</b> (Android) es para el dashboard, el calendario y los avisos. Cada edición usa tu plan de Claude: si llegas a su límite, la edición se pausa y la retomas con <b>Editar vídeo</b> cuando se renueve.</p>
           <ul class="lista">
-            <li><span><b>Desplegar / Ampliar.</b> Muestra la ventana más grande para leer con calma.</span></li>
+            <li><span><b>Línea, Franja o Completo.</b> Cuánto espacio ocupa la ventana bajo el vídeo.</span></li>
+            <li><span><b>Desplegar</b> muestra u oculta lo que va escribiendo; <b>Ampliar</b> la pone a pantalla completa.</span></li>
             <li><span><b>Detener.</b> Pausa el trabajo; podrás retomarlo con Editar vídeo.</span></li>
             <li><span><b>También en la app de Claude.</b> La misma conversación se puede seguir desde la app de Claude en el móvil o el navegador.</span></li>
             <li><span><b>Te espera.</b> La etiqueta avisa cuando Claude necesita tu respuesta.</span></li>
           </ul>
+          <figure class="fig" data-callouts='[[91.9,54.9,"Editar vídeo",-4,-12],[80.6,54.9,"Línea · Franja · Completo",-18,-12],[85.6,60.7,"Desplegar",-16,14],[90.3,60.7,"Detener",-4,20],[94.6,60.7,"Ampliar",-2,10]]'>
+            <div class="lienzo"><img src="img/ccventana_antes.webp" width="3200" height="2000" alt="Ventana de Claude Code bajo el vídeo en edición, con sus botones" loading="lazy"></div>
+            <figcaption><ol class="leyenda">
+              <li><span class="c">1</span><span><b>Editar vídeo.</b> Abre la ventana de Claude Code de ese vídeo y empieza (o retoma) la edición.</span></li>
+              <li><span class="c">2</span><span><b>Línea, Franja o Completo.</b> Cuánto espacio ocupa la ventana.</span></li>
+              <li><span class="c">3</span><span><b>Desplegar.</b> Muestra u oculta lo que va escribiendo.</span></li>
+              <li><span class="c">4</span><span><b>Detener.</b> Pausa el trabajo; lo retomas con Editar vídeo.</span></li>
+              <li><span class="c">5</span><span><b>Ampliar.</b> La ventana ocupa toda la pantalla, como en la siguiente imagen.</span></li>
+            </ol></figcaption>
+          </figure>
+          <figure class="fig" data-callouts='[[17,3.7,"También en la app de Claude",6,14],[24.8,3.7,"Trabajando",22,40],[92.2,3.7,"Detener",-8,14],[96.5,3.7,"Reducir (vuelve al tamaño normal)",-14,26],[35,26,"Lo que hace, paso a paso",12,36]]'>
+            <div class="lienzo"><img src="img/ccventana.webp" width="3200" height="2000" alt="Ventana de Claude Code ampliada mostrando el trabajo de edición en directo" loading="lazy"></div>
+          </figure>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Si se corta internet, EVA vuelve a enlazar la conversación con la app de Claude en cuanto regresa la conexión. No tienes que hacer nada.</span></div>
         </article>
 
-        <!-- 09 -->
-        <article class="cap" id="calendario">
-          <header><span class="num">09</span><h3>Calendario</h3></header>
+                <article class="cap" id="calendario">
+          <header><span class="num">10</span><h3>Calendario</h3></header>
           <p>Todos los vídeos del mes, publicados y por salir, de todos tus canales. Sirve para ver de un vistazo qué sale cada día y para que la planificación no repita artistas.</p>
           <figure class="fig" data-callouts='[[25,24.2,"Canales y su tipo",10,-12],[23.1,60,"Vídeo del día",10,12],[91.4,45,"Hoy",-6,-12],[88,18,"Ir a hoy",-10,-10]]'>
             <div class="lienzo"><img src="img/calendario.webp" width="3200" height="2000" alt="Calendario mensual con los vídeos de cada canal" loading="lazy"></div>
           </figure>
         </article>
 
-        <!-- 10 -->
-        <article class="cap" id="canales">
-          <header><span class="num">10</span><h3>Canales</h3></header>
+                <article class="cap" id="canales">
+          <header><span class="num">11</span><h3>Canales</h3></header>
           <p>En el menú lateral, <strong>Canales</strong> lista los canales a los que tienes acceso. Pulsa <strong>Agregar canal</strong> para crear uno propio: escribe el nombre y un código corto de 2 a 5 letras. EVA crea su carpeta dentro de tu raíz de canales.</p>
           <figure class="fig" data-callouts='[[50,44.8,"Nombre del canal",16,-8],[39.8,55.2,"Código corto",-14,4],[61.2,66.6,"Crear canal",10,10]]'>
             <div class="lienzo"><img src="img/agregar.webp" width="3200" height="2000" alt="Ventana Agregar canal con nombre y código corto" loading="lazy"></div>
@@ -556,37 +668,76 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           </figure>
         </article>
 
-        <!-- 11 -->
-        <article class="cap" id="metricas">
-          <header><span class="num">11</span><h3>Conectar las métricas de YouTube</h3></header>
-          <p>Con las métricas conectadas, la planificación sabe qué funciona en tu canal y el Dashboard muestra tus ingresos reales. Todo se queda en tu PC.</p>
+                <article class="cap" id="metricas">
+          <header><span class="num">12</span><h3>Conectar las métricas de YouTube</h3></header>
+          <p>Cualquier persona puede conectar las métricas de <strong>sus propios canales</strong>. Con ellas, la planificación sabe qué funciona en tu canal y el Dashboard muestra tus ingresos reales. El permiso de YouTube es tuyo y se queda en tu PC.</p>
           <ol class="pasos">
-            <li>Abre la ficha del canal y, en <b>Métricas de YouTube</b>, pulsa <span class="boton-ui azul">Conectar métricas</span>.</li>
-            <li>En el navegador, <b>entra con la cuenta de Google dueña del canal</b> de YouTube.</li>
-            <li>Acepta los permisos de <b>solo lectura</b>. Si Google avisa de que la app no está verificada, entra en <b>Avanzado → Ir a…</b>: es tu propia conexión.</li>
-            <li>Vuelve a EVA: el canal aparece como <b>conectado</b> y sus datos empiezan a llegar.</li>
+            <li>Abre la ficha de tu canal (menú <b>Canales</b>) y baja hasta <b>Métricas de YouTube</b>. Pulsa <span class="boton-ui azul">Conectar métricas</span>.</li>
+            <li>Se abre Google en el navegador: <b>entra con la cuenta de Google dueña del canal</b> de YouTube.</li>
+            <li>Acepta los permisos, que son de <b>solo lectura</b>. Si Google avisa de que la app no está verificada, pulsa <b>Avanzado → Ir a…</b>: es la app de EVA.</li>
+            <li>Vuelve a EVA: el canal aparece como <b>Conectado</b> y empieza a traer sus datos. Desde ahí puedes <b>Actualizar ahora</b>, <b>Cambiar cuenta</b> o <b>Desconectar</b>.</li>
           </ol>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>En los canales del equipo, las métricas las conecta el responsable del canal. Si no ves el botón, pídeselo a él o al administrador.</span></div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>¿Te pide un «cliente de Google» en vez del botón? Pide al administrador que active <b>Compartir con el equipo</b> en su EVA y te saltas ese paso. Las métricas de los canales del equipo las conecta el administrador.</span></div>
         </article>
 
-        <!-- 12 -->
-        <article class="cap" id="cuenta">
-          <header><span class="num">12</span><h3>Mi cuenta</h3></header>
-          <p>Tu nombre y foto, las carpetas de este PC, tus claves y tus dispositivos. Cada persona elige sus carpetas; los cambios se aplican al momento.</p>
-          <figure class="fig" data-callouts='[[41.3,18.4,"Cambiar nombre",10,-10],[83,39.4,"Elegir carpeta",-14,-10],[93.2,72.6,"Tu clave",-10,-10],[90.2,91.8,"Vincular dispositivo",-16,-6]]'>
-            <div class="lienzo"><img src="img/cuenta.webp" width="3200" height="2310" alt="Mi cuenta con carpetas, claves y dispositivos vinculados" loading="lazy"></div>
+                <article class="cap" id="cuenta">
+          <header><span class="num">13</span><h3>Mi cuenta</h3></header>
+          <p>Todo lo tuyo en este PC. Cada persona tiene su propia cuenta y sus propias carpetas; los cambios se aplican al momento.</p>
+          <figure class="fig" data-callouts='[[24.1,22.5,"Cambiar foto",4,12],[40.6,17.5,"Cambiar nombre",12,-9],[93.4,24.4,"Acerca de",-12,6],[94.7,8.3,"Salir",-10,5],[82.7,37.2,"Carpetas de este PC",-26,-4],[73.5,68.4,"Tu clave de Digen",-26,-6],[90,92.4,"Dispositivos",-24,-4]]'>
+            <div class="lienzo"><img src="img/cuenta_completa.webp" width="3200" height="2450" alt="Mi cuenta con foto, nombre, carpetas, clave y dispositivos" loading="lazy"></div>
             <figcaption><ol class="leyenda">
-              <li><span class="c">1</span><span><b>Nombre y foto.</b> Lo que ve el resto del equipo.</span></li>
-              <li><span class="c">2</span><span><b>Carpetas de este PC.</b> Vídeos de los shows, raíz de los canales y carpeta de planificación.</span></li>
-              <li><span class="c">3</span><span><b>Claves.</b> Se pegan aquí, se guardan cifradas en este PC y nunca se muestran enteras.</span></li>
-              <li><span class="c">4</span><span><b>Dispositivos.</b> Vincula tu móvil o tableta.</span></li>
+              <li><span class="c">1</span><span><b>Foto.</b> Súbela y recórtala; la ve el resto del equipo.</span></li>
+              <li><span class="c">2</span><span><b>Nombre.</b> Cómo te ven los demás. El correo no se puede cambiar.</span></li>
+              <li><span class="c">3</span><span><b>Acerca de.</b> Versión de EVA y estado de sus piezas.</span></li>
+              <li><span class="c">4</span><span><b>Salir.</b> Cierra tu sesión en este PC.</span></li>
+              <li><span class="c">5</span><span><b>Carpetas de este PC.</b> Vídeos de los shows, raíz de los canales y carpeta de planificación, con <b>Elegir carpeta</b> o <b>Pegar ruta</b>.</span></li>
+              <li><span class="c">6</span><span><b>Clave de Digen.</b> EVA la comprueba, la guarda cifrada en tu PC y nunca la muestra entera.</span></li>
+              <li><span class="c">7</span><span><b>Dispositivos.</b> Tu móvil o tableta Android: vincular y quitar.</span></li>
             </ol></figcaption>
           </figure>
         </article>
 
-        <!-- 13 -->
-        <article class="cap" id="movil">
-          <header><span class="num">13</span><h3>App móvil</h3></header>
+        <article class="cap" id="otras">
+          <header><span class="num">14</span><h3>Más secciones del menú</h3></header>
+          <p>Además de lo principal, el menú tiene estas secciones. Ninguna te pide instalar ni subir nada: EVA las mantiene al día solo.</p>
+
+          <h4>Digen</h4>
+          <p>Digen es el servicio que genera los clips de la narración y la canción de cada vídeo. Aquí ves tu propia cuenta: usos por día, tareas que se están generando (con <b>Abrir chat</b> para verlas en Digen), actividad y tus skills. Funciona con tu clave de Digen, que se guarda en Mi cuenta.</p>
+          <figure class="fig" data-callouts='[[83.8,10.3,"Periodo",-12,10],[93.5,10.3,"Actualizar",-4,16],[24.9,36.9,"Usos por día",14,-10],[22.4,74.1,"Tareas en curso",14,-8],[52.4,86.4,"Abrir chat",8,8]]'>
+            <div class="lienzo"><img src="img/digen.webp" width="3200" height="2000" alt="Sección Digen con usos, tareas en curso y actividad" loading="lazy"></div>
+          </figure>
+
+          <h4>Skills y Prompts</h4>
+          <p>Son las instrucciones con las que EVA planifica (Skills) y edita (Prompts). Las mantiene el administrador; tú ves qué versión está en uso y qué cambió en cada una. Cada vez que abres una conversación de Claude Code, EVA le pasa la versión más reciente: no tienes que instalar nada.</p>
+          <figure class="fig" data-callouts='[[39.5,30.1,"Versión en uso",14,-12],[90.8,30.7,"Ir a Planificación",-8,12],[59.1,47.2,"Historial de cambios",14,10]]'>
+            <div class="lienzo"><img src="img/skills.webp" width="3200" height="2000" alt="Sección Skills con la versión en uso y su historial" loading="lazy"></div>
+          </figure>
+
+          <h4>Actualizaciones</h4>
+          <p>Cuando hay una versión nueva de EVA te llega un aviso. Aquí ves sus novedades y la instalas con <span class="boton-ui azul">Descargar e instalar</span>: se instala encima, sin tocar tus canales, vídeos, planificaciones ni tu sesión, y EVA se vuelve a abrir sola.</p>
+          <figure class="fig" data-callouts='[[53,17.8,"Nueva versión",-12,12],[90,19,"Descargar e instalar",-8,12],[82.1,37.2,"Esta instalación",-4,12]]'>
+            <div class="lienzo"><img src="img/actualizaciones.webp" width="3200" height="2000" alt="Sección Actualizaciones con una versión nueva lista para instalar" loading="lazy"></div>
+          </figure>
+
+          <h4>Comprobación del sistema, Modelos e Incidencias</h4>
+          <ul class="lista">
+            <li><span><b>Comprobación del sistema</b> prueba de verdad cada pieza de tu PC (conexión, Claude Code, DaVinci Resolve, carpetas, espacio en disco, tu clave) y te dice cómo arreglar lo que falle. Úsala si algo no va.</span></li>
+            <li><span><b>Modelos</b> muestra lo que EVA necesita descargar una vez para transcribir la voz y reconocer caras. Si falta algo, sale el botón <b>Descargar</b>.</span></li>
+            <li><span><b>Incidencias</b> reúne, por vídeo, lo que le pediste corregir a Claude mientras editaba. Solo las ves tú y se borran solas al terminar la edición.</span></li>
+          </ul>
+          <figure class="fig" data-callouts='[[92.1,10.2,"Probar de nuevo",-6,10],[81.2,10.2,"Repetir el inicio guiado",-14,18],[20.8,24.2,"Lo que hay que revisar",16,-6],[20.6,34.6,"En verde, todo bien",16,6]]'>
+            <div class="lienzo"><img src="img/comprobacion.webp" width="3200" height="2000" alt="Comprobación del sistema con cada pieza revisada" loading="lazy"></div>
+          </figure>
+
+          <h4>Acerca de EVA</h4>
+          <p>Toca el logo de EVA (arriba a la izquierda) o <b>Acerca de</b> en Mi cuenta: verás la versión instalada, este PC, tu rol y el estado de cada pieza. Es lo primero que conviene mirar si vas a reportar un problema.</p>
+          <figure class="fig" data-callouts='[[42.6,36,"Versión",-12,-6],[50,48,"Estado de las piezas",-20,10],[63.3,28.4,"Cerrar",8,-6]]'>
+            <div class="lienzo"><img src="img/acerca.webp" width="3200" height="2000" alt="Ventana Acerca de EVA con la versión y el estado de los componentes" loading="lazy"></div>
+          </figure>
+        </article>
+
+                <article class="cap" id="movil">
+          <header><span class="num">15</span><h3>App móvil</h3></header>
           <p>EVA también va contigo en el móvil o la tableta Android: dashboard, ingresos, calendario, planificación y producción, con los avisos del PC. La conexión es directa con tu PC por tu wifi y va cifrada; fuera de casa, la app te enseña los últimos datos que vio.</p>
           <h4>Vincular el móvil</h4>
           <ol class="pasos">
@@ -609,27 +760,35 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <p>Para desvincular un móvil, pulsa <strong>Quitar</strong> en Mi cuenta → Dispositivos del PC, o <strong>Desvincular este dispositivo</strong> desde la propia app.</p>
         </article>
 
-        <!-- 14 -->
-        <article class="cap" id="avisos">
-          <header><span class="num">14</span><h3>Avisos y feedback</h3></header>
+                <article class="cap" id="avisos">
+          <header><span class="num">16</span><h3>Avisos y feedback</h3></header>
           <p>La <strong>campana</strong> de arriba reúne los avisos: una edición terminada, un dispositivo vinculado, una nueva versión de EVA. <strong>Marcar como leídas</strong> los da por vistos y <strong>Limpiar</strong> los borra.</p>
           <figure class="fig" data-callouts='[[87.9,2.6,"Campana",-20,8],[84,12.5,"Tus avisos",-22,16]]'>
             <div class="lienzo"><img src="img/notis.webp" width="3200" height="2000" alt="Panel de notificaciones abierto desde la campana" loading="lazy"></div>
           </figure>
           <h4>Feedback</h4>
-          <p>¿Tienes una idea o algo no funciona? En <strong>Feedback</strong> elige <strong>Mejora</strong>, <strong>Error</strong> u <strong>Otro</strong>, escribe un título y una descripción y pulsa <span class="boton-ui azul">Enviar</span>. A la derecha ves las ideas de todos: vota las que te interesen y sigue su estado (<em>Nueva</em> o <em>Hecha</em>).</p>
-          <figure class="fig" data-callouts='[[23.8,22.4,"Tipo",10,-10],[20.8,63.6,"Enviar",12,8],[55.4,23.4,"Vota",-8,14],[75.8,33.4,"Estado",8,12],[90,10.2,"Filtrar",-6,10]]'>
-            <div class="lienzo"><img src="img/feedback.webp" width="3200" height="2000" alt="Sección Feedback con el formulario y la lista de ideas votadas" loading="lazy"></div>
+          <p>¿Tienes una idea o algo no funciona? En <strong>Feedback</strong> elige <strong>Mejora</strong>, <strong>Error</strong> u <strong>Otro</strong>, escribe un título y una descripción y pulsa <span class="boton-ui azul">Enviar</span>. Al administrador le llega un aviso al momento.</p>
+          <ul class="lista">
+            <li><span><b>Adjunta una captura.</b> Con <b>Añadir imagen</b>, pegándola con <span class="kbd">Ctrl</span>+<span class="kbd">V</span> en la descripción o arrastrándola al formulario. EVA la reduce para que pese poco.</span></li>
+            <li><span><b>Adjunta un archivo de texto</b>, como un registro, con <b>Añadir archivo de texto</b>.</span></li>
+            <li><span><b>Vota y sigue las ideas</b> de todos en la lista de la derecha: su estado pasa de <em>Nueva</em> a <em>Planificada</em>, <em>En curso</em> y <em>Hecha</em>. Toca un adjunto para verlo.</span></li>
+          </ul>
+          <figure class="fig" data-callouts='[[34.4,22.6,"Mejora, Error u Otro",8,-12],[23.3,55.6,"Añadir imagen",-12,10],[35.1,55.6,"Añadir texto",10,-10],[20.8,80.9,"Enviar",12,6],[55.4,23.6,"Vota",-6,16],[76.7,28.8,"Idea con adjuntos",8,14]]'>
+            <div class="lienzo"><img src="img/feedback_adj.webp" width="3200" height="2000" alt="Feedback con una captura y un archivo de texto adjuntos" loading="lazy"></div>
           </figure>
         </article>
 
-        <!-- 15 -->
-        <article class="cap" id="dudas">
-          <header><span class="num">15</span><h3>Preguntas frecuentes</h3></header>
+                <article class="cap" id="dudas">
+          <header><span class="num">17</span><h3>Preguntas frecuentes</h3></header>
           <div class="preguntas">
             <details><summary>¿Tengo que dejar el PC encendido mientras edita?</summary><p>Sí. La edición ocurre en tu PC, con tu DaVinci Resolve. Puedes cerrar la ventana de EVA o seguir el avance desde el móvil, pero el PC debe seguir encendido.</p></details>
             <details><summary>¿Puedo seguir usando el PC mientras EVA edita?</summary><p>Sí, aunque DaVinci Resolve estará ocupado. Evita tocar la línea de tiempo del proyecto que se está montando.</p></details>
-            <details><summary>¿Por qué no veo un canal del equipo?</summary><p>Porque tu acceso a ese canal es <em>Oculto</em>. Pide al administrador que te dé acceso de <em>Colabora</em> o <em>Solo planificar</em>.</p></details>
+            <details><summary>¿Por qué no veo un canal del equipo?</summary><p>Porque el administrador aún no te ha dado acceso a ese canal. Pídeselo; si eres invitado, solo verás tus canales propios.</p></details>
+            <details><summary>¿Dónde queda el vídeo terminado y quién lo sube?</summary><p>En la carpeta del vídeo, dentro de la carpeta de su canal. EVA no publica en YouTube: lo subes tú, con el título y la miniatura de su paquete (pestaña Miniaturas).</p></details>
+            <details><summary>¿Qué hago si la edición falla o el resultado no me gusta?</summary><p>Escríbele a Claude en la ventana de ese vídeo qué quieres distinto, o pulsa <b>Editar vídeo</b> para retomarla. También puedes retocar a mano el proyecto en DaVinci Resolve. Si algo no funciona en EVA, mira Comprobación del sistema y cuéntalo en Feedback.</p></details>
+            <details><summary>¿Funciona en Mac o en iPhone?</summary><p>EVA se instala en PC con Windows. La app móvil de EVA es para Android; desde un iPhone puedes seguir y contestar las ediciones en la app de Claude.</p></details>
+            <details><summary>¿Qué es la clave de Digen y de dónde la saco?</summary><p>Digen genera los clips de la narración y la canción. Cada persona usa su propia cuenta: la clave se copia de tu cuenta de Digen y se pega en Mi cuenta. Si no sabes cuál usar, pregunta al administrador.</p></details>
+            <details><summary>¿A quién pregunto si me atasco?</summary><p>Al administrador que te invitó. Dentro de EVA, usa Feedback (con una captura si puedes): le llega un aviso al momento.</p></details>
             <details><summary>¿Qué pasa si se corta internet en mitad de una edición?</summary><p>EVA espera a que vuelva la conexión y vuelve a enlazar la conversación con la app de Claude. El trabajo hecho no se pierde.</p></details>
             <details><summary>¿Cuántos vídeos puedo editar a la vez?</summary><p>Hasta tres. Cada uno en su ventana; DaVinci Resolve se reparte por turnos entre ellos.</p></details>
             <details><summary>¿Mis claves son visibles para otros?</summary><p>No. Se guardan cifradas en tu PC y EVA nunca las muestra enteras, ni siquiera a ti.</p></details>
@@ -700,6 +859,11 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         p.setAttribute("d", `M${lx} ${ly} Q${cx} ${cy} ${ex} ${ey}`); p.setAttribute("stroke-width", 2.6 * k);
       });
     };
+    if (!fig.querySelector(".leyenda")) {
+      const ol = document.createElement("ol"); ol.className = "leyenda solo-movil";
+      datos.forEach(([, , txt], i) => { const li = document.createElement("li"); li.innerHTML = `<span class="c">${i + 1}</span>`; const sp = document.createElement("span"); sp.textContent = txt; li.appendChild(sp); ol.appendChild(li); });
+      let cap = fig.querySelector("figcaption"); if (!cap) { cap = document.createElement("figcaption"); fig.appendChild(cap); } cap.prepend(ol);
+    }
     dibujar(); if ("ResizeObserver" in window) new ResizeObserver(dibujar).observe(lienzo); else addEventListener("resize", dibujar);
     img.dataset.zoom = "";
   });
@@ -720,6 +884,12 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     setTimeout(() => b.textContent = "Copiar", 1800);
   }));
 
+  // Tablas en móvil: cada celda lleva el nombre de su columna
+  document.querySelectorAll("table.accesos").forEach(t => { const cab = [...t.querySelectorAll("thead th")].map(th => th.textContent.trim());
+    if (cab.length > 2) t.querySelectorAll("tbody tr").forEach(tr => [...tr.children].forEach((td, i) => { if (i > 0 && cab[i]) { const t = cab[i].toLowerCase().replace(/\p{L}/u, c => c.toUpperCase()); td.dataset.l = /\?$/.test(t) ? t : t + ":"; } })); });
+  // Índice para pantallas pequeñas (copia del lateral)
+  const im = document.querySelector(".indice-movil ol"), il = document.querySelector(".indice ol");
+  if (im && il) { im.innerHTML = il.innerHTML; im.addEventListener("click", e => { if (e.target.closest("a")) im.closest("details").open = false; }); }
   // Índice: marcar la sección visible
   const enlaces = [...document.querySelectorAll(".indice a")];
   const mapa = new Map(enlaces.map(a => [a.getAttribute("href").slice(1), a]));
