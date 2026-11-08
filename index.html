@@ -181,6 +181,15 @@ table.comparar td:first-child{white-space:normal;min-width:180px}
 .leyenda.solo-movil{display:none}
 @media (max-width:820px){.leyenda.solo-movil{display:grid}}
 figure.fig.estrecha{max-width:420px}
+.arbol{margin-top:16px;max-width:620px;background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:14px 18px;font:500 14.5px/1.5 "JetBrains Mono",ui-monospace,monospace;color:var(--t1)}
+.arbol>div{display:flex;align-items:center;gap:8px;padding:3px 0;flex-wrap:wrap}
+.arbol .n1{padding-left:22px}.arbol .n2{padding-left:44px}.arbol .n3{padding-left:66px;color:var(--t2)}
+.arbol em{font:italic 400 13px Figtree,sans-serif;color:var(--t3)}
+.ic-carpeta{width:16px;height:12px;border-radius:2px 3px 3px 3px;background:var(--violeta);position:relative;flex:none;margin-top:2px}
+.ic-carpeta::before{content:"";position:absolute;left:0;top:-3px;width:7px;height:4px;border-radius:2px 2px 0 0;background:var(--violeta)}
+.arbol .arch::before{content:"";width:11px;height:14px;border:1.5px solid var(--t3);border-radius:2px;flex:none}
+@media (max-width:640px){.arbol{font-size:13px;padding:12px}.arbol .n1{padding-left:12px}.arbol .n2{padding-left:24px}.arbol .n3{padding-left:36px}}
+code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--linea);border-radius:5px;padding:0 5px;color:var(--t1)}
 @media (max-width:640px){
   table.accesos thead{display:none}
   table.accesos,table.accesos tbody,table.accesos tr,table.accesos td{display:block;width:100%}
@@ -315,7 +324,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     <div class="flujo">
       <div class="paso"><div class="n">1</div><h3>Planificar</h3><p>Pulsas <b>Planificar</b> y EVA propone los vídeos de la semana con su historia, título y miniatura.</p></div>
       <div class="paso"><div class="n">2</div><h3>Aprobar</h3><p>Revisas la propuesta y la apruebas, o pides cambios con tus palabras.</p></div>
-      <div class="paso"><div class="n">3</div><h3>Producir</h3><p>Cada vídeo aprobado pasa a Producción. Tú haces la imagen del concursante y apruebas la narración; EVA prepara el resto.</p></div>
+      <div class="paso"><div class="n">3</div><h3>Producir</h3><p>Preparas el material de cada vídeo (foto, narración, canción e instrumental) en la carpeta que EVA crea para él.</p></div>
       <div class="paso"><div class="n">4</div><h3>Editar</h3><p>Pulsas <b>Editar vídeo</b> y EVA monta, verifica y renderiza en DaVinci Resolve.</p></div>
       <div class="paso"><div class="n">5</div><h3>Listo para publicar</h3><p>El vídeo terminado queda en su carpeta, dentro de la del canal. Lo subes tú a YouTube el día previsto.</p></div>
     </div>
@@ -383,7 +392,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       <li><a href="#roles"><span><b>Mira tu rol</b> y qué canales tienes.</span></a></li>
       <li><a href="#canales"><span><b>Crea tu canal y conecta sus métricas</b>, si trabajas con canales propios.</span></a></li>
       <li><a href="#planificacion"><span><b>Planifica tu primera semana</b> y apruébala.</span></a></li>
-      <li><a href="#produccion"><span><b>Produce y edita</b> tu primer vídeo.</span></a></li>
+      <li><a href="#produccion"><span><b>Prepara el material y edita</b> tu primer vídeo.</span></a></li>
     </ol>
     <details class="indice-movil"><summary>Ir a una sección del manual</summary><ol></ol></details>
 
@@ -478,7 +487,6 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             </tbody>
           </table>
           </div>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>¿Echas en falta un canal del equipo o ver sus ingresos? Pídeselo al administrador: él decide a qué tiene acceso cada persona. Al final del menú, en <b>Soporte</b>, tienes Comprobación del sistema, Incidencias y Feedback.</span></div>
           <figure class="fig" data-callouts='[[27.3,23.8,"Personas del equipo",8,-12],[52.7,28,"Tu rol",14,-12],[44.5,41.5,"Canales a los que accedes",22,14],[93.1,17.1,"Solo lectura",-6,-8]]'>
             <div class="lienzo"><img src="img/equipo.webp" width="3200" height="2000" alt="Sección Equipo con la lista de personas, el rol y los canales a los que accede cada una" loading="lazy"></div>
             <figcaption><p class="pie">Equipo (solo colaboradores): quién forma parte del equipo, su rol y los canales que compartís.</p></figcaption>
@@ -546,7 +554,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <header><span class="num">06</span><h3>Aprobar o pedir cambios</h3></header>
           <p>Cuando el estudio termina, EVA te enseña la propuesta: los vídeos de la semana con su día y su hora, la idea general y la señal <strong>Cumple las reglas</strong>. Nada se produce hasta que tú lo apruebas.</p>
           <ul class="lista">
-            <li><span><b>Aprobar planificación</b> crea los vídeos de la semana y los pasa a Producción.</span></li>
+            <li><span><b>Aprobar planificación</b> crea los vídeos de la semana, les hace a cada uno su carpeta y los pasa a Producción.</span></li>
             <li><span><b>Pedir cambios</b> te deja escribir con tus palabras qué quieres distinto («cambia el artista del jueves», «sube la publicación a las 19:00»). EVA rehace la propuesta y te la vuelve a enseñar.</span></li>
             <li><span><b>Eliminar planificación</b> descarta la semana; los vídeos que aún no se empezaron se descartan con ella.</span></li>
           </ul>
@@ -588,16 +596,40 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
                 <article class="cap" id="produccion">
           <header><span class="num">08</span><h3>Producción</h3></header>
-          <p>Todos tus vídeos de la semana en tarjetas. Toca uno para ver en qué etapa está; el reloj marca el tiempo activo de trabajo. Cada vídeo pasa por dos fases:</p>
+          <p>Todos tus vídeos de la semana en tarjetas. Toca uno para ver en qué etapa está; el reloj marca el tiempo activo de trabajo.</p>
+          <h4>Las carpetas: EVA las crea por ti</h4>
+          <p>No tienes que organizar nada. Al crear un canal, EVA le hace su carpeta dentro de tu carpeta de canales; al aprobar una semana, crea dentro una carpeta para cada vídeo. Ahí va todo lo de ese vídeo, y ahí aparecerá el vídeo terminado.</p>
+          <div class="arbol" aria-label="Ejemplo de carpetas">
+            <div><span class="ic-carpeta"></span>Canales <em>tu carpeta de canales (Mi cuenta)</em></div>
+            <div class="n1"><span class="ic-carpeta"></span>Voces del Sur <em>una por canal</em></div>
+            <div class="n2"><span class="ic-carpeta"></span>2026-11-09 Lunes - Isabel Pantoja <em>una por vídeo</em></div>
+            <div class="n3 arch">concursante.jpg</div>
+            <div class="n3 arch">narracion.mp3</div>
+            <div class="n3 arch">cancion.mp3</div>
+            <div class="n3 arch">instrumental.mp3</div>
+          </div>
+          <h4>Antes de editar: prepara el material</h4>
+          <p>Para empezar la producción de un vídeo, genera estos cuatro archivos con lo que te prepara su paquete (pestañas Concursante, Narración y Canción) y guárdalos en la carpeta del vídeo <strong>con estos nombres exactos</strong>:</p>
+          <div class="tabla-scroll">
+          <table class="accesos comparar">
+            <thead><tr><th>Archivo</th><th>Qué es</th><th>De dónde sale</th></tr></thead>
+            <tbody>
+              <tr><td><code>concursante.jpg</code></td><td>La foto del concursante (también vale .png).</td><td>La creas con la descripción de la pestaña Concursante.</td></tr>
+              <tr><td><code>narracion.mp3</code></td><td>La voz del narrador que cuenta la historia.</td><td>El texto de la pestaña Narración.</td></tr>
+              <tr><td><code>cancion.mp3</code></td><td>La canción que interpreta el concursante.</td><td>Los datos de la pestaña Canción.</td></tr>
+              <tr><td><code>instrumental.mp3</code></td><td>La misma canción sin voz, solo la música.</td><td>La pestaña Canción.</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Los audios también valen en <code>.wav</code> o <code>.m4a</code>. Si falta algo, EVA te dice exactamente qué archivo falta y no deja empezar la edición. Los clips de Digen no los preparas tú: si faltan, EVA los lanza al pulsar <b>Editar vídeo</b>.</span></div>
+          <h4>Después: la edición, sola</h4>
           <div class="tabla-scroll">
           <table class="accesos comparar">
             <thead><tr><th>Etapa</th><th>Qué pasa</th><th>¿Te necesita?</th></tr></thead>
             <tbody>
-              <tr><td>Imagen</td><td>La imagen del concursante, hecha con el texto que EVA te prepara en la pestaña Concursante.</td><td>Sí, la haces tú</td></tr>
-              <tr><td>Narración</td><td>EVA genera la voz del narrador.</td><td>Sí, la escuchas y la apruebas</td></tr>
-              <tr><td>Canción y clips</td><td>Se prepara la canción y se generan los clips en tu cuenta de Digen (los sigues en la sección Digen).</td><td>No</td></tr>
+              <tr><td>Clips de Digen</td><td>Se generan los clips de la narración y la canción en tu cuenta de Digen (los sigues en la sección Digen).</td><td>No</td></tr>
               <tr><td>Edición</td><td>Guion, revisión de clips, plan de montaje, verificación, montaje en DaVinci Resolve, render y revisión final.</td><td>No; solo si aparece «Te espera»</td></tr>
-              <tr><td>Terminado</td><td>El vídeo final queda en su carpeta, dentro de la carpeta del canal.</td><td>Lo revisas y lo subes a YouTube</td></tr>
+              <tr><td>Terminado</td><td>El vídeo final queda en la carpeta del vídeo.</td><td>Lo revisas y lo subes a YouTube</td></tr>
             </tbody>
           </table>
           </div>
