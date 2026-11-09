@@ -460,6 +460,45 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta de planificación lista para aprobar, con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
       </figure>
     </div>
+
+    <div class="dos" style="margin-top:72px">
+      <div>
+        <p class="etq">Narración con ElevenLabs</p>
+        <h3 style="font-size:28px;letter-spacing:-.02em">Una voz única para cada historia.</h3>
+        <p class="t2" style="margin-top:14px">Una abuela de Jalisco, un pescador japonés, una costurera rusa… Cada concursante tiene su origen, su edad y su forma de hablar. Antes había que pasar mucho rato buscando en la biblioteca de ElevenLabs una voz que casi encajara. Ahora <b>EVA crea para ti la voz más adecuada</b>: describe la que pide la historia y ElevenLabs la hace a medida.</p>
+        <ul class="lista">
+          <li><span><b>Tres voces de muestra.</b> Escuchas tres versiones cortas, eliges la que más te convence y EVA genera con ella la narración completa.</span></li>
+          <li><span><b>Muestras cortas, menos créditos.</b> Las voces de muestra se hacen con un trozo breve de la narración, lo justo para escucharlas.</span></li>
+          <li><span><b>O con una voz que ya tengas.</b> Pegas su ID y EVA genera la narración con ella, gastando aún menos.</span></li>
+          <li><span><b>Ajustes pensados para esa narración.</b> Velocidad, estabilidad, similitud y estilo vienen recomendados para cada historia, y puedes retocarlos si quieres.</span></li>
+          <li><span><b>Sin llenar tu cuenta.</b> Al aprobar la narración, la voz creada para ese vídeo se retira de tu cuenta de ElevenLabs; el audio se queda en la carpeta del vídeo.</span></li>
+        </ul>
+      </div>
+      <figure class="fig" style="margin:0;max-width:520px;justify-self:center">
+        <div class="lienzo"><img src="img/narracion_voz.webp" width="1096" height="1128" alt="Generar la narración: botones Generar voz automáticamente y Generar voz por ID, y tres voces de muestra con su reproductor y el botón Usar esta voz" loading="lazy"></div>
+        <figcaption class="t3" style="margin-top:10px;font-size:14px">Las tres voces de muestra, listas para escuchar y elegir.</figcaption>
+      </figure>
+    </div>
+
+    <div class="dos" style="margin-top:72px;align-items:start">
+      <div>
+        <p class="etq">Títulos y miniaturas</p>
+        <h3 style="font-size:28px;letter-spacing:-.02em">La mejor combinación, probada con tu público.</h3>
+        <p class="t2" style="margin-top:14px">Un mismo vídeo puede triunfar o pasar desapercibido según su título y su miniatura. Por eso EVA no se queda con una sola idea: para cada vídeo prepara <b>tres combinaciones distintas (A, B y C)</b>, cada una con su título y su miniatura y con un enfoque diferente, para probarlas en YouTube Studio con «Probar y comparar».</p>
+        </div>
+      <div>
+        <ul class="lista" style="margin-top:0">
+          <li><span><b>YouTube decide con datos.</b> Enseña cada combinación a una parte del público y se queda con la que mejor funciona. Así se elige la propuesta con más posibilidades de éxito.</span></li>
+          <li><span><b>Los fotogramas, sacados del vídeo.</b> Al terminar la edición, EVA extrae del propio vídeo las reacciones del jurado que pide cada prueba y las deja listas en la carpeta del vídeo.</span></li>
+          <li><span><b>Los prompts, escritos.</b> Cada prueba trae su prompt para ChatGPT y la lista de imágenes que subir, en orden. Solo copias, pegas y generas.</span></li>
+          <li><span><b>Aprende de las ganadoras.</b> EVA anota qué combinación ganó en cada vídeo y lo tiene en cuenta al planificar las semanas siguientes.</span></li>
+        </ul>
+      </div>
+    </div>
+    <figure class="fig" style="margin:28px 0 0">
+        <div class="lienzo"><img src="img/pruebas_ab.webp" width="2584" height="940" alt="Pestaña Miniaturas con las pruebas A, B y C: título, imágenes que subir a ChatGPT en orden y botón para copiar el prompt" loading="lazy"></div>
+        <figcaption class="t3" style="margin-top:10px;font-size:14px">Tres combinaciones de título y miniatura para cada vídeo.</figcaption>
+      </figure>
   </div>
 </section>
 
@@ -779,12 +818,22 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <tbody>
               <tr><td>Resumen</td><td>Ficha del vídeo (publicación, concursante, avance inicial) y la descripción para YouTube, lista para copiar.</td></tr>
               <tr><td>Miniaturas</td><td>Las variantes de título y miniatura para probar (A, B, C).</td></tr>
-              <tr><td>Narración</td><td>El texto que se locuta y los ajustes de la voz.</td></tr>
+              <tr><td>Narración</td><td>El texto que se locuta, la narración con su reproductor, los ajustes de ElevenLabs recomendados (y editables) y los botones para generarla con una voz única o con una voz que ya tengas.</td></tr>
               <tr><td>Canción</td><td>La letra y el estilo de la canción del concursante, y el prompt de la música de fondo de la narración.</td></tr>
               <tr><td>Concursante</td><td>La historia del personaje y la descripción para su imagen.</td></tr>
             </tbody>
           </table>
           </div>
+          <h4>La narración, con una voz hecha para el concursante</h4>
+          <p>En la pestaña <strong>Narración</strong> generas el audio sin salir de EVA, con tu propia clave de ElevenLabs (se guarda en Mi cuenta). Tienes dos formas de hacerlo:</p>
+          <ul class="lista">
+            <li><span><b>Generar voz automáticamente.</b> EVA crea una voz única para esa narración según el origen, la edad y el tono del concursante. Antes te enseña tres voces de muestra cortas para que elijas una. Consume algo más de créditos por esas muestras; EVA te lo recuerda la primera vez, y puedes marcar «No volver a mostrar este aviso».</span></li>
+            <li><span><b>Generar voz por ID.</b> Usa una voz que ya tengas en ElevenLabs: pegas su ID y listo. Consume menos créditos.</span></li>
+          </ul>
+          <figure class="fig" data-callouts='[[9.5, 12.5, "Texto que se locuta", 14, 8, "La narración completa del paquete, con sus caracteres, palabras y duración aproximada."], [78, 18.6, "Reproductor", -16, -10, "Escucha la narración generada: las ondas del propio audio, la barra para avanzar y reproducir o pausa."], [68.9, 35.5, "Aprobar narración", -18, 9, "Si te convence, la apruebas y queda lista para la edición. Si no, «No me convence» y generas otra."], [93.1, 43.6, "Ajustes recomendados", -10, 9, "Elegidos para esta narración en concreto: velocidad, estabilidad, similitud y estilo."], [85, 67.4, "Editables", -30, 2, "Con «Editar ajustes» puedes mover cada barra; la narración se genera con los valores que dejes."], [65.5, 81.6, "Generar otra narración", -20, 8, "Los dos botones para generarla: con una voz única o con una voz que ya tengas."]]'>
+            <div class="lienzo"><img src="img/narracion.webp" width="2656" height="1786" alt="Pestaña Narración: el texto a la izquierda; a la derecha el reproductor de la narración, los botones para aprobarla y los ajustes de ElevenLabs en modo edición" loading="lazy"></div>
+          </figure>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Pensado para no gastar de más.</b> Las voces de muestra se hacen con un trozo corto de la narración y, al elegir una, se recogen para dejar a la vista solo la narración. En el Dashboard ves cuántos créditos te quedan en ElevenLabs, y EVA te avisa en la campana cuando queda menos de la mitad de tu plan.</span></div>
           <h4>Todo listo para copiar y pegar</h4>
           <p>EVA no solo decide qué vídeos hacer: te deja cada pieza del vídeo escrita y lista para copiar con un clic, para que producir sea copiar, pegar y generar.</p>
           <ul class="lista">
@@ -793,6 +842,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Prompt de la imagen del concursante</b> (pestaña Concursante).</span></li>
             <li><span><b>Narración</b> con sus ajustes de voz, <b>canción</b> e <b>instrumental</b> con sus prompts, y la <b>descripción</b> para YouTube.</span></li>
           </ul>
+          <p><strong>¿Por qué tres pruebas?</strong> Porque el éxito de un vídeo depende mucho de su título y su miniatura. YouTube Studio («Probar y comparar») enseña cada combinación a una parte del público y se queda con la que mejor funciona; EVA prepara tres combinaciones con enfoques distintos (la canción y el ídolo, la historia del concursante, la reacción del público) para que gane la mejor, y anota cuál ganó para planificar mejor las siguientes semanas.</p>
           <figure class="fig" data-callouts='[[20.5, 57.9, "Prueba A, B o C", 10, -12, "Las tres versiones que se prueban en YouTube, cada una con su título y su miniatura."], [41.4, 67.6, "Copiar el título", -8, -12, "Copia el título de esa prueba para pegarlo en YouTube."], [29.9, 80, "Imágenes para ChatGPT, en orden", 14, 8, "Las imágenes que subes a ChatGPT, en este orden, para hacer la miniatura (las del jurado están en la carpeta miniatura)."], [31.1, 89, "Copiar el prompt de la miniatura", 12, 12, "Copia el texto que pegas en ChatGPT junto a esas imágenes."], [85.8, 52.2, "Dónde se prueba en YouTube", -12, -12, "Dónde se cargan las tres pruebas: YouTube Studio → Probar y comparar."]]'>
             <div class="lienzo"><img src="img/miniaturas.webp" width="3200" height="2000" alt="Pestaña Miniaturas con las tres pruebas A, B y C: título, imágenes que subir y botón para copiar el prompt" loading="lazy"></div>
           </figure>
@@ -824,7 +874,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <thead><tr><th>Archivo</th><th>Qué es</th><th>De dónde sale</th></tr></thead>
             <tbody>
               <tr><td><code>concursante.jpg</code></td><td>La foto del concursante (vale cualquier nombre, en .jpg, .png o .webp).</td><td>En ChatGPT, con el prompt de la pestaña Concursante.</td></tr>
-              <tr><td><code>narracion.mp3</code></td><td>La voz que cuenta la historia del concursante.</td><td>En ElevenLabs, con el texto y los ajustes de voz de la pestaña Narración.</td></tr>
+              <tr><td><code>narracion.mp3</code></td><td>La voz que cuenta la historia del concursante.</td><td>Desde la pestaña Narración de EVA, con una voz única creada para el concursante o con una voz tuya de ElevenLabs. También vale hacerla en ElevenLabs y dejarla en la carpeta.</td></tr>
               <tr><td><code>cancion.mp3</code></td><td>La canción que interpreta el concursante.</td><td>En Suno, con la letra y el estilo de la pestaña Canción.</td></tr>
               <tr><td><code>instrumental.mp3</code></td><td>Música suave de fondo para la narración (no es la canción sin voz).</td><td>En Suno, en modo Instrumental, con su prompt de la pestaña Canción.</td></tr>
             </tbody>
@@ -963,6 +1013,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Por cobrar</b> es tu parte del mes pasado. <b>Este mes</b>, lo que llevas hasta el último día con datos.</span></li>
             <li><span><b>Tu parte estimada</b> proyecta el mes completo: toma la media diaria de cada canal y la multiplica por los días que faltan.</span></li>
             <li><span>Los <b>ingresos de los canales del equipo</b> solo aparecen si el administrador te da permiso para verlos; los de tus canales, en cuanto conectes sus métricas.</span></li>
+            <li><span><b>Créditos.</b> Si guardaste tu clave de ElevenLabs, una tarjeta te dice cuántos créditos te quedan en tu plan y cuándo se renuevan (y los de Digen, si tu cuenta los ofrece). Cuando queda menos de la mitad, te llega un aviso a la campana.</span></li>
           </ul>
           <figure class="fig" data-callouts='[[75.8,68,"Tu parte estimada",-24,6,"Lo que te tocaría a fin de mes si sigue el ritmo actual, ya con los descuentos."],[82.3,75.8,"Desglose por canal",-30,4.7,"La media diaria de cada canal y lo que aporta a esa estimación."],[75.2,89.8,"% de impuestos",-23,-2.8,"Lo que se descuenta del bruto en impuestos (en EVA, «taxes»)."],[84.8,89.8,"% de envío",9,6.2,"Lo que cuesta enviarte el dinero; se descuenta después de los impuestos."]]'>
             <div class="lienzo"><img src="img/ingresos_estimada.webp" width="2400" height="1500" alt="Dashboard con Tu parte estimada, el desglose por canal y los campos de taxes y envío" loading="lazy"></div>
