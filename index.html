@@ -830,6 +830,8 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <ul class="lista">
             <li><span><b>Generar voz automáticamente.</b> EVA crea una voz única para esa narración según el origen, la edad y el tono del concursante. Antes te enseña tres voces de muestra cortas para que elijas una. Consume algo más de créditos por esas muestras; EVA te lo recuerda la primera vez, y puedes marcar «No volver a mostrar este aviso».</span></li>
             <li><span><b>Generar voz por ID.</b> Usa una voz que ya tengas en ElevenLabs: pegas su ID y listo. Consume menos créditos.</span></li>
+            <li><span><b>Configurar la voz.</b> Los ajustes de ElevenLabs (velocidad, estabilidad, similitud, exageración de estilo y speaker boost) vienen recomendados para esa narración. Con <b>Editar ajustes</b> los mueves a tu gusto, y con <b>Restablecer recomendados</b> vuelves a los de EVA.</span></li>
+            <li><span><b>Regenerar con la misma voz.</b> Si la narración se generó desde EVA y cambias un ajuste, aparece <b>Regenerar narración</b>: la vuelve a generar con la misma voz y los ajustes nuevos. Si la narración la pusiste tú a mano en la carpeta, no aparece, porque EVA no sabe con qué voz se hizo; en ese caso usa cualquiera de los dos botones de arriba.</span></li>
           </ul>
           <figure class="fig" data-callouts='[[9.5, 12.5, "Texto que se locuta", 14, 8, "La narración completa del paquete, con sus caracteres, palabras y duración aproximada."], [78, 18.6, "Reproductor", -16, -10, "Escucha la narración generada: las ondas del propio audio, la barra para avanzar y reproducir o pausa."], [68.9, 35.5, "Aprobar narración", -18, 9, "Si te convence, la apruebas y queda lista para la edición. Si no, «No me convence» y generas otra."], [93.1, 43.6, "Ajustes recomendados", -10, 9, "Elegidos para esta narración en concreto: velocidad, estabilidad, similitud y estilo."], [85, 67.4, "Editables", -30, 2, "Con «Editar ajustes» puedes mover cada barra. Si cambias algo, aparece «Regenerar narración» para generarla otra vez con la misma voz."], [65.5, 81.6, "Generar otra narración", -20, 8, "Los dos botones para generarla: con una voz única o con una voz que ya tengas."]]'>
             <div class="lienzo"><img src="img/narracion.webp" width="2656" height="1786" alt="Pestaña Narración: el texto a la izquierda; a la derecha el reproductor de la narración, los botones para aprobarla y los ajustes de ElevenLabs en modo edición" loading="lazy"></div>
@@ -882,6 +884,16 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           </table>
           </div>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Los audios también valen en <code>.wav</code> o <code>.m4a</code>. Si falta algo, EVA te dice exactamente qué archivo falta y no deja empezar la edición. Los clips de Digen no los preparas tú: si faltan, EVA los lanza al pulsar <b>Editar vídeo</b>.</span></div>
+          <h4>Los clips de Digen: EVA se encarga de todo</h4>
+          <p>No tienes que pedir los clips a Digen ni descargarlos. Al pulsar <span class="boton-ui claude">Editar vídeo</span> (o <span class="boton-ui">Solo clips</span>), EVA sigue estos pasos:</p>
+          <ol class="pasos">
+            <li><b>Mira si ya están.</b> Si los clips de la narración y la canción ya están en la carpeta del vídeo, los usa tal cual: no se vuelven a pedir ni se gastan créditos.</li>
+            <li><b>Mira si ya se están generando.</b> Si están en marcha en tu cuenta de Digen, espera a que terminen en lugar de pedirlos otra vez.</li>
+            <li><b>Si no existen, los encarga.</b> Manda a Digen la narración y la canción, con la imagen del concursante, para que genere los clips en tu cuenta.</li>
+            <li><b>Los descarga solos.</b> Vigila la generación y, cuando termina, deja los clips en las carpetas <code>narracion</code> y <code>cancion</code> del vídeo.</li>
+            <li><b>Los revisa.</b> Comprueba cada clip y vuelve a pedir solo los que salen mal, con un tope para no gastar de más.</li>
+            <li><b>Edita.</b> Con los clips listos, monta el vídeo en DaVinci Resolve, lo renderiza y revisa el resultado. Con Solo clips, antes te espera para que des el visto bueno.</li>
+          </ol>
           <h4>Dos formas de editar: elige la tuya</h4>
           <p>Con el material en su carpeta, tienes dos botones. Hacen lo mismo con los clips de Digen y con el montaje; la diferencia es <strong>si quieres revisar los clips antes de que empiece la edición</strong>.</p>
           <div class="modos">
