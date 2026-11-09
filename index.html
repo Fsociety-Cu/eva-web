@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
+:root{--marca:#3B82F6;
   --bg:#F6F6FA; --bg-2:#EEEEF5; --panel:#FFFFFF; --linea:#E1E2EC; --linea-2:#C9CBDA;
   --t1:#14131C; --t2:#454559; --t3:#6E6E82;
   --azul:#2F6FEB; --violeta:#8B5CF6; --naranja:#D9773F; --verde:#0E9F6E;
@@ -63,8 +63,19 @@ h1{font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.035em;font-w
 h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .entrada{font-size:clamp(18px,2.2vw,21px);color:var(--t2);max-width:62ch;text-wrap:pretty}
 .botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.autor{margin-top:18px;font-size:15px;color:var(--t3);max-width:62ch}
-.modos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+.portada-cab{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:end}
+@media (min-width:980px){.portada-cab{grid-template-columns:minmax(0,1fr) 330px;gap:40px}}
+.firma{position:relative;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--linea);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra);backdrop-filter:blur(6px)}
+.firma::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.75;pointer-events:none}
+.firma .quien{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.firma .av{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:19px;display:grid;place-items:center;flex:none}
+.firma .de{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.firma .nombre{font-size:20px;font-weight:800;color:var(--t1);line-height:1.15}
+.firma p{font-size:15px;color:var(--t2);margin:0}
+.firma .inv{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:600;color:var(--violeta);background:var(--acento-suave);border-radius:999px;padding:4px 12px}
+.modos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:18px 0 26px}
+.modo .vista{margin:-6px -6px 14px;border-radius:10px;overflow:hidden;border:1px solid var(--linea);cursor:zoom-in;background:#141417}
+.modo .vista img{width:100%;height:auto}
 .modo{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:20px;min-width:0}
 .modo h4{margin:0 0 6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .modo .para{display:block;font-size:14px;color:var(--t3);margin-bottom:10px}
@@ -132,22 +143,23 @@ p+p{margin-top:12px}
 
 /* Figuras con flechas */
 figure.fig{margin-top:26px}
-.lienzo{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--linea);box-shadow:var(--sombra);background:#141417;cursor:zoom-in}
-.lienzo img{width:100%;height:auto}
+.lienzo{position:relative;border-radius:14px;border:1px solid var(--linea);box-shadow:var(--sombra);background:#141417;cursor:zoom-in}
+.lienzo img{width:100%;height:auto;border-radius:13px}
 .lienzo svg.flechas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.pin{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid #F97316;box-shadow:0 0 0 3px rgba(249,115,22,.22),inset 0 0 0 2px rgba(255,255,255,.35);pointer-events:none}
-.pin b{position:absolute;right:-12px;top:-12px;width:22px;height:22px;border-radius:50%;background:#F97316;color:#fff;font:800 12px/22px Figtree,sans-serif;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.45)}
-.pin::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(249,115,22,.65);animation:latido 2.4s ease-out infinite}
+.pin{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid var(--marca);box-shadow:0 0 0 3px color-mix(in srgb,var(--marca) 25%,transparent),inset 0 0 0 2px rgba(255,255,255,.35);pointer-events:none}
+.pin b{position:absolute;right:-12px;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--marca);color:#fff;font:800 12px/22px Figtree,sans-serif;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.45)}
+.pin::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid color-mix(in srgb,var(--marca) 65%,transparent);animation:latido 2.4s ease-out infinite}
 @keyframes latido{0%{transform:scale(.9);opacity:.9}70%,100%{transform:scale(1.5);opacity:0}}
 @media (prefers-reduced-motion:reduce){.pin::after{animation:none}}
-.etiqueta{position:absolute;transform:translate(-50%,-50%);background:#FFFFFF;color:#14131C;font:700 13.5px/1.25 Figtree,sans-serif;padding:7px 11px;border-radius:9px;box-shadow:0 6px 20px rgba(0,0,0,.45);white-space:nowrap;pointer-events:none;border:1.5px solid #F97316}
-.etiqueta i{font-style:normal;color:#F97316;margin-right:6px}
+.etiqueta{position:absolute;transform:translate(-50%,-50%);background:#FFFFFF;color:#14131C;font:700 13.5px/1.25 Figtree,sans-serif;padding:7px 11px;border-radius:9px;box-shadow:0 6px 20px rgba(0,0,0,.45);white-space:nowrap;pointer-events:none;border:1.5px solid var(--marca)}
+.etiqueta i{font-style:normal;color:var(--marca);margin-right:6px}
 @media (max-width:820px){.etiqueta,svg.flechas{display:none}.pin{width:24px;height:24px;margin:-12px 0 0 -12px;border-width:2px}.pin b{width:18px;height:18px;font-size:10.5px;line-height:18px;right:-10px;top:-10px}}
 figcaption{margin-top:14px}
+.leyenda + .pie{margin-top:12px}
 .leyenda{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:10px 24px}
 .leyenda li{display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:15px;color:var(--t2)}
 .leyenda li b{color:var(--t1)}
-.leyenda .c{width:24px;height:24px;border-radius:50%;background:#F97316;color:#fff;font-weight:800;font-size:12.5px;display:grid;place-items:center;margin-top:1px}
+.leyenda .c{width:24px;height:24px;border-radius:50%;background:var(--marca);color:#fff;font-weight:800;font-size:12.5px;display:grid;place-items:center;margin-top:1px}
 
 /* Comandos */
 .consola{margin-top:18px;background:var(--codigo);border:1px solid var(--linea);border-radius:12px;overflow:hidden;max-width:720px}
@@ -285,6 +297,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 <!-- ============ PORTADA ============ -->
 <section class="portada" id="inicio">
   <div class="ancho">
+    <div class="portada-cab"><div>
     <span class="sello">Editora de Vídeos Autónoma</span>
     <h1>Del plan de la semana al vídeo <em>editado y listo</em>.</h1>
     <p class="entrada">EVA une una planificación inteligente con la edición autónoma de vídeos, pensada para canales de shows de talentos. Tú decides qué se publica; EVA planifica, monta, revisa y entrega el vídeo terminado en DaVinci Resolve.</p>
@@ -293,7 +306,12 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn" href="#manual">Ver el manual</a>
     </div>
-    <p class="autor">EVA es un proyecto creado por Andy para trabajar con su equipo de canales. Por ahora solo está disponible por invitación.</p>
+    </div>
+    <aside class="firma" aria-label="Autor">
+      <div class="quien"><span class="av" aria-hidden="true">A</span><div><div class="de">Creado por</div><div class="nombre">Andy</div></div></div>
+      <p>EVA es su proyecto para trabajar con su equipo de canales de shows de talentos.</p>
+      <span class="inv">Por ahora, solo por invitación</span>
+    </aside></div>
     <div class="escaparate"><img src="img/produccion.webp" width="3200" height="2000" alt="Producción en EVA: tres vídeos editándose a la vez, cada uno con su ventana de Claude Code y su barra de etapas" data-zoom></div>
   </div>
 </section>
@@ -354,7 +372,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <li><span><b>Una segunda mirada.</b> Antes de llegar a ti, la propuesta pasa una revisión como la de un editor exigente: si algo falla, se corrige.</span></li>
         </ul>
       </div>
-      <figure class="fig" style="margin:0" data-callouts='[[91.5,32.2,"Cumple las reglas",-14,-12],[26,64.2,"Aprobar",-4,16],[37.5,64.2,"Pedir cambios",14,16]]'>
+      <figure class="fig" style="margin:0" data-callouts='[[91.5, 32.2, "Cumple las reglas", -14, -12, "La revisión automática confirma que la propuesta respeta las reglas del canal; si algo falla, se corrige antes de llegar a ti."], [26, 64.2, "Aprobar", -4, 16, "Das por buena la semana y sus vídeos pasan a Producción."], [37.5, 64.2, "Pedir cambios", 14, 16, "Le dices a EVA qué quieres distinto y rehace la propuesta."]]'>
         <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta de planificación lista para aprobar, con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
       </figure>
     </div>
@@ -489,7 +507,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <header><span class="num">01</span><h3>Instalar EVA y entrar</h3></header>
           <p>Ejecuta el instalador de EVA que te da el administrador. La primera vez te enseña el <strong>Código de este PC</strong>: envíaselo al administrador, que te devuelve tu licencia para activar EVA en ese PC (solo se hace una vez; al actualizar ya no se pide).</p>
           <p>Abre EVA y pulsa <span class="boton-ui">Entrar con Google</span> con la cuenta que autorizó el administrador. Por seguridad, cada PC nuevo debe aprobarlo el administrador la primera vez; después la sesión queda guardada.</p>
-          <figure class="fig" data-callouts='[[76.1,49.4,"Entrar con Google",-12,-12],[76,64.6,"Tema claro, sistema u oscuro",-6,12]]'>
+          <figure class="fig" data-callouts='[[76.1, 49.4, "Entrar con Google", -12, -12, "Entra con la cuenta de Google que autorizó el administrador."], [76, 64.6, "Tema claro, sistema u oscuro", -6, 12, "Elige el aspecto de EVA. Puedes cambiarlo también después, ya dentro."]]'>
             <div class="lienzo"><img src="img/entrada.webp" width="3200" height="2000" alt="Pantalla de inicio de sesión de EVA con el botón Entrar con Google" loading="lazy"></div>
           </figure>
           <h4>El asistente de bienvenida</h4>
@@ -500,7 +518,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           </figure>
           <h4>La interfaz, en claro o en oscuro</h4>
           <p>A la izquierda está el menú con todas las secciones y tus canales. Arriba a la derecha tienes el <strong>selector de tema</strong> (claro, el del sistema u oscuro), la <strong>campana</strong> de avisos y tu <strong>avatar</strong>, que abre tu cuenta. Tocar el logo de EVA abre <strong>Acerca de EVA</strong>.</p>
-          <figure class="fig" data-callouts='[[82.9,2.6,"Claro · Sistema · Oscuro",-14,12],[88.1,2.6,"Avisos",-2,22],[3.2,2.2,"Acerca de EVA",9,9],[6,46,"Menú de secciones",14,0]]'>
+          <figure class="fig" data-callouts='[[82.9, 2.6, "Claro · Sistema · Oscuro", -14, 12, "Cambia entre tema claro, el del sistema u oscuro."], [88.1, 2.6, "Avisos", -2, 22, "La campana de avisos; el número indica cuántos tienes sin leer."], [3.2, 2.2, "Acerca de EVA", 9, 9, "Toca el logo para ver la versión instalada y el estado de cada pieza."], [6, 46, "Menú de secciones", 14, 0, "Todas las secciones de EVA y tus canales; la flecha de cada canal despliega sus semanas."]]'>
             <div class="lienzo"><img src="img/dashboard_claro.webp" width="3200" height="2000" alt="EVA en tema claro, con el selector de tema arriba a la derecha" loading="lazy"></div>
           </figure>
         </article>
@@ -516,12 +534,12 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li>Baja hasta <b>Secuencias de comandos</b> (<i>Scripts</i>).</li>
             <li>Pulsa <b>CursorBridge</b>. No verás ninguna ventana nueva: el conector se queda esperando a EVA.</li>
           </ol>
-          <figure class="fig" data-callouts='[[45.2,1.2,"Área de trabajo",-12,10],[47.5,45.6,"Secuencias de comandos",-20,10],[60.8,45.6,"CursorBridge",16,-8]]'>
+          <figure class="fig" data-callouts='[[45.2, 1.2, "Área de trabajo", -12, 10, "El menú Área de trabajo (Workspace), en la barra superior de DaVinci Resolve."], [47.5, 45.6, "Secuencias de comandos", -20, 10, "Dentro de ese menú, la opción Secuencias de comandos (Scripts)."], [60.8, 45.6, "CursorBridge", 16, -8, "El conector de EVA. Al pulsarlo no se abre ninguna ventana: se queda esperando a EVA."]]'>
             <div class="lienzo"><img src="img/resolve_scripts.webp" width="1921" height="1153" alt="Menú Área de trabajo de DaVinci Resolve con Secuencias de comandos y CursorBridge" loading="lazy"></div>
           </figure>
           <h4>Cómo saber si está listo</h4>
           <p>En <strong>Producción</strong>, junto al título, un piloto te dice en todo momento cómo está DaVinci Resolve:</p>
-          <figure class="fig" data-callouts='[[31.9,47,"El piloto de DaVinci Resolve",24,0]]'>
+          <figure class="fig" data-callouts='[[31.9, 47, "El piloto de DaVinci Resolve", 24, 0, "En verde, con «DaVinci Resolve en línea», EVA ya puede montar. Si no está en verde, abre Resolve y lanza CursorBridge."]]'>
             <div class="lienzo"><img src="img/led.webp" width="2590" height="180" alt="Cabecera de Producción con el piloto «DaVinci Resolve en línea»" loading="lazy"></div>
           </figure>
           <ul class="leds">
@@ -580,7 +598,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             </tbody>
           </table>
           </div>
-          <figure class="fig" data-callouts='[[27.3,23.8,"Personas del equipo",8,-12],[52.7,28,"Tu rol",14,-12],[44.5,41.5,"Canales a los que accedes",22,14],[93.1,17.1,"Solo lectura",-6,-8]]'>
+          <figure class="fig" data-callouts='[[27.3, 23.8, "Personas del equipo", 8, -12, "Quién forma parte del equipo, con su foto y su nombre."], [52.7, 28, "Tu rol", 14, -12, "El rol de cada persona en EVA."], [44.5, 41.5, "Canales a los que accedes", 22, 14, "Los canales del equipo a los que accede cada persona."], [93.1, 17.1, "Solo lectura", -6, -8, "Esta sección solo se consulta: los roles y los accesos los cambia el administrador."]]'>
             <div class="lienzo"><img src="img/equipo.webp" width="3200" height="2000" alt="Sección Equipo con la lista de personas, el rol y los canales a los que accede cada una" loading="lazy"></div>
             <figcaption><p class="pie">Equipo (solo colaboradores): quién forma parte del equipo, su rol y los canales que compartís.</p></figcaption>
           </figure>
@@ -589,7 +607,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <article class="cap" id="canales">
           <header><span class="num">05</span><h3>Canales</h3></header>
           <p>En el menú lateral, <strong>Canales</strong> lista los canales a los que tienes acceso. Pulsa <strong>Agregar canal</strong> para crear uno propio: escribe el nombre y un código corto de 2 a 5 letras. EVA crea su carpeta dentro de tu raíz de canales.</p>
-          <figure class="fig" data-callouts='[[50,44.8,"Nombre del canal",16,-8],[39.8,55.2,"Código corto",-14,4],[61.2,66.6,"Crear canal",10,10]]'>
+          <figure class="fig" data-callouts='[[50, 44.8, "Nombre del canal", 16, -8, "El nombre con el que verás el canal en EVA."], [39.8, 55.2, "Código corto", -14, 4, "De 2 a 5 letras. Identifica los vídeos del canal (por ejemplo, MIC-2026-11-09-Nombre)."], [61.2, 66.6, "Crear canal", 10, 10, "Crea el canal y su carpeta dentro de tu raíz de canales."]]'>
             <div class="lienzo"><img src="img/agregar.webp" width="3200" height="2000" alt="Ventana Agregar canal con nombre y código corto" loading="lazy"></div>
           </figure>
           <p style="margin-top:22px">La ficha de cada canal muestra cuántos vídeos hay planificados, en producción y publicados, su carpeta en este PC y sus ajustes:</p>
@@ -598,7 +616,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Importar planificación antigua.</b> Trae paquetes y análisis que ya tenías, adaptados al formato actual.</span></li>
             <li><span><b>Eliminar canal.</b> Solo quien lo creó. Tus archivos del PC no se tocan.</span></li>
           </ul>
-          <figure class="fig" data-callouts='[[30,32,"Estado de los vídeos",10,-12],[23.2,60.2,"Carpeta del canal",12,-10],[93.7,52.6,"Planificación independiente",-12,-10],[91.4,62.2,"Importar",-8,10],[25.1,89.6,"Conectar métricas",14,-8]]'>
+          <figure class="fig" data-callouts='[[30, 32, "Estado de los vídeos", 10, -12, "Cuántos vídeos hay planificados, en producción y publicados."], [23.2, 60.2, "Carpeta del canal", 12, -10, "Dónde están los vídeos del canal en este PC. Con Elegir carpeta o Pegar ruta la cambias."], [93.7, 52.6, "Planificación independiente", -12, -10, "Activada, el canal se planifica por su cuenta; desactivada, junto a los demás para no repetir canciones, artistas ni días."], [91.4, 62.2, "Importar", -8, 10, "Trae paquetes y análisis que ya tenías, adaptados al formato actual."], [25.1, 89.6, "Conectar métricas", 14, -8, "Conecta las métricas de YouTube de este canal con tu cuenta de Google, para planificar con sus resultados y ver sus ingresos."]]'>
             <div class="lienzo"><img src="img/canal.webp" width="3200" height="2110" alt="Ficha de un canal propio con sus ajustes y la conexión de métricas" loading="lazy"></div>
           </figure>
         </article>
@@ -634,10 +652,10 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li>Mientras trabaja, ves su conversación dentro de la propia semana. Si necesita tu opinión, aparece la etiqueta <b>Te espera</b>: contéstale ahí mismo o desde la app de Claude.</li>
           </ol>
 <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Entraste como invitado?</b> Puede que no veas este botón tal cual: tus canales son personales y su planificación funciona de forma independiente, sin tener en cuenta a ningún equipo. Esto no afecta a tu forma de trabajar: planificas, apruebas y produces tus vídeos igual.</span></div>
-          <figure class="fig" data-callouts='[[8.9,26.3,"Nueva planificación",10,14],[22,16.2,"Elige el canal",4,-10],[26.4,22,"La semana siguiente",16,16],[92.7,23.5,"Planificar",-6,12]]'>
+          <figure class="fig" data-callouts='[[8.9, 26.3, "Nueva planificación", 10, 14, "En el menú, dentro del canal, abre una planificación nueva."], [22, 16.2, "Elige el canal", 4, -10, "Las pestañas de arriba cambian el canal que vas a planificar."], [26.4, 22, "La semana siguiente", 16, 16, "La semana que se va a planificar: siempre la siguiente."], [92.7, 23.5, "Planificar", -6, 12, "Arranca la planificación: EVA analiza el canal y prepara la propuesta."]]'>
             <div class="lienzo"><img src="img/nuevaplan.webp" width="3200" height="2000" alt="Nueva planificación de un canal con el botón Planificar" loading="lazy"></div>
           </figure>
-          <figure class="fig" data-callouts='[[37.5,38,"Conversación de la planificación",-12,15],[52.5,30.8,"Te espera",8,-10],[94.6,30.8,"Ampliar",-6,12]]'>
+          <figure class="fig" data-callouts='[[37.5, 38, "Conversación de la planificación", -12, 15, "Lo que EVA va haciendo, en directo, dentro de la propia semana."], [52.5, 30.8, "Te espera", 8, -10, "EVA necesita tu respuesta: contéstale aquí mismo o desde la app de Claude."], [94.6, 30.8, "Ampliar", -6, 12, "Abre la conversación a pantalla completa para leerla con calma."]]'>
             <div class="lienzo"><img src="img/propuesta.webp" width="3200" height="2000" alt="Conversación de planificación dentro de la semana, esperando tu respuesta" loading="lazy"></div>
           </figure>
         </article>
@@ -651,7 +669,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Eliminar planificación</b> descarta la semana; los vídeos que aún no se empezaron se descartan con ella.</span></li>
           </ul>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Cuándo pedir cambios y cómo?</b> Antes de aprobar: <b>Pedir cambios</b>. Con la semana ya aprobada, para un solo vídeo: <b>Ajustar con Claude</b>. Durante una edición: escríbelo en su ventana de Claude Code.</span></div>
-          <figure class="fig" data-callouts='[[26,64.2,"Aprobar planificación",-6,14],[37.5,64.2,"Pedir cambios",12,14],[91.5,32.2,"Cumple las reglas",-8,10],[91.4,23.4,"Eliminar planificación",-14,-10]]'>
+          <figure class="fig" data-callouts='[[26, 64.2, "Aprobar planificación", -6, 14, "Das por buena la semana: sus vídeos pasan a Producción con sus paquetes."], [37.5, 64.2, "Pedir cambios", 12, 14, "Escribe qué quieres distinto y EVA rehace la propuesta antes de aprobarla."], [91.5, 32.2, "Cumple las reglas", -8, 10, "Resultado de la revisión automática: la propuesta respeta las reglas del canal."], [91.4, 23.4, "Eliminar planificación", -14, -10, "Descarta la semana entera."]]'>
             <div class="lienzo"><img src="img/informe.webp" width="3200" height="2000" alt="Propuesta lista con los botones Aprobar planificación y Pedir cambios" loading="lazy"></div>
           </figure>
         </article>
@@ -692,7 +710,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Prompt de la imagen del concursante</b> (pestaña Concursante).</span></li>
             <li><span><b>Narración</b> con sus ajustes de voz, <b>canción</b> e <b>instrumental</b> con sus prompts, y la <b>descripción</b> para YouTube.</span></li>
           </ul>
-          <figure class="fig" data-callouts='[[20.5,57.9,"Prueba A, B o C",10,-12],[41.4,67.6,"Copiar el título",-8,-12],[29.9,80,"Imágenes para ChatGPT, en orden",14,8],[31.1,89,"Copiar el prompt de la miniatura",12,12],[85.8,52.2,"Dónde se prueba en YouTube",-12,-12]]'>
+          <figure class="fig" data-callouts='[[20.5, 57.9, "Prueba A, B o C", 10, -12, "Las tres versiones que se prueban en YouTube, cada una con su título y su miniatura."], [41.4, 67.6, "Copiar el título", -8, -12, "Copia el título de esa prueba para pegarlo en YouTube."], [29.9, 80, "Imágenes para ChatGPT, en orden", 14, 8, "Las imágenes que subes a ChatGPT, en este orden, para hacer la miniatura (las del jurado están en la carpeta miniatura)."], [31.1, 89, "Copiar el prompt de la miniatura", 12, 12, "Copia el texto que pegas en ChatGPT junto a esas imágenes."], [85.8, 52.2, "Dónde se prueba en YouTube", -12, -12, "Dónde se cargan las tres pruebas: YouTube Studio → Probar y comparar."]]'>
             <div class="lienzo"><img src="img/miniaturas.webp" width="3200" height="2000" alt="Pestaña Miniaturas con las tres pruebas A, B y C: título, imágenes que subir y botón para copiar el prompt" loading="lazy"></div>
           </figure>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Las fotos del jurado para las miniaturas te las deja EVA.</b> Al terminar la edición, en la carpeta del vídeo aparece la carpeta <code>miniatura</code> con la imagen del concursante y un fotograma de un juez o jueza por prueba (<code>3A_…</code>, <code>3B_…</code>, <code>3C_…</code>), con la reacción que pide cada una. La foto del artista homenajeado y el logo del canal los pones tú; la pestaña Miniaturas te dice el orden exacto. Por eso las miniaturas se hacen al final, con el vídeo ya editado.</span></div>
@@ -733,9 +751,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <h4>Dos formas de editar: elige la tuya</h4>
           <p>Con el material en su carpeta, tienes dos botones. Hacen lo mismo con los clips de Digen y con el montaje; la diferencia es <strong>si quieres revisar los clips antes de que empiece la edición</strong>.</p>
           <div class="modos">
-            <div class="modo"><h4><span class="boton-ui claude">Editar vídeo</span> Edición autónoma</h4><span class="para">Para quien prefiere no estar pendiente.</span>
+            <div class="modo"><div class="vista"><img src="img/modo_editar.webp" width="2560" height="1400" alt="Edición autónoma: la barra de etapas avanza sola mientras Claude Code edita el vídeo" loading="lazy" data-zoom></div><h4><span class="boton-ui claude">Editar vídeo</span> Edición autónoma</h4><span class="para">Para quien prefiere no estar pendiente.</span>
               <ol><li>Lanza los clips en Digen (si aún no están), espera a que terminen y los descarga.</li><li>Los revisa y rehace solo los que salen mal, con el tope de créditos.</li><li>Edita, monta en DaVinci Resolve, renderiza y revisa el resultado.</li><li>Te avisa cuando el vídeo está terminado.</li></ol></div>
-            <div class="modo"><h4><span class="boton-ui">Solo clips</span> Revisar los clips primero</h4><span class="para">Para quien quiere dar el visto bueno antes de editar.</span>
+            <div class="modo"><div class="vista"><img src="img/modo_soloclips.webp" width="1960" height="1072" alt="Revisar clips: cada clip con su reproductor, la casilla Rehacer este clip y qué falla" loading="lazy" data-zoom></div><h4><span class="boton-ui">Solo clips</span> Revisar los clips primero</h4><span class="para">Para quien quiere dar el visto bueno antes de editar.</span>
               <ol><li>Lanza, descarga y revisa los clips igual, pero <b>no edita</b>.</li><li>Te avisa cuando están listos para revisar.</li><li>Los ves y escuchas; marcas los que haya que rehacer o das el visto bueno.</li><li>Con tu visto bueno empieza la edición, igual que con Editar vídeo.</li></ol></div>
           </div>
           <p><b>¿Cuál elegir?</b> Si estás empezando, o quieres escuchar tú el lipsync antes de editar, usa <b>Solo clips</b>: la edición espera a tu visto bueno, así que tarda más si no estás pendiente. Cuando ya confíes en el resultado, <b>Editar vídeo</b> lo hace todo sin esperarte; en ese modo EVA revisa con más cuidado los clips dudosos y rehace los que salen mal, dentro del mismo tope.</p>
@@ -768,7 +786,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           </figure>
           <h4>Paso a paso con Solo clips</h4>
           <p>Si prefieres ver los clips de Digen antes de que se edite, pulsa <span class="boton-ui">Solo clips</span>, al lado de <span class="boton-ui claude">Editar vídeo</span>. Cuando los clips están listos, ese botón pasa a llamarse <span class="boton-ui">Revisar clips</span>.</p>
-          <figure class="fig" data-callouts='[[84.4,54.9,"Solo clips",-10,-14],[91.9,54.9,"Editar vídeo",-2,12],[21.9,33.8,"Listo para editar",10,-10]]'>
+          <figure class="fig" data-callouts='[[84.4, 54.9, "Solo clips", -10, -14, "Prepara y revisa los clips de Digen, pero no edita hasta que des el visto bueno."], [91.9, 54.9, "Editar vídeo", -2, 12, "Lo hace todo sin esperarte: clips, edición, render y revisión."], [21.9, 33.8, "Listo para editar", 10, -10, "El material ya está en su carpeta: puedes usar cualquiera de los dos botones."]]'>
             <div class="lienzo"><img src="img/soloclips.webp" width="3200" height="2000" alt="Vídeo listo para editar con los botones Solo clips y Editar vídeo" loading="lazy"></div>
           </figure>
           <ol class="pasos">
@@ -778,10 +796,10 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span>Marca <b>Rehacer este clip</b> en los que fallen, escribe qué falla («el micrófono tapa la boca», «sonríe mientras habla») y pulsa <b>Rehacer N clips</b>: EVA los vuelve a pedir a Digen y te avisa otra vez. Cuentan dentro del mismo tope de unos 10 clips rehechos por vídeo.</span></li>
             <li><span>Cuando estés conforme, pulsa <b>Dar el visto bueno y editar</b>: empieza la edición con los clips tal como están, sin volver a rehacerlos.</span></li>
           </ol>
-          <figure class="fig" data-callouts='[[84,54.9,"Revisar clips",-10,-14],[52.2,23.8,"Te espera · Revisar clips",-10,26]]'>
+          <figure class="fig" data-callouts='[[84, 54.9, "Revisar clips", -10, -14, "Cuando los clips están listos, Solo clips pasa a llamarse Revisar clips: púlsalo para verlos."], [52.2, 23.8, "Te espera · Revisar clips", -10, 26, "La tarjeta del vídeo te avisa de que la edición espera tu revisión."]]'>
             <div class="lienzo"><img src="img/porrevisar.webp" width="3200" height="2000" alt="Tarjeta de vídeo con los clips listos para revisar y el botón Revisar clips" loading="lazy"></div>
           </figure>
-          <figure class="fig" data-callouts='[[56.8,36.6,"Revisar con sonido",8,-14],[51.4,44.6,"Rehacer este clip",-14,10],[57.3,48,"Qué falla",16,12],[60.6,95.4,"Rehacer marcados",-16,-12],[72,95.4,"Dar el visto bueno y editar",-6,-12]]'>
+          <figure class="fig" data-callouts='[[56.8, 36.6, "Revisar con sonido", 8, -14, "EVA marca así los clips que no pudo dar por buenos del todo: escúchalos con atención."], [51.4, 44.6, "Rehacer este clip", -14, 10, "Márcalo si el clip falla."], [57.3, 48, "Qué falla", 16, 12, "Escribe qué falla para que se corrija, por ejemplo «no se mueve en la segunda frase»."], [60.6, 95.4, "Rehacer marcados", -16, -12, "Vuelve a pedir a Digen los clips marcados; EVA te avisa cuando lleguen."], [72, 95.4, "Dar el visto bueno y editar", -6, -12, "Acepta los clips tal como están y empieza la edición."]]'>
             <div class="lienzo"><img src="img/revisarclips.webp" width="3200" height="2000" alt="Ventana Revisar clips con los clips de la narración, uno marcado para rehacer" loading="lazy"></div>
           </figure>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Pulsa <b>Editar vídeo</b> en su tarjeta: EVA te pregunta si quieres <b>Retocar</b> (le dices qué cambiar y cambia solo eso, sin volver a generar clips) o <b>Editar de nuevo</b> (rehace el montaje desde cero). Si la ventana de ese vídeo sigue abierta, escríbeselo directamente. También puedes retocarlo tú en DaVinci Resolve; si lo haces, exporta tú el vídeo final.</span></div>
@@ -808,7 +826,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">5</span><span><b>Ampliar.</b> La ventana ocupa toda la pantalla, como en la siguiente imagen.</span></li>
             </ol></figcaption>
           </figure>
-          <figure class="fig" data-callouts='[[17,3.7,"También en la app de Claude",6,14],[24.8,3.7,"Trabajando",22,40],[92.2,3.7,"Detener",-8,14],[96.5,3.7,"Reducir (vuelve al tamaño normal)",-14,26],[35,26,"Lo que hace, paso a paso",12,36]]'>
+          <figure class="fig" data-callouts='[[17, 3.7, "También en la app de Claude", 4, 10, "La misma conversación está en la sección Code de la app de Claude: puedes seguirla y contestar desde allí."], [24.8, 3.7, "Trabajando", 19, 7, "Claude Code está trabajando. Si cambia a «Te espera», necesita tu respuesta."], [92.2, 3.7, "Detener", -12, 10, "Para la edición en el punto en que esté."], [96.5, 3.7, "Reducir (vuelve al tamaño normal)", -14, 20, "Devuelve la ventana a su sitio, en la tarjeta del vídeo."], [35, 26, "Lo que hace, paso a paso", 15, 24, "Cada paso que da EVA. Si quieres corregir algo, escríbeselo aquí."]]'>
             <div class="lienzo"><img src="img/ccventana.webp" width="3200" height="2000" alt="Ventana de Claude Code ampliada mostrando el trabajo de edición en directo" loading="lazy"></div>
           </figure>
           <h4>También desde la app de Claude (opcional)</h4>
@@ -824,7 +842,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <article class="cap" id="edicion-resolve">
           <header><span class="num">12</span><h3>La edición, en directo en DaVinci Resolve</h3></header>
           <p>Mientras EVA edita, puedes mirar DaVinci Resolve y ver cómo se monta el vídeo: crea un proyecto para ese vídeo, trae su material y va colocando en la línea de tiempo la actuación, la narración, la música y las reacciones del jurado y del público. Al terminar, exporta el vídeo final a su carpeta y lo revisa antes de darlo por terminado.</p>
-          <figure class="fig" data-callouts='[[18.5,38.5,"Material del vídeo",10,-16],[76,32,"Visor",-10,-10],[54,64.7,"El vídeo completo",-12,-8],[42.3,82.7,"Actuación montada",-14,-14],[84.6,82.7,"Reacciones del jurado",-6,-14],[42.3,87.2,"Música y narración",8,8]]'>
+          <figure class="fig" data-callouts='[[18.5, 38.5, "Material del vídeo", 10, -16, "Los clips, la narración, la canción y las tomas que EVA trae al proyecto."], [76, 32, "Visor", -10, -10, "Reproduce el vídeo tal como va quedando."], [54, 64.7, "El vídeo completo", -12, -8, "La línea de tiempo, con el vídeo de principio a fin."], [42.3, 82.7, "Actuación montada", -14, -14, "Los clips del concursante, en su orden."], [84.6, 82.7, "Reacciones del jurado", -6, -14, "Las reacciones del jurado y del público, intercaladas en la actuación."], [42.3, 87.2, "Música y narración", 8, 8, "Las pistas de audio: narración, canción e instrumental."]]'>
             <div class="lienzo"><img src="img/resolve_edicion.webp" width="1921" height="1153" alt="DaVinci Resolve con un vídeo montado por EVA en la línea de tiempo" loading="lazy"></div>
           </figure>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Mientras edita, no toques la línea de tiempo de ese proyecto ni cierres DaVinci Resolve. Si lo cierras sin querer, ábrelo, lanza CursorBridge y pulsa <b>Editar vídeo</b> para que siga.</span></div>
@@ -833,7 +851,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <article class="cap" id="calendario">
           <header><span class="num">13</span><h3>Calendario</h3></header>
           <p>Todos los vídeos del mes, publicados y por salir, de todos tus canales. Sirve para ver de un vistazo qué sale cada día y para que la planificación no repita artistas.</p>
-          <figure class="fig" data-callouts='[[25,24.2,"Canales y su tipo",10,-12],[23.1,60,"Vídeo del día",10,12],[91.4,45,"Hoy",-6,-12],[88,18,"Ir a hoy",-10,-10]]'>
+          <figure class="fig" data-callouts='[[25, 24.2, "Canales y su tipo", 10, -12, "Cada canal con su color, si es del equipo o personal, y cuántos vídeos tiene este mes."], [23.1, 60, "Vídeo del día", 10, 12, "El vídeo que sale ese día, con el color de su canal."], [91.4, 45, "Hoy", -6, -12, "El día de hoy, resaltado."], [88, 18, "Ir a hoy", -10, -10, "Hoy vuelve al mes actual; las flechas pasan de mes."]]'>
             <div class="lienzo"><img src="img/calendario.webp" width="3200" height="2000" alt="Calendario mensual con los vídeos de cada canal" loading="lazy"></div>
           </figure>
         </article>
@@ -863,8 +881,8 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Tu parte estimada</b> proyecta el mes completo: toma la media diaria de cada canal y la multiplica por los días que faltan.</span></li>
             <li><span>Los <b>ingresos de los canales del equipo</b> solo aparecen si el administrador te da permiso para verlos; los de tus canales, en cuanto conectes sus métricas.</span></li>
           </ul>
-          <figure class="fig estrecha" data-callouts='[[50,69,"Tu parte estimada",0,-12],[24.8,94.4,"% de impuestos",22,-8],[59.1,94.4,"% de envío",20,-15]]'>
-            <div class="lienzo"><img src="img/ingresos_ajustes_recorte.webp" width="680" height="1276" alt="Tu parte estimada con el desglose por canal y los campos de taxes y envío" loading="lazy"></div>
+          <figure class="fig" data-callouts='[[75.8,68,"Tu parte estimada",-24,6,"Lo que te tocaría a fin de mes si sigue el ritmo actual, ya con los descuentos."],[82.3,75.8,"Desglose por canal",-30,4.7,"La media diaria de cada canal y lo que aporta a esa estimación."],[75.2,89.8,"% de impuestos",-23,-2.8,"Lo que se descuenta del bruto en impuestos (en EVA, «taxes»)."],[84.8,89.8,"% de envío",9,6.2,"Lo que cuesta enviarte el dinero; se descuenta después de los impuestos."]]'>
+            <div class="lienzo"><img src="img/ingresos_estimada.webp" width="2400" height="1500" alt="Dashboard con Tu parte estimada, el desglose por canal y los campos de taxes y envío" loading="lazy"></div>
             <figcaption><p class="pie">Cambia los porcentajes de impuestos y envío y todo se recalcula al momento. Se guardan en tu PC.</p></figcaption>
           </figure>
         </article>
@@ -892,19 +910,19 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
           <h4>Digen</h4>
           <p>Digen es el servicio que genera los clips de la narración y la canción de cada vídeo. Aquí ves tu propia cuenta: usos por día, tareas que se están generando (con <b>Abrir chat</b> para verlas en Digen), actividad y tus skills. Funciona con tu clave de Digen, que se guarda en Mi cuenta.</p>
-          <figure class="fig" data-callouts='[[83.8,10.3,"Periodo",-12,10],[93.5,10.3,"Actualizar",-4,16],[24.9,36.9,"Usos por día",14,-10],[22.4,74.1,"Tareas en curso",14,-8],[52.4,86.4,"Abrir chat",8,8]]'>
+          <figure class="fig" data-callouts='[[83.8, 10.3, "Periodo", -12, 10, "Elige si ves los últimos 7, 30 o 60 días."], [93.5, 10.3, "Actualizar", -4, 16, "Pide a Digen los datos más recientes."], [24.9, 36.9, "Usos por día", 14, -10, "Cuántas veces se han usado tus skills cada día."], [22.4, 74.1, "Tareas en curso", 14, -8, "Los clips que se están generando ahora, con su avance y los créditos gastados."], [52.4, 86.4, "Abrir chat", 8, 8, "Abre esa tarea en Digen para verla allí."]]'>
             <div class="lienzo"><img src="img/digen.webp" width="3200" height="2000" alt="Sección Digen con usos, tareas en curso y actividad" loading="lazy"></div>
           </figure>
 
           <h4>Skills y Prompts</h4>
           <p>Son las instrucciones con las que EVA planifica (Skills) y edita (Prompts). Las mantiene el administrador; tú ves qué versión está en uso y qué cambió en cada una. Cada vez que abres una conversación de Claude Code, EVA le pasa la versión más reciente: no tienes que instalar nada.</p>
-          <figure class="fig" data-callouts='[[39.5,30.1,"Versión en uso",14,-12],[90.8,30.7,"Ir a Planificación",-8,12],[59.1,47.2,"Historial de cambios",14,10]]'>
+          <figure class="fig" data-callouts='[[39.5, 30.1, "Versión en uso", 14, -12, "La versión de la skill que usa EVA ahora mismo."], [90.8, 30.7, "Ir a Planificación", -8, 12, "Te lleva a Planificación para usarla."], [59.1, 47.2, "Historial de cambios", 14, 10, "Qué cambió en cada versión."]]'>
             <div class="lienzo"><img src="img/skills.webp" width="3200" height="2000" alt="Sección Skills con la versión en uso y su historial" loading="lazy"></div>
           </figure>
 
           <h4>Actualizaciones</h4>
           <p>Cuando hay una versión nueva de EVA te llega un aviso. Aquí ves sus novedades y la instalas con <span class="boton-ui azul">Descargar e instalar</span>: se instala encima, sin tocar tus canales, vídeos, planificaciones ni tu sesión, y EVA se vuelve a abrir sola. Mientras se descarga verás una barra con el porcentaje. Mejor actualiza sin ediciones en marcha y, después, cierra DaVinci Resolve, ábrelo y vuelve a lanzar CursorBridge: Comprobación del sistema te avisa si el conector se quedó en una versión anterior.</p>
-          <figure class="fig" data-callouts='[[53,17.8,"Nueva versión",-12,12],[90,19,"Descargar e instalar",-8,12],[82.1,37.2,"Esta instalación",-4,12]]'>
+          <figure class="fig" data-callouts='[[53, 17.8, "Nueva versión", -12, 12, "La versión nueva disponible y sus novedades."], [90, 19, "Descargar e instalar", -8, 12, "La descarga, con su barra de progreso, y la instala encima sin tocar tus datos."], [82.1, 37.2, "Esta instalación", -4, 12, "La versión que tienes instalada en este PC."]]'>
             <div class="lienzo"><img src="img/actualizaciones.webp" width="3200" height="2000" alt="Sección Actualizaciones con una versión nueva lista para instalar" loading="lazy"></div>
           </figure>
 
@@ -914,13 +932,13 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Modelos</b> muestra lo que EVA necesita descargar una vez para transcribir la voz y reconocer caras. Si falta algo, sale el botón <b>Descargar</b>.</span></li>
             <li><span><b>Incidencias</b> reúne, por vídeo, lo que le pediste corregir a Claude mientras editaba. Solo las ves tú y se borran solas al terminar la edición.</span></li>
           </ul>
-          <figure class="fig" data-callouts='[[92.1,10.2,"Probar de nuevo",-6,10],[81.2,10.2,"Repetir el inicio guiado",-14,18],[20.8,24.2,"Lo que hay que revisar",16,-6],[20.6,34.6,"En verde, todo bien",16,6]]'>
+          <figure class="fig" data-callouts='[[92.1, 10.2, "Probar de nuevo", -6, 10, "Vuelve a revisar todas las piezas de EVA en este PC."], [81.2, 10.2, "Repetir el inicio guiado", -14, 18, "Vuelve a abrir los pasos del primer inicio (carpetas y claves)."], [20.8, 24.2, "Lo que hay que revisar", 16, -6, "Lo que falla o falta, con su explicación y cómo arreglarlo."], [20.6, 34.6, "En verde, todo bien", 16, 6, "Cada pieza que funciona aparece en verde, con «Bien»."]]'>
             <div class="lienzo"><img src="img/comprobacion.webp" width="3200" height="2000" alt="Comprobación del sistema con cada pieza revisada" loading="lazy"></div>
           </figure>
 
           <h4>Acerca de EVA</h4>
           <p>Toca el logo de EVA (arriba a la izquierda) o <b>Acerca de</b> en Mi cuenta: verás la versión instalada, este PC, tu rol y el estado de cada pieza. Es lo primero que conviene mirar si vas a reportar un problema.</p>
-          <figure class="fig" data-callouts='[[42.6,36,"Versión",-12,-6],[50,48,"Estado de las piezas",-20,10],[63.3,28.4,"Cerrar",8,-6]]'>
+          <figure class="fig" data-callouts='[[42.6, 36, "Versión", -12, -6, "La versión de EVA instalada en este PC."], [50, 48, "Estado de las piezas", -20, 10, "Cómo está cada pieza de EVA; es lo primero que conviene mirar si vas a reportar un problema."], [63.3, 28.4, "Cerrar", 8, -6, "Cierra la ventana."]]'>
             <div class="lienzo"><img src="img/acerca.webp" width="3200" height="2000" alt="Ventana Acerca de EVA con la versión y el estado de los componentes" loading="lazy"></div>
           </figure>
         </article>
@@ -935,7 +953,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li>Abre EVA en el móvil, pulsa <b>Escanear código</b> y apunta al QR del PC.</li>
             <li>Si Windows pregunta, pulsa <b>Permitir</b>: es para que EVA reciba a tu móvil en tu red privada. EVA sonará para confirmar que el dispositivo quedó vinculado.</li>
           </ol>
-          <figure class="fig" data-callouts='[[36,52,"Escanea este código",-16,-6],[48.8,51.6,"Sigue los pasos",14,-14],[36,67.2,"Cambia cada 30 s",-14,10]]'>
+          <figure class="fig" data-callouts='[[36, 52, "Escanea este código", -16, -6, "Apunta la cámara del móvil a este código desde la app de EVA."], [48.8, 51.6, "Sigue los pasos", 14, -14, "Los pasos para vincular el móvil o la tableta."], [36, 67.2, "Cambia cada 30 s", -14, 10, "Por seguridad, el código cambia cada 30 segundos."]]'>
             <div class="lienzo"><img src="img/vincular.webp" width="3200" height="2000" alt="Ventana Vincular un móvil o una tableta con el código QR" loading="lazy"></div>
           </figure>
           <div class="moviles" aria-label="Capturas de la app móvil">
@@ -952,7 +970,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <article class="cap" id="avisos">
           <header><span class="num">18</span><h3>Avisos y feedback</h3></header>
           <p>La <strong>campana</strong> de arriba reúne los avisos: una edición terminada, un dispositivo vinculado, una nueva versión de EVA. <strong>Marcar como leídas</strong> los da por vistos y <strong>Limpiar</strong> los borra.</p>
-          <figure class="fig" data-callouts='[[87.9,2.6,"Campana",-20,8],[84,12.5,"Tus avisos",-22,16]]'>
+          <figure class="fig" data-callouts='[[87.9, 2.6, "Campana", -20, 8, "Abre tus avisos; el número indica cuántos tienes sin leer."], [84, 12.5, "Tus avisos", -22, 16, "Los avisos más recientes. Marcar como leídas los da por vistos y Limpiar los borra."]]'>
             <div class="lienzo"><img src="img/notis.webp" width="3200" height="2000" alt="Panel de notificaciones abierto desde la campana" loading="lazy"></div>
           </figure>
           <h4>Feedback</h4>
@@ -962,7 +980,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li><span><b>Adjunta un archivo de texto</b>, como un registro, con <b>Añadir archivo de texto</b>.</span></li>
             <li><span><b>Vota y sigue las ideas</b> de todos en la lista de la derecha: su estado pasa de <em>Nueva</em> a <em>Planificada</em>, <em>En curso</em> y <em>Hecha</em>. Toca un adjunto para verlo.</span></li>
           </ul>
-          <figure class="fig" data-callouts='[[34.4,22.6,"Mejora, Error u Otro",8,-12],[23.3,55.6,"Añadir imagen",-12,10],[35.1,55.6,"Añadir texto",10,-10],[20.8,80.9,"Enviar",12,6],[55.4,23.6,"Vota",-6,16],[76.7,28.8,"Idea con adjuntos",8,14]]'>
+          <figure class="fig" data-callouts='[[34.4, 22.6, "Mejora, Error u Otro", 8, -12, "Elige si es una mejora, un error u otra cosa."], [23.3, 55.6, "Añadir imagen", -12, 10, "Adjunta una captura o una foto."], [35.1, 55.6, "Añadir texto", 10, -10, "Adjunta un archivo de texto, como un registro."], [20.8, 80.9, "Enviar", 12, 6, "Lo envía; lo verá el administrador."], [55.4, 23.6, "Vota", -6, 16, "Vota las ideas que también quieres."], [76.7, 28.8, "Idea con adjuntos", 8, 14, "Cada idea muestra sus adjuntos y su estado."]]'>
             <div class="lienzo"><img src="img/feedback_adj.webp" width="3200" height="2000" alt="Feedback con una captura y un archivo de texto adjuntos" loading="lazy"></div>
           </figure>
         </article>
@@ -1018,11 +1036,11 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     let datos; try { datos = JSON.parse(fig.dataset.callouts); } catch (e) { return; }
     const svg = document.createElementNS(NS, "svg");
     svg.setAttribute("class", "flechas"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("aria-hidden", "true");
-    svg.innerHTML = `<defs><marker id="pt${fi}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F97316"/></marker></defs>`;
+    svg.innerHTML = `<defs><marker id="pt${fi}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--marca)"/></marker></defs>`;
     const caminos = datos.map(([x, y, txt, dx, dy], i) => {
       const n = String(i + 1);
       const p = document.createElementNS(NS, "path");
-      p.setAttribute("fill", "none"); p.setAttribute("stroke", "#F97316"); p.setAttribute("stroke-linecap", "round"); p.setAttribute("marker-end", `url(#pt${fi})`);
+      p.setAttribute("fill", "none"); p.style.stroke = "var(--marca)"; p.setAttribute("stroke-linecap", "round"); p.setAttribute("marker-end", `url(#pt${fi})`);
       svg.appendChild(p);
       const pin = document.createElement("span"); pin.className = "pin"; pin.innerHTML = `<b>${n}</b>`;
       pin.style.left = x + "%"; pin.style.top = y + "%"; lienzo.appendChild(pin);
@@ -1050,8 +1068,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       });
     };
     if (!fig.querySelector(".leyenda")) {
-      const ol = document.createElement("ol"); ol.className = "leyenda solo-movil";
-      datos.forEach(([, , txt], i) => { const li = document.createElement("li"); li.innerHTML = `<span class="c">${i + 1}</span>`; const sp = document.createElement("span"); sp.textContent = txt; li.appendChild(sp); ol.appendChild(li); });
+      const ol = document.createElement("ol"); ol.className = "leyenda";
+      datos.forEach(([, , txt, , , exp], i) => { const li = document.createElement("li"); li.innerHTML = `<span class="c">${i + 1}</span>`; const sp = document.createElement("span");
+        const b = document.createElement("b"); b.textContent = txt + (exp ? "." : ""); sp.appendChild(b); if (exp) sp.append(" " + exp); li.appendChild(sp); ol.appendChild(li); });
       let cap = fig.querySelector("figcaption"); if (!cap) { cap = document.createElement("figcaption"); fig.appendChild(cap); } cap.prepend(ol);
     }
     dibujar(); if ("ResizeObserver" in window) new ResizeObserver(dibujar).observe(lienzo); else addEventListener("resize", dibujar);
