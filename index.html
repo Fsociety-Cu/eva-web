@@ -59,16 +59,17 @@ img{display:block;max-width:100%}
 .portada::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:720px;background:radial-gradient(closest-side,color-mix(in srgb,var(--violeta) 30%,transparent),transparent 70%),radial-gradient(closest-side at 70% 40%,color-mix(in srgb,var(--azul) 26%,transparent),transparent 70%);filter:blur(10px);opacity:.75;pointer-events:none}
 .portada .ancho{position:relative}
 .sello{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--violeta);background:var(--acento-suave);border-radius:999px;padding:6px 14px}
-h1{font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:20px 0 18px;max-width:14ch;text-wrap:balance}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:20px 0 22px;max-width:none;text-wrap:balance}
 h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .entrada{font-size:clamp(18px,2.2vw,21px);color:var(--t2);max-width:62ch;text-wrap:pretty}
 .botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.portada-cab{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:end}
+@media (min-width:900px){.portada h1{white-space:nowrap;font-size:min(54px,calc((100vw - 64px) / 20.8))}}
+.portada-cab{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center}
 @media (min-width:980px){.portada-cab{grid-template-columns:minmax(0,1fr) 330px;gap:40px}}
 .firma{position:relative;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--linea);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra);backdrop-filter:blur(6px)}
 .firma::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.75;pointer-events:none}
 .firma .quien{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.firma .av{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:19px;display:grid;place-items:center;flex:none}
+.firma .av{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:16px;display:grid;place-items:center;flex:none}
 .firma .de{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
 .firma .nombre{font-size:20px;font-weight:800;color:var(--t1);line-height:1.15}
 .firma p{font-size:15px;color:var(--t2);margin:0}
@@ -297,9 +298,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 <!-- ============ PORTADA ============ -->
 <section class="portada" id="inicio">
   <div class="ancho">
-    <div class="portada-cab"><div>
     <span class="sello">Editora de Vídeos Autónoma</span>
     <h1>Del plan de la semana al vídeo <em>editado y listo</em>.</h1>
+    <div class="portada-cab"><div>
     <p class="entrada">EVA une una planificación inteligente con la edición autónoma de vídeos, pensada para canales de shows de talentos. Tú decides qué se publica; EVA planifica, monta, revisa y entrega el vídeo terminado en DaVinci Resolve.</p>
     <div class="botones">
       <a class="btn primario" href="#manual">Empezar a usar EVA
@@ -308,7 +309,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     </div>
     </div>
     <aside class="firma" aria-label="Autor">
-      <div class="quien"><span class="av" aria-hidden="true">A</span><div><div class="de">Creado por</div><div class="nombre">Andy</div></div></div>
+      <div class="quien"><span class="av" aria-hidden="true">AV</span><div><div class="de">Creado por</div><div class="nombre">Andy Vergara</div></div></div>
       <p>EVA es su proyecto para trabajar con su equipo de canales de shows de talentos.</p>
       <span class="inv">Por ahora, solo por invitación</span>
     </aside></div>
@@ -1027,6 +1028,15 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     raiz.dataset.theme = oscuro ? "light" : "dark";
     try { localStorage.setItem("eva-web-tema", raiz.dataset.theme); } catch (e) {}
   });
+
+  // Título de la portada en una sola línea, del mismo ancho que la captura de debajo
+  const h1 = document.querySelector(".portada h1");
+  const ajustarTitulo = () => { if (!h1) return; h1.style.fontSize = "";
+    if (innerWidth < 900) return;
+    const caja = h1.parentElement, cs = getComputedStyle(caja), w = caja.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    h1.style.fontSize = "100px"; const r = document.createRange(); r.selectNodeContents(h1); const t = r.getBoundingClientRect().width;
+    h1.style.fontSize = (100 * w / t * 0.995).toFixed(2) + "px"; };
+  ajustarTitulo(); if (document.fonts) document.fonts.ready.then(ajustarTitulo); addEventListener("resize", ajustarTitulo);
 
   // Flechas sobre las capturas: [x %, y %, texto, dx %, dy %]
   const NS = "http://www.w3.org/2000/svg";
