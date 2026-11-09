@@ -63,6 +63,13 @@ h1{font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.035em;font-w
 h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .entrada{font-size:clamp(18px,2.2vw,21px);color:var(--t2);max-width:62ch;text-wrap:pretty}
 .botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.autor{margin-top:18px;font-size:15px;color:var(--t3);max-width:62ch}
+.modos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+.modo{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:20px;min-width:0}
+.modo h4{margin:0 0 6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.modo .para{display:block;font-size:14px;color:var(--t3);margin-bottom:10px}
+.modo ol{margin:0;padding-left:20px;color:var(--t2);font-size:15.5px;line-height:1.55}
+.modo ol li{margin:4px 0}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:12px 20px;border-radius:12px;border:1px solid var(--linea);background:var(--panel);color:var(--t1)}
 .btn:hover{text-decoration:none;border-color:var(--linea-2)}
 .btn.primario{background:var(--grad);color:#fff;border:0;box-shadow:0 10px 24px -10px color-mix(in srgb,var(--violeta) 70%,transparent)}
@@ -286,6 +293,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn" href="#manual">Ver el manual</a>
     </div>
+    <p class="autor">EVA es un proyecto creado por Andy para trabajar con su equipo de canales. Por ahora solo está disponible por invitación.</p>
     <div class="escaparate"><img src="img/produccion.webp" width="3200" height="2000" alt="Producción en EVA: tres vídeos editándose a la vez, cada uno con su ventana de Claude Code y su barra de etapas" data-zoom></div>
   </div>
 </section>
@@ -330,7 +338,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       <div class="paso"><div class="n">1</div><h3>Planificar</h3><p>Pulsas <b>Planificar</b> y EVA propone los vídeos de la semana con su historia, título y miniatura.</p></div>
       <div class="paso"><div class="n">2</div><h3>Aprobar</h3><p>Revisas la propuesta y la apruebas, o pides cambios con tus palabras.</p></div>
       <div class="paso"><div class="n">3</div><h3>Producir</h3><p>Preparas el material de cada vídeo (foto, narración, canción e instrumental) en la carpeta que EVA crea para él.</p></div>
-      <div class="paso"><div class="n">4</div><h3>Editar</h3><p>Pulsas <b>Editar vídeo</b> y EVA monta, verifica y renderiza en DaVinci Resolve.</p></div>
+      <div class="paso"><div class="n">4</div><h3>Editar</h3><p>Pulsas <b>Editar vídeo</b> y EVA monta, verifica y renderiza en DaVinci Resolve. O <b>Solo clips</b>, si quieres revisar los clips antes.</p></div>
       <div class="paso"><div class="n">5</div><h3>Listo para publicar</h3><p>El vídeo terminado queda en su carpeta, dentro de la del canal. Lo subes tú a YouTube el día previsto.</p></div>
     </div>
 
@@ -340,7 +348,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <h3 style="font-size:28px;letter-spacing:-.02em">Una semana pensada, no improvisada.</h3>
         <ul class="lista">
           <li><span><b>Resultados recientes.</b> Vistas, retención y qué títulos y miniaturas ganaron en las últimas semanas.</span></li>
-          <li><span><b>Los demás canales.</b> Mira el calendario de todo el equipo para no repetir artistas, canciones ni días.</span></li>
+          <li><span><b>Los demás canales.</b> Si colaboras en un equipo, mira también su calendario para no repetir artistas, canciones ni días.</span></li>
           <li><span><b>Tu público.</b> Días y horas de publicación pensados para la audiencia de cada canal, con la hora de España y de América.</span></li>
           <li><span><b>Las reglas del canal.</b> Cada canal tiene su estilo y sus límites; la propuesta se revisa contra ellos antes de enseñártela.</span></li>
           <li><span><b>Una segunda mirada.</b> Antes de llegar a ti, la propuesta pasa una revisión como la de un editor exigente: si algo falla, se corrige.</span></li>
@@ -381,14 +389,15 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
         <p>Con <b>Solo clips</b>, EVA genera y revisa los clips sin editar y te avisa: los miras con sonido, rehaces los que no te convenzan y das el visto bueno para editar.</p>
       </article>
     </div>
+    <div class="nota" style="margin-top:28px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>EVA no es perfecta, y no pretende serlo.</b> Por eso te deja el control en cada etapa: puedes pedir cambios en la planificación, revisar los clips antes de editar o escribirle en su ventana de Claude Code una corrección en cualquier momento de la edición.</span></div>
     <div class="dos" style="margin-top:72px">
       <div>
         <p class="etq">Aprende de cada fallo</p>
         <h3 style="font-size:28px;letter-spacing:-.02em">Cada error real se convierte en una regla nueva.</h3>
         <p class="t2" style="margin-top:14px">Cuando un vídeo sale con un fallo que se escapó, se estudia y EVA lo vigila desde entonces. Un ejemplo: unos clips con lipsync casi perfecto pasaron la revisión aunque, escuchándolos, se notaba que la boca no acompañaba bien a la voz. Desde entonces:</p>
         <ul class="lista">
-          <li><span><b>Mira la boca junto a la voz</b>, fotograma a fotograma, en los clips que la revisión automática no puede dar por buenos del todo.</span></li>
-          <li><span><b>Pide a Digen lo que evita esos fallos:</b> el micrófono nunca delante de los labios, nada de sonrisa amplia mientras habla y una articulación clara de cada palabra.</span></li>
+          <li><span><b>Mira la boca junto a la voz</b> en los clips que la revisión automática no puede dar por buenos del todo.</span></li>
+          <li><span><b>Ajusta lo que pide a Digen</b> para evitar ese tipo de fallo en los siguientes vídeos.</span></li>
           <li><span><b>Te marca los dudosos</b> («Revisar con sonido») para que, si usas Solo clips, sepas cuáles mirar primero.</span></li>
         </ul>
       </div>
@@ -441,7 +450,8 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
       <li><a href="#entrar"><span><b>Instala EVA y entra.</b> El administrador te da el instalador y autoriza tu cuenta de Google y tu PC.</span></a></li>
       <li><a href="#resolve"><span><b>Instala DaVinci Resolve</b> y aprende a conectarlo con EVA.</span></a></li>
       <li><a href="#instalar"><span><b>Instala Claude Code</b> e inicia sesión con tu cuenta de Claude.</span></a></li>
-      <li><a href="#otras"><span><b>Comprueba que todo está en verde</b> en Comprobación del sistema.</span></a></li>
+      <li><a href="#cuenta"><span><b>Pega tu clave de Digen</b> en Mi cuenta: es el servicio que genera los clips del concursante.</span></a></li>
+      <li><a href="#otras"><span><b>Comprueba que todo está en verde</b> en Comprobación del sistema (menú de la izquierda).</span></a></li>
       <li><a href="#roles"><span><b>Mira tu rol</b> y qué canales tienes.</span></a></li>
       <li><a href="#canales"><span><b>Crea tu canal y conecta sus métricas</b>, si trabajas con canales propios.</span></a></li>
       <li><a href="#planificacion"><span><b>Planifica tu primera semana</b> y apruébala.</span></a></li>
@@ -497,11 +507,11 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
         <article class="cap" id="resolve">
           <header><span class="num">02</span><h3>Instalar y conectar DaVinci Resolve</h3></header>
-          <p>EVA monta tus vídeos dentro de <strong>DaVinci Resolve</strong>, así que tiene que estar instalado en tu PC. Descárgalo de la web oficial de Blackmagic Design e instálalo; mejor antes de abrir EVA, porque así EVA le añade sola su <strong>conector</strong>. Si lo instalas después, pulsa <b>Probar de nuevo</b> en Comprobación del sistema.</p>
+          <p>EVA monta tus vídeos dentro de <strong>DaVinci Resolve</strong>, así que tiene que estar instalado en tu PC. Instala la versión que te indique quien te invitó a EVA (EVA necesita una versión concreta para poder conectarse a Resolve); al abrir EVA, esta le añade sola su <strong>conector</strong> (el pequeño programa que le deja trabajar dentro de Resolve). Si ya tenías EVA abierta al instalar Resolve, pulsa <b>Probar de nuevo</b> en Comprobación del sistema.</p>
           <h4>Antes de cada edición: abre Resolve y lanza el conector</h4>
           <p>El conector, llamado <strong>CursorBridge</strong>, es lo que permite a EVA trabajar dentro de DaVinci Resolve. Se lanza así cada vez que abres Resolve:</p>
           <ol class="pasos">
-            <li>Abre <b>DaVinci Resolve</b> y deja abierto cualquier proyecto (EVA creará el de cada vídeo).</li>
+            <li>Abre <b>DaVinci Resolve</b> y deja abierto cualquier proyecto (EVA creará el de cada vídeo). La primera vez, crea uno vacío con <b>Nuevo proyecto</b> y cualquier nombre.</li>
             <li>En el menú de arriba, abre <b>Área de trabajo</b> (en inglés, <i>Workspace</i>).</li>
             <li>Baja hasta <b>Secuencias de comandos</b> (<i>Scripts</i>).</li>
             <li>Pulsa <b>CursorBridge</b>. No verás ninguna ventana nueva: el conector se queda esperando a EVA.</li>
@@ -551,7 +561,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
         <article class="cap" id="roles">
           <header><span class="num">04</span><h3>Tu rol y lo que puedes hacer</h3></header>
-          <p>El administrador te da uno de estos dos roles. Tu rol aparece en tu ficha de <strong>Equipo</strong> y en la ventana <strong>Acerca de EVA</strong>.</p>
+          <p>El administrador te da uno de estos dos roles. Tu rol aparece debajo de tu nombre, arriba a la derecha, y en la ventana <strong>Acerca de EVA</strong>. No tienes que hacer nada con él: solo decide qué ves.</p>
           <div class="roles">
             <div class="rol"><h4><span class="punto" style="background:#8B5CF6"></span>Colaborador</h4><p>Trabajas con los <strong>canales del equipo</strong> que te asigne el administrador y, además, con tus canales propios. Planificas, produces y editas sus vídeos, y ves quién forma parte del equipo.</p></div>
             <div class="rol"><h4><span class="punto" style="background:#0E9F6E"></span>Invitado</h4><p>Trabajas con <strong>tus propios canales</strong>: los creas en EVA, conectas sus métricas, los planificas y editas sus vídeos. Lo del equipo no te aparece.</p></div>
@@ -612,7 +622,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <ul class="lista">
             <li><span><b>Qué funcionó y qué no.</b> Vistas, retención, clics y qué títulos y miniaturas ganaron en las últimas semanas, vídeo a vídeo.</span></li>
             <li><span><b>Tu audiencia.</b> Qué días y a qué horas responde mejor tu público, con la hora de España y de América.</span></li>
-            <li><span><b>El resto de canales.</b> El calendario de todo el equipo, para no repetir artistas ni canciones ni pisar los mismos días.</span></li>
+            <li><span><b>Los canales del equipo.</b> Si colaboras en un equipo, EVA consulta el calendario de todos sus canales para no repetir artistas ni canciones ni pisar los mismos días.</span></li>
             <li><span><b>Las reglas de tu canal.</b> Su estilo, su formato y sus límites; la propuesta se comprueba contra ellas.</span></li>
             <li><span><b>Una segunda revisión.</b> Antes de enseñártela, la propuesta pasa un control como el de un editor jefe exigente; si algo no cumple, se corrige.</span></li>
           </ul>
@@ -623,6 +633,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <li>Pulsa <span class="boton-ui azul">Planificar</span>. EVA empieza el estudio; tarda unos minutos y puedes seguir usando EVA.</li>
             <li>Mientras trabaja, ves su conversación dentro de la propia semana. Si necesita tu opinión, aparece la etiqueta <b>Te espera</b>: contéstale ahí mismo o desde la app de Claude.</li>
           </ol>
+<div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Entraste como invitado?</b> Puede que no veas este botón tal cual: tus canales son personales y su planificación funciona de forma independiente, sin tener en cuenta a ningún equipo. Esto no afecta a tu forma de trabajar: planificas, apruebas y produces tus vídeos igual.</span></div>
           <figure class="fig" data-callouts='[[8.9,26.3,"Nueva planificación",10,14],[22,16.2,"Elige el canal",4,-10],[26.4,22,"La semana siguiente",16,16],[92.7,23.5,"Planificar",-6,12]]'>
             <div class="lienzo"><img src="img/nuevaplan.webp" width="3200" height="2000" alt="Nueva planificación de un canal con el botón Planificar" loading="lazy"></div>
           </figure>
@@ -647,7 +658,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
         <article class="cap" id="semana">
           <header><span class="num">09</span><h3>Tu semana planificada</h3></header>
-          <p>Una vez aprobada, la semana queda en tarjetas: una por vídeo, con su día, artista y estado. Toca una para ver todo su paquete en las pestañas de abajo.</p>
+          <p>Una vez aprobada, la semana queda en tarjetas: una por vídeo, con su día, artista y estado. Toca una para ver su <strong>paquete</strong>, la ficha completa del vídeo con todo lo necesario para producirlo, en las pestañas de abajo.</p>
           <figure class="fig" data-callouts='[[21.5,16,"Canales",12,-11],[9.6,22.8,"Nueva planificación",1,24],[30,40,"Un vídeo de la semana",12,12],[78,23.4,"Exportar",-6,10],[90.5,23.4,"Ajustar con Claude",-4,-10],[90.6,55.6,"Informe de la semana",-8,10],[37.5,62.6,"Pestañas del vídeo",10,10]]'>
             <div class="lienzo"><img src="img/planificacion.webp" width="3200" height="2000" alt="Planificación de una semana aprobada con tres tarjetas de vídeo" loading="lazy"></div>
             <figcaption><ol class="leyenda">
@@ -667,12 +678,24 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <tbody>
               <tr><td>Resumen</td><td>Ficha del vídeo (publicación, concursante, avance inicial) y la descripción para YouTube, lista para copiar.</td></tr>
               <tr><td>Miniaturas</td><td>Las variantes de título y miniatura para probar (A, B, C).</td></tr>
-              <tr><td>Narración</td><td>El texto que se locuta y su aprobación.</td></tr>
-              <tr><td>Canción</td><td>El tema que interpreta el concursante y sus datos.</td></tr>
+              <tr><td>Narración</td><td>El texto que se locuta y los ajustes de la voz.</td></tr>
+              <tr><td>Canción</td><td>La letra y el estilo de la canción del concursante, y el prompt de la música de fondo de la narración.</td></tr>
               <tr><td>Concursante</td><td>La historia del personaje y la descripción para su imagen.</td></tr>
             </tbody>
           </table>
           </div>
+          <h4>Todo listo para copiar y pegar</h4>
+          <p>EVA no solo decide qué vídeos hacer: te deja cada pieza del vídeo escrita y lista para copiar con un clic, para que producir sea copiar, pegar y generar.</p>
+          <ul class="lista">
+            <li><span><b>Títulos.</b> Tres, uno por prueba (A, B y C), elegidos a partir de lo que de verdad ha funcionado en tu canal, con su contador de caracteres.</span></li>
+            <li><span><b>Prompts de las miniaturas.</b> Uno por prueba, con la plantilla de tu canal y la lista de imágenes que tienes que subir a ChatGPT, en orden.</span></li>
+            <li><span><b>Prompt de la imagen del concursante</b> (pestaña Concursante).</span></li>
+            <li><span><b>Narración</b> con sus ajustes de voz, <b>canción</b> e <b>instrumental</b> con sus prompts, y la <b>descripción</b> para YouTube.</span></li>
+          </ul>
+          <figure class="fig" data-callouts='[[20.5,57.9,"Prueba A, B o C",10,-12],[41.4,67.6,"Copiar el título",-8,-12],[29.9,80,"Imágenes para ChatGPT, en orden",14,8],[31.1,89,"Copiar el prompt de la miniatura",12,12],[85.8,52.2,"Dónde se prueba en YouTube",-12,-12]]'>
+            <div class="lienzo"><img src="img/miniaturas.webp" width="3200" height="2000" alt="Pestaña Miniaturas con las tres pruebas A, B y C: título, imágenes que subir y botón para copiar el prompt" loading="lazy"></div>
+          </figure>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Las fotos del jurado para las miniaturas te las deja EVA.</b> Al terminar la edición, en la carpeta del vídeo aparece la carpeta <code>miniatura</code> con la imagen del concursante y un fotograma de un juez o jueza por prueba (<code>3A_…</code>, <code>3B_…</code>, <code>3C_…</code>), con la reacción que pide cada una. La foto del artista homenajeado y el logo del canal los pones tú; la pestaña Miniaturas te dice el orden exacto. Por eso las miniaturas se hacen al final, con el vídeo ya editado.</span></div>
         </article>
 
         <article class="cap" id="produccion">
@@ -688,33 +711,48 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
             <div class="n3 arch">narracion.mp3</div>
             <div class="n3 arch">cancion.mp3</div>
             <div class="n3 arch">instrumental.mp3</div>
+            <div class="n3"><span class="ic-carpeta"></span>narracion, cancion <em>los clips de Digen (los baja EVA)</em></div>
+            <div class="n3"><span class="ic-carpeta"></span>miniatura <em>al terminar: fotos para las miniaturas A/B/C</em></div>
+            <div class="n3 arch">isabel pantoja final.mp4 <em>el vídeo terminado</em></div>
+            <div class="n3 arch">proyecto isabel pantoja final.drp <em>el proyecto de DaVinci Resolve, para retocarlo o abrirlo en otro PC</em></div>
           </div>
           <h4>Antes de editar: prepara el material</h4>
-          <p>Para empezar la producción de un vídeo, genera estos cuatro archivos con lo que te prepara su paquete (pestañas Concursante, Narración y Canción) y guárdalos en la carpeta del vídeo <strong>con estos nombres exactos</strong>:</p>
+          <p>Para empezar la producción de un vídeo, genera estos cuatro archivos con lo que te prepara su paquete (pestañas Concursante, Narración y Canción) y guárdalos en la carpeta del vídeo. Los tres audios tienen que llamarse <strong>exactamente así</strong>:</p>
           <div class="tabla-scroll">
           <table class="accesos comparar">
             <thead><tr><th>Archivo</th><th>Qué es</th><th>De dónde sale</th></tr></thead>
             <tbody>
-              <tr><td><code>concursante.jpg</code></td><td>La foto del concursante (también vale .png).</td><td>La creas con la descripción de la pestaña Concursante.</td></tr>
-              <tr><td><code>narracion.mp3</code></td><td>La voz del narrador que cuenta la historia.</td><td>El texto de la pestaña Narración.</td></tr>
-              <tr><td><code>cancion.mp3</code></td><td>La canción que interpreta el concursante.</td><td>Los datos de la pestaña Canción.</td></tr>
-              <tr><td><code>instrumental.mp3</code></td><td>La misma canción sin voz, solo la música.</td><td>La pestaña Canción.</td></tr>
+              <tr><td><code>concursante.jpg</code></td><td>La foto del concursante (vale cualquier nombre, en .jpg, .png o .webp).</td><td>En ChatGPT, con el prompt de la pestaña Concursante.</td></tr>
+              <tr><td><code>narracion.mp3</code></td><td>La voz que cuenta la historia del concursante.</td><td>En ElevenLabs, con el texto y los ajustes de voz de la pestaña Narración.</td></tr>
+              <tr><td><code>cancion.mp3</code></td><td>La canción que interpreta el concursante.</td><td>En Suno, con la letra y el estilo de la pestaña Canción.</td></tr>
+              <tr><td><code>instrumental.mp3</code></td><td>Música suave de fondo para la narración (no es la canción sin voz).</td><td>En Suno, en modo Instrumental, con su prompt de la pestaña Canción.</td></tr>
             </tbody>
           </table>
           </div>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Los audios también valen en <code>.wav</code> o <code>.m4a</code>. Si falta algo, EVA te dice exactamente qué archivo falta y no deja empezar la edición. Los clips de Digen no los preparas tú: si faltan, EVA los lanza al pulsar <b>Editar vídeo</b>.</span></div>
-          <h4>Después: la edición, sola</h4>
+          <h4>Dos formas de editar: elige la tuya</h4>
+          <p>Con el material en su carpeta, tienes dos botones. Hacen lo mismo con los clips de Digen y con el montaje; la diferencia es <strong>si quieres revisar los clips antes de que empiece la edición</strong>.</p>
+          <div class="modos">
+            <div class="modo"><h4><span class="boton-ui claude">Editar vídeo</span> Edición autónoma</h4><span class="para">Para quien prefiere no estar pendiente.</span>
+              <ol><li>Lanza los clips en Digen (si aún no están), espera a que terminen y los descarga.</li><li>Los revisa y rehace solo los que salen mal, con el tope de créditos.</li><li>Edita, monta en DaVinci Resolve, renderiza y revisa el resultado.</li><li>Te avisa cuando el vídeo está terminado.</li></ol></div>
+            <div class="modo"><h4><span class="boton-ui">Solo clips</span> Revisar los clips primero</h4><span class="para">Para quien quiere dar el visto bueno antes de editar.</span>
+              <ol><li>Lanza, descarga y revisa los clips igual, pero <b>no edita</b>.</li><li>Te avisa cuando están listos para revisar.</li><li>Los ves y escuchas; marcas los que haya que rehacer o das el visto bueno.</li><li>Con tu visto bueno empieza la edición, igual que con Editar vídeo.</li></ol></div>
+          </div>
+          <p><b>¿Cuál elegir?</b> Si estás empezando, o quieres escuchar tú el lipsync antes de editar, usa <b>Solo clips</b>: la edición espera a tu visto bueno, así que tarda más si no estás pendiente. Cuando ya confíes en el resultado, <b>Editar vídeo</b> lo hace todo sin esperarte; en ese modo EVA revisa con más cuidado los clips dudosos y rehace los que salen mal, dentro del mismo tope.</p>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Mientras Digen genera los clips</b> (de 15 a 40 minutos), la ventana de Claude Code se cierra y el botón queda en gris con el aviso «Digen está generando sus clips»: es normal. EVA mira cada pocos minutos y, cuando terminan, abre sola la edición (o la revisión, con Solo clips). Deja el PC encendido y EVA abierta con tu sesión. Si estabas en Solo clips y pulsas Editar vídeo, EVA editará sin esperar tu revisión.</span></div>
+          <h4>Qué pasa en cada etapa</h4>
           <div class="tabla-scroll">
           <table class="accesos comparar">
             <thead><tr><th>Etapa</th><th>Qué pasa</th><th>¿Te necesita?</th></tr></thead>
             <tbody>
               <tr><td>Clips de Digen</td><td>Se generan los clips de la narración y la canción en tu cuenta de Digen (los sigues en la sección Digen). EVA los revisa y rehace los que salen mal, con su tope.</td><td>No (con Solo clips, das tú el visto bueno)</td></tr>
-              <tr><td>Edición</td><td>Guion, revisión de clips, plan de montaje, verificación, montaje en DaVinci Resolve, render y revisión final.</td><td>No; solo si aparece «Te espera»</td></tr>
-              <tr><td>Terminado</td><td>El vídeo final queda en la carpeta del vídeo.</td><td>Lo revisas y lo subes a YouTube</td></tr>
+              <tr><td>Guion, Plan y Verificación</td><td>Lee la narración y la canción, elige las tomas del jurado y del público, prepara el montaje y lo comprueba.</td><td>No; solo si aparece «Te espera»</td></tr>
+              <tr><td>Montaje, Render y Revisión</td><td>Monta el vídeo en DaVinci Resolve, lo exporta y revisa el resultado.</td><td>Que DaVinci Resolve esté abierto con su conector</td></tr>
+              <tr><td>Terminado</td><td>Quedan en la carpeta del vídeo el vídeo final, el proyecto de Resolve y la carpeta <code>miniatura</code>.</td><td>Lo revisas, haces las miniaturas y lo subes a YouTube</td></tr>
             </tbody>
           </table>
           </div>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Antes de pulsar Editar vídeo:</b> DaVinci Resolve tiene que estar abierto con CursorBridge lanzado. Lo sabrás porque el piloto de arriba dice <b>DaVinci Resolve en línea</b>, en verde. <a href="#resolve">Cómo lanzarlo</a>.</span></div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Antes de pulsar Editar vídeo:</b> abre DaVinci Resolve y lanza CursorBridge; lo sabrás porque el piloto de arriba dice <b>DaVinci Resolve en línea</b>, en verde. Si al llegar al montaje Resolve no responde, la edición se detiene y te avisa. Con Solo clips no hace falta hasta que des el visto bueno. <a href="#resolve">Cómo lanzarlo</a>.</span></div>
           <p style="margin-top:16px">Para editar, toca la tarjeta del vídeo y pulsa <span class="boton-ui claude">Editar vídeo</span>. EVA abre su ventana de Claude Code y se pone a trabajar; mientras edita puedes seguir con otras cosas. Puedes lanzar <strong>hasta tres ediciones a la vez</strong>: cada una tiene su ventana y comparten DaVinci Resolve por turnos, sin pisarse.</p>
           <figure class="fig" data-callouts='[[45.9,9.9,"DaVinci Resolve en línea",-22,6],[38,17,"Tarjeta del vídeo",10,12],[77.8,10.2,"Ocultar terminados",-22,8],[90.3,10.2,"Filtrar por canal",-6,12],[65.8,45.6,"Etapa actual",-4,-12],[91.9,54.8,"Editar vídeo",-4,-12],[77.5,77,"Otras ediciones a la vez",6,12]]'>
             <div class="lienzo"><img src="img/produccion.webp" width="3200" height="2000" alt="Producción con tres ediciones en paralelo y la barra de etapas" loading="lazy"></div>
@@ -728,13 +766,17 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <li><span class="c">7</span><span><b>Ediciones en paralelo</b>, cada una en su ventana.</span></li>
             </ol></figcaption>
           </figure>
-          <h4>Solo clips: revisa los clips antes de editar</h4>
-          <p><span class="boton-ui claude">Editar vídeo</span> lo hace todo de principio a fin sin esperarte. Si prefieres ver los clips de Digen antes de que se edite, pulsa <span class="boton-ui">Solo clips</span>, al lado:</p>
+          <h4>Paso a paso con Solo clips</h4>
+          <p>Si prefieres ver los clips de Digen antes de que se edite, pulsa <span class="boton-ui">Solo clips</span>, al lado de <span class="boton-ui claude">Editar vídeo</span>. Cuando los clips están listos, ese botón pasa a llamarse <span class="boton-ui">Revisar clips</span>.</p>
+          <figure class="fig" data-callouts='[[84.4,54.9,"Solo clips",-10,-14],[91.9,54.9,"Editar vídeo",-2,12],[21.9,33.8,"Listo para editar",10,-10]]'>
+            <div class="lienzo"><img src="img/soloclips.webp" width="3200" height="2000" alt="Vídeo listo para editar con los botones Solo clips y Editar vídeo" loading="lazy"></div>
+          </figure>
           <ol class="pasos">
             <li><span>EVA lanza los clips en Digen (si aún no están), los descarga y los revisa, sin editar nada. Los que salen mal los rehace, con el mismo tope de créditos.</span></li>
             <li><span>Cuando están listos te llega un aviso a la campana (también en la app móvil) y la tarjeta del vídeo dice <b>Te espera · Revisar clips</b>.</span></li>
             <li><span>Pulsa <span class="boton-ui">Revisar clips</span>: los ves y los escuchas uno a uno. Los marcados <b>Revisar con sonido</b> son los que conviene mirar primero.</span></li>
-            <li><span>Marca los que haya que rehacer y escribe qué falla («el micrófono tapa la boca», «sonríe mientras habla»): EVA los vuelve a pedir a Digen y te avisa otra vez. O pulsa <b>Dar el visto bueno y editar</b> y empieza la edición, sin volver a rehacerlos.</span></li>
+            <li><span>Marca <b>Rehacer este clip</b> en los que fallen, escribe qué falla («el micrófono tapa la boca», «sonríe mientras habla») y pulsa <b>Rehacer N clips</b>: EVA los vuelve a pedir a Digen y te avisa otra vez. Cuentan dentro del mismo tope de unos 10 clips rehechos por vídeo.</span></li>
+            <li><span>Cuando estés conforme, pulsa <b>Dar el visto bueno y editar</b>: empieza la edición con los clips tal como están, sin volver a rehacerlos.</span></li>
           </ol>
           <figure class="fig" data-callouts='[[84,54.9,"Revisar clips",-10,-14],[52.2,23.8,"Te espera · Revisar clips",-10,26]]'>
             <div class="lienzo"><img src="img/porrevisar.webp" width="3200" height="2000" alt="Tarjeta de vídeo con los clips listos para revisar y el botón Revisar clips" loading="lazy"></div>
@@ -742,7 +784,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <figure class="fig" data-callouts='[[56.8,36.6,"Revisar con sonido",8,-14],[51.4,44.6,"Rehacer este clip",-14,10],[57.3,48,"Qué falla",16,12],[60.6,95.4,"Rehacer marcados",-16,-12],[72,95.4,"Dar el visto bueno y editar",-6,-12]]'>
             <div class="lienzo"><img src="img/revisarclips.webp" width="3200" height="2000" alt="Ventana Revisar clips con los clips de la narración, uno marcado para rehacer" loading="lazy"></div>
           </figure>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Díselo a Claude en la ventana de ese vídeo y lo corrige, o retócalo tú: el proyecto queda en DaVinci Resolve.</span></div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Pulsa <b>Editar vídeo</b> en su tarjeta: EVA te pregunta si quieres <b>Retocar</b> (le dices qué cambiar y cambia solo eso, sin volver a generar clips) o <b>Editar de nuevo</b> (rehace el montaje desde cero). Si la ventana de ese vídeo sigue abierta, escríbeselo directamente. También puedes retocarlo tú en DaVinci Resolve; si lo haces, exporta tú el vídeo final.</span></div>
         </article>
 
         <article class="cap" id="claude-code">
@@ -769,6 +811,9 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <figure class="fig" data-callouts='[[17,3.7,"También en la app de Claude",6,14],[24.8,3.7,"Trabajando",22,40],[92.2,3.7,"Detener",-8,14],[96.5,3.7,"Reducir (vuelve al tamaño normal)",-14,26],[35,26,"Lo que hace, paso a paso",12,36]]'>
             <div class="lienzo"><img src="img/ccventana.webp" width="3200" height="2000" alt="Ventana de Claude Code ampliada mostrando el trabajo de edición en directo" loading="lazy"></div>
           </figure>
+          <h4>También desde la app de Claude (opcional)</h4>
+          <p>Cada conversación de Claude Code que abre EVA aparece también en la <b>app de Claude</b> (escritorio, móvil o claude.ai), en su sección <b>Code</b>, con el nombre <b>EVA · …</b> del vídeo o de la planificación. Es la misma conversación, en paralelo: lo que escribas en un sitio aparece en el otro y el trabajo sigue en tu PC. Entra en la app con la misma cuenta de Claude que usas en Claude Code.</p>
+          <p>No hace falta usarla. Te recomendamos seguir y revisar cada etapa desde EVA, donde además ves las etapas, los clips y DaVinci Resolve. Pero si te resulta más cómodo dar indicaciones o correcciones desde la app de Claude, o seguir el trabajo desde el móvil, puedes hacerlo: es cuestión de gustos.</p>
           <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Si se corta internet, EVA vuelve a enlazar la conversación con la app de Claude en cuanto regresa la conexión. No tienes que hacer nada.</span></div>
         </article>
 
@@ -854,7 +899,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           </figure>
 
           <h4>Actualizaciones</h4>
-          <p>Cuando hay una versión nueva de EVA te llega un aviso. Aquí ves sus novedades y la instalas con <span class="boton-ui azul">Descargar e instalar</span>: se instala encima, sin tocar tus canales, vídeos, planificaciones ni tu sesión, y EVA se vuelve a abrir sola.</p>
+          <p>Cuando hay una versión nueva de EVA te llega un aviso. Aquí ves sus novedades y la instalas con <span class="boton-ui azul">Descargar e instalar</span>: se instala encima, sin tocar tus canales, vídeos, planificaciones ni tu sesión, y EVA se vuelve a abrir sola. Mientras se descarga verás una barra con el porcentaje. Mejor actualiza sin ediciones en marcha y, después, cierra DaVinci Resolve, ábrelo y vuelve a lanzar CursorBridge: Comprobación del sistema te avisa si el conector se quedó en una versión anterior.</p>
           <figure class="fig" data-callouts='[[53,17.8,"Nueva versión",-12,12],[90,19,"Descargar e instalar",-8,12],[82.1,37.2,"Esta instalación",-4,12]]'>
             <div class="lienzo"><img src="img/actualizaciones.webp" width="3200" height="2000" alt="Sección Actualizaciones con una versión nueva lista para instalar" loading="lazy"></div>
           </figure>
@@ -922,13 +967,13 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <header><span class="num">19</span><h3>Preguntas frecuentes</h3></header>
           <div class="preguntas">
             <details><summary>¿Tengo que dejar el PC encendido mientras edita?</summary><p>Sí. La edición ocurre en tu PC, con tu DaVinci Resolve. Puedes cerrar la ventana de EVA o seguir el avance desde el móvil, pero el PC debe seguir encendido.</p></details>
-            <details><summary>¿Por qué no se activa Editar vídeo?</summary><p>Porque falta algo: uno de los cuatro archivos del material (EVA te dice cuál) o que DaVinci Resolve esté abierto con CursorBridge lanzado. Mira el piloto de Producción: tiene que estar en verde.</p></details>
+            <details><summary>¿Por qué no se activa Editar vídeo?</summary><p>Porque falta algo, y EVA lo escribe junto al botón: uno de los cuatro archivos del material, que Digen termine los clips, que haya menos de tres ediciones abiertas o que Claude Code esté instalado. Aparte, ten DaVinci Resolve abierto con CursorBridge (piloto en verde) antes de empezar.</p></details>
             <details><summary>¿Puedo seguir usando el PC mientras EVA edita?</summary><p>Sí, aunque DaVinci Resolve estará ocupado. Evita tocar la línea de tiempo del proyecto que se está montando.</p></details>
             <details><summary>¿Por qué no veo un canal del equipo?</summary><p>Porque el administrador aún no te ha dado acceso a ese canal. Pídeselo; si eres invitado, solo verás tus canales propios.</p></details>
-            <details><summary>¿Dónde queda el vídeo terminado y quién lo sube?</summary><p>En la carpeta del vídeo, dentro de la carpeta de su canal. EVA no publica en YouTube: lo subes tú, con el título y la miniatura de su paquete (pestaña Miniaturas).</p></details>
+            <details><summary>¿Dónde queda el vídeo terminado y quién lo sube?</summary><p>En la carpeta del vídeo, dentro de la carpeta de su canal. EVA no publica en YouTube: lo subes tú con el título A, la descripción (pestaña Resumen) y las tres miniaturas en «Probar y comparar». El paquete trae además, en «Exportar planificación», lo que conviene hacer al publicar, como el comentario fijado o marcar «Contenido alterado o sintético».</p></details>
             <details><summary>¿Qué hago si la edición falla o el resultado no me gusta?</summary><p>Escríbele a Claude en la ventana de ese vídeo qué quieres distinto, o pulsa <b>Editar vídeo</b> para retomarla. También puedes retocar a mano el proyecto en DaVinci Resolve. Si algo no funciona en EVA, mira Comprobación del sistema y cuéntalo en Feedback.</p></details>
             <details><summary>¿Funciona en Mac o en iPhone?</summary><p>EVA se instala en PC con Windows. La app móvil de EVA es para Android; desde un iPhone puedes seguir y contestar las ediciones en la app de Claude.</p></details>
-            <details><summary>¿Qué es la clave de Digen y de dónde la saco?</summary><p>Digen genera los clips de la narración y la canción. Cada persona usa su propia cuenta: la clave se copia de tu cuenta de Digen y se pega en Mi cuenta. Si no sabes cuál usar, pregunta al administrador.</p></details>
+            <details><summary>¿Qué es la clave de Digen y de dónde la saco?</summary><p>Digen genera los clips de la narración y la canción. Cada persona usa su propia cuenta de Digen (los clips gastan sus créditos): la clave se copia de tu cuenta de Digen y se pega en Mi cuenta.</p></details>
             <details><summary>¿A quién pregunto si me atasco?</summary><p>Al administrador que te invitó. Dentro de EVA, usa Feedback (con una captura si puedes): le llega un aviso al momento.</p></details>
             <details><summary>¿Qué pasa si se corta internet en mitad de una edición?</summary><p>EVA espera a que vuelva la conexión y vuelve a enlazar la conversación con la app de Claude. El trabajo hecho no se pierde.</p></details>
             <details><summary>¿Cuántos vídeos puedo editar a la vez?</summary><p>Hasta tres. Cada uno en su ventana; DaVinci Resolve se reparte por turnos entre ellos.</p></details>
