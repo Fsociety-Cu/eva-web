@@ -306,6 +306,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 </style>
 </head>
 <body>
+<script>(function(){var t="dark";try{t=localStorage.getItem("eva-web-tema")||"dark";}catch(e){}document.documentElement.dataset.theme=t;})();</script>
 <header class="barra">
   <div class="ancho">
     <a class="marca" href="#inicio" aria-label="EVA, inicio">
@@ -1091,6 +1092,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 (() => {
   // Tema
   const raiz = document.documentElement, btn = document.getElementById("tema");
+  raiz.dataset.theme = "dark";   // la web se abre en oscuro; si el visitante eligió otro tema, se respeta
   try { const t = localStorage.getItem("eva-web-tema"); if (t) raiz.dataset.theme = t; } catch (e) {}
   btn.addEventListener("click", () => {
     const oscuro = raiz.dataset.theme ? raiz.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
