@@ -85,7 +85,16 @@ h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;back
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:12px 20px;border-radius:12px;border:1px solid var(--linea);background:var(--panel);color:var(--t1)}
 .btn:hover{text-decoration:none;border-color:var(--linea-2)}
 .btn.primario{background:var(--grad);color:#fff;border:0;box-shadow:0 10px 24px -10px color-mix(in srgb,var(--violeta) 70%,transparent)}
-.escaparate{margin-top:56px;border-radius:18px;overflow:hidden;border:1px solid var(--linea);box-shadow:var(--sombra);background:#141417}
+.pilares{margin-top:48px;border-top:1px solid var(--linea);padding-top:26px}
+.pilares .lead{font-size:clamp(18px,2vw,21px);font-weight:700;color:var(--t1);margin-bottom:18px;text-wrap:balance}
+.pilares .lead em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pilares ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.pilares li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:color-mix(in srgb,var(--panel) 80%,transparent);border:1px solid var(--linea);border-radius:14px;padding:16px 18px}
+.pilares .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--acento-suave);color:var(--violeta)}
+.pilares .ico svg{width:20px;height:20px}
+.pilares b{display:block;color:var(--t1);font-size:16.5px;margin-bottom:2px}
+.pilares span{color:var(--t2);font-size:15px;line-height:1.5}
+.escaparate{margin-top:36px;border-radius:18px;overflow:hidden;border:1px solid var(--linea);box-shadow:var(--sombra);background:#141417}
 .escaparate img{width:100%;height:auto}
 
 /* Secciones */
@@ -310,9 +319,17 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
     </div>
     <aside class="firma" aria-label="Autor">
       <div class="quien"><span class="av" aria-hidden="true">AV</span><div><div class="de">Creado por</div><div class="nombre">Andy Vergara</div></div></div>
-      <p>EVA es su proyecto para trabajar con su equipo de canales de shows de talentos.</p>
-      <span class="inv">Por ahora, solo por invitación</span>
+      <p>EVA es un proyecto personal.</p>
+      <span class="inv">Solo se accede por invitación</span>
     </aside></div>
+    <div class="pilares">
+      <p class="lead">EVA se ocupa de las dos etapas que más pesan para que un vídeo funcione en YouTube: <em>la planificación y la producción</em>.</p>
+      <ul>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><div><b>Planificación con datos</b><span>Cada semana, ideas basadas en lo que de verdad funciona en tus canales, con su guion, títulos y miniaturas listos para usar.</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span><div><b>Producción y montaje</b><span>Del material al vídeo montado en DaVinci Resolve, sin cortar clips a mano ni pelearte con la línea de tiempo.</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg></span><div><b>Una fracción del tiempo</b><span>Lo que antes eran horas de edición y semanas improvisadas, ahora sale en mucho menos tiempo y con un plan detrás.</span></div></li>
+      </ul>
+    </div>
     <div class="escaparate"><img src="img/produccion.webp" width="3200" height="2000" alt="Producción en EVA: tres vídeos editándose a la vez, cada uno con su ventana de Claude Code y su barra de etapas" data-zoom></div>
   </div>
 </section>
