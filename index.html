@@ -107,7 +107,7 @@ section.bloque{padding:84px 0;border-top:1px solid var(--linea)}
 .cifra .sube{color:var(--verde);font-weight:700}
 .yt-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;margin-top:18px;align-items:start}
 @media (max-width:820px){.yt-grid{grid-template-columns:minmax(0,1fr)}}
-figure.yt{margin:0} figure.yt.ancha{margin-top:26px}
+figure.yt{margin:0} figure.yt.ancha{margin-top:26px} figure.yt.ancha + figure.yt.ancha{max-width:926px}
 figure.yt .marco{border-radius:14px;overflow:hidden;border:1px solid var(--linea);box-shadow:var(--sombra);background:#0f0f0f;cursor:zoom-in}
 figure.yt img{width:100%;height:auto}
 figure.yt figcaption{margin-top:10px;font-size:15px;color:var(--t2)} figure.yt figcaption b{color:var(--t1)}
@@ -353,21 +353,16 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
   <div class="ancho">
     <p class="etq">Resultados reales</p>
     <h2>Un canal del equipo, antes y después de EVA.</h2>
-    <p class="sub">Capturas de YouTube Studio de uno de los canales con los que trabajamos, tal cual salen. Solo hemos dejado fuera el nombre del canal y de los vídeos.</p>
+    <p class="sub">Capturas de YouTube Studio de uno de los canales con los que trabajamos, tal cual salen. EVA se empezó a usar a mediados de octubre. Solo hemos dejado fuera el nombre del canal y de los vídeos.</p>
     <div class="cifras">
-      <div class="cifra"><span class="et">Ingresos de octubre</span><b>12.664,82 USD</b><span class="det">Agosto: 143,78 USD · junio y julio: 0 USD</span></div>
+      <div class="cifra"><span class="et">Ingresos en 28 días</span><b>16.838,75 USD</b><span class="det"><span class="sube">▲ más de 999 %</span> frente a los 28 días anteriores</span></div>
       <div class="cifra"><span class="et">Vistas en 28 días</span><b>11,5 M</b><span class="det"><span class="sube">▲ 980 %</span> frente a los 28 días anteriores</span></div>
       <div class="cifra"><span class="et">Suscriptores en 28 días</span><b>+11,2 K</b><span class="det">y 365,8 K horas de reproducción</span></div>
     </div>
     <figure class="yt ancha"><div class="marco"><img src="img/yt_ingresos.webp" width="1121" height="382" alt="Ingresos estimados de los últimos 28 días en YouTube Studio: 16.838,75 USD" loading="lazy" data-zoom></div>
       <figcaption><b>Ingresos de los últimos 28 días:</b> 16.838,75 USD, más de un 999 % por encima de los 28 días anteriores.</figcaption></figure>
-    <div class="yt-grid">
-      <figure class="yt"><div class="marco"><img src="img/yt_resumen.webp" width="926" height="585" alt="Resumen de YouTube Studio: 11,5 millones de vistas en 28 días" loading="lazy" data-zoom></div>
-        <figcaption><b>Resumen del canal:</b> vistas, horas de reproducción, suscriptores e ingresos de los últimos 28 días.</figcaption></figure>
-      <figure class="yt"><div class="marco"><img src="img/yt_meses.webp" width="551" height="306" alt="Ingresos por mes en YouTube Studio: de 0 USD en junio y julio a 12.664,82 USD en octubre" loading="lazy" data-zoom></div>
-        <figcaption><b>Mes a mes:</b> de 0 USD en junio y julio a 12.664,82 USD en octubre.</figcaption></figure>
-    </div>
-    <p class="res-nota">Cada canal es distinto y nadie puede garantizar unas cifras. Lo que EVA sí asegura es una semana bien planificada y vídeos bien producidos, a tiempo.</p>
+    <figure class="yt ancha"><div class="marco"><img src="img/yt_resumen.webp" width="926" height="585" alt="Resumen de YouTube Studio: 11,5 millones de vistas en 28 días" loading="lazy" data-zoom></div>
+      <figcaption><b>Resumen del canal:</b> vistas, horas de reproducción, suscriptores e ingresos de los últimos 28 días.</figcaption></figure>
   </div>
 </section>
 
