@@ -799,19 +799,22 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
 
         <article class="cap" id="semana">
           <header><span class="num">09</span><h3>Tu semana planificada</h3></header>
-          <p>Una vez aprobada, la semana queda en tarjetas: una por vídeo, con su día, artista y estado. Toca una para ver su <strong>paquete</strong>, la ficha completa del vídeo con todo lo necesario para producirlo, en las pestañas de abajo.</p>
-          <figure class="fig" data-callouts='[[21.5,16,"Canales",12,-11],[9.6,22.8,"Nueva planificación",1,24],[30,40,"Un vídeo de la semana",12,12],[78,23.4,"Exportar",-6,10],[90.5,23.4,"Ajustar con Claude",-4,-10],[90.6,55.6,"Informe de la semana",-8,10],[37.5,62.6,"Pestañas del vídeo",10,10]]'>
-            <div class="lienzo"><img src="img/planificacion.webp" width="3200" height="2000" alt="Planificación de una semana aprobada con tres tarjetas de vídeo" loading="lazy"></div>
+          <p>Una vez aprobada, la semana queda en tarjetas: una por vídeo, con su día, artista, estado y la foto del concursante cuando ya está en su carpeta. Toca una para ver su <strong>paquete</strong>, la ficha completa del vídeo con todo lo necesario para producirlo, en las pestañas de abajo.</p>
+          <figure class="fig" data-callouts='[[22.1,16.2,"Canales",10,-9],[8.9,22.9,"Nueva planificación",3,22],[30.3,39.7,"Un vídeo de la semana",14,-14],[90,23.5,"Exportar",-6,-9],[38.1,49.7,"Abrir carpeta",10,10],[88.9,59,"Chatear con Claude Code",-6,-12],[75.1,59,"Informe de la semana",-10,10],[50.4,67,"Pestañas del vídeo",-24,-9],[81.5,85,"Imagen del concursante",-30,5]]'>
+            <div class="lienzo"><img src="img/planificacion.webp" width="3200" height="2000" alt="Planificación de una semana aprobada: tres tarjetas de vídeo con el botón Abrir carpeta y, abajo, la pestaña Concursante con el prompt y la imagen elegida" loading="lazy"></div>
             <figcaption><ol class="leyenda">
-              <li><span class="c">1</span><span><b>Canales.</b> Cambia de canal sin salir de la semana.</span></li>
-              <li><span class="c">2</span><span><b>Nueva planificación.</b> Empieza la semana siguiente de ese canal.</span></li>
-              <li><span class="c">3</span><span><b>Tarjeta del vídeo.</b> Día, artista, estado y última modificación. Tócala para ver su paquete.</span></li>
+              <li><span class="c">1</span><span><b>Canales.</b> Cambia de canal sin salir de la semana; EVA recuerda lo último que viste de cada uno y lo enseña al instante.</span></li>
+              <li><span class="c">2</span><span><b>Nueva planificación.</b> Empieza la semana actual si el canal aún no tiene nada en ella, o la siguiente.</span></li>
+              <li><span class="c">3</span><span><b>Tarjeta del vídeo.</b> Día, artista, estado, foto del concursante y última modificación. Tócala para ver su paquete.</span></li>
               <li><span class="c">4</span><span><b>Exportar planificación.</b> Guarda los paquetes de la semana (un documento por vídeo) en la carpeta que elijas.</span></li>
-              <li><span class="c">5</span><span><b>Ajustar con Claude.</b> Abre la conversación para retocar un vídeo concreto sin rehacer la semana.</span></li>
-              <li><span class="c">6</span><span><b>Informe de la semana.</b> Cómo rindieron los vídeos ya publicados.</span></li>
-              <li><span class="c">7</span><span><b>Pestañas.</b> Todo el paquete del vídeo elegido.</span></li>
+              <li><span class="c">5</span><span><b>Abrir carpeta.</b> Abre la carpeta de ese vídeo en el Explorador de Windows, para dejar o revisar sus archivos sin buscarla. Si aún no existe en tu PC, EVA la crea.</span></li>
+              <li><span class="c">6</span><span><b>Chatear con Claude Code.</b> Para retocar algo de la semana (una canción, un día, un título) sin rehacerla entera.</span></li>
+              <li><span class="c">7</span><span><b>Informe de la semana.</b> Cómo rindieron los vídeos ya publicados.</span></li>
+              <li><span class="c">8</span><span><b>Pestañas.</b> Todo el paquete del vídeo elegido: aquí, la pestaña Concursante.</span></li>
+              <li><span class="c">9</span><span><b>Imagen del concursante.</b> El prompt para generarla en ChatGPT y, cuando la dejas en la carpeta del vídeo, la imagen elegida.</span></li>
             </ol></figcaption>
           </figure>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>La carpeta lleva siempre el día real.</b> Cada carpeta de vídeo se llama con su canal, su fecha y su artista (por ejemplo <code>STE-2026-11-09-RocioDurcal</code>). Si un vídeo se mueve a otro día, al reprogramarlo o al replanificar, EVA renombra sola su carpeta con la fecha nueva, sin tocar nada de lo que tenga dentro. Solo espera si en ese momento se está editando o Digen está generando sus clips.</span></div>
           <h4>Qué hay en cada pestaña</h4>
           <div class="tabla-scroll">
           <table class="accesos">
@@ -821,7 +824,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <tr><td>Miniaturas</td><td>Las variantes de título y miniatura para probar (A, B, C).</td></tr>
               <tr><td>Narración</td><td>El texto que se locuta, la narración con su reproductor, los ajustes de ElevenLabs recomendados (y editables) y los botones para generarla con una voz única o con una voz que ya tengas.</td></tr>
               <tr><td>Canción</td><td>La letra y el estilo de la canción del concursante, y el prompt de la música de fondo de la narración.</td></tr>
-              <tr><td>Concursante</td><td>La historia del personaje y la descripción para su imagen.</td></tr>
+              <tr><td>Concursante</td><td>El prompt de la imagen del concursante para ChatGPT y, cuando ya está en la carpeta, la imagen elegida.</td></tr>
             </tbody>
           </table>
           </div>
@@ -860,7 +863,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <div class="arbol" aria-label="Ejemplo de carpetas">
             <div><span class="ic-carpeta"></span>Canales <em>tu carpeta de canales (Mi cuenta)</em></div>
             <div class="n1"><span class="ic-carpeta"></span>Voces del Sur <em>una por canal</em></div>
-            <div class="n2"><span class="ic-carpeta"></span>2026-11-09 Lunes - Isabel Pantoja <em>una por vídeo</em></div>
+            <div class="n2"><span class="ic-carpeta"></span>VDS-2026-11-09-IsabelPantoja <em>una por vídeo: canal, día y artista (con «Abrir carpeta» llegas directo)</em></div>
             <div class="n3 arch">concursante.jpg</div>
             <div class="n3 arch">narracion.mp3</div>
             <div class="n3 arch">cancion.mp3</div>
