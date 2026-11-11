@@ -771,10 +771,11 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <h4>Cómo lanzarla</h4>
           <ol class="pasos">
             <li>En el menú lateral, abre <b>Planificación</b> y, debajo del canal, pulsa <b>Nueva planificación</b>.</li>
-            <li>Pulsa <span class="boton-ui azul">Planificar</span>. EVA empieza el estudio; tarda unos minutos y puedes seguir usando EVA.</li>
+            <li>Pulsa <span class="boton-ui azul">Planificar</span>. EVA empieza el estudio; tarda unos minutos y puedes seguir usando EVA. Si prefieres no revisar la propuesta tú, pulsa <span class="boton-ui claude">⚡ Auto</span> (te lo explicamos justo abajo).</li>
             <li>Mientras trabaja, ves su conversación dentro de la propia semana. Si necesita tu opinión, aparece la etiqueta <b>Te espera</b>: contéstale ahí mismo o desde la app de Claude.</li>
           </ol>
 <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿Entraste como invitado?</b> Puede que no veas este botón tal cual: tus canales son personales y su planificación funciona de forma independiente, sin tener en cuenta a ningún equipo. Esto no afecta a tu forma de trabajar: planificas, apruebas y produces tus vídeos igual.</span></div>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Modo Auto.</b> Con <b>⚡ Auto</b>, EVA planifica igual que siempre, pero en lugar de esperar tu aprobación, un <b>revisor independiente</b> comprueba la propuesta: la contrasta con las métricas reales del canal y de los demás, la variedad, las reglas y el calendario del equipo. Si es buena, la aprueba él; si encuentra un problema, pide los cambios y la vuelve a revisar. Te llega un aviso a la campana cuando queda aprobada. Siempre puedes seguir usando <b>Planificar</b> para revisarla tú.</span></div>
           <figure class="fig" data-callouts='[[8.9, 26.3, "Nueva planificación", 10, 14, "En el menú, dentro del canal, abre una planificación nueva."], [22, 16.2, "Elige el canal", 4, -10, "Las pestañas de arriba cambian el canal que vas a planificar."], [26.4, 22, "La semana siguiente", 16, 16, "La semana que se va a planificar: siempre la siguiente."], [92.7, 23.5, "Planificar", -6, 12, "Arranca la planificación: EVA analiza el canal y prepara la propuesta."]]'>
             <div class="lienzo"><img src="img/nuevaplan.webp" width="3200" height="2000" alt="Nueva planificación de un canal con el botón Planificar" loading="lazy"></div>
           </figure>
@@ -915,7 +916,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
               <tr><td>Clips de Digen</td><td>Se generan los clips de la narración y la canción en tu cuenta de Digen (los sigues en la sección Digen). EVA los revisa y rehace los que salen mal, con su tope.</td><td>No (con Solo clips, das tú el visto bueno)</td></tr>
               <tr><td>Guion, Plan y Verificación</td><td>Lee la narración y la canción, elige las tomas del jurado y del público, prepara el montaje y lo comprueba.</td><td>No; solo si aparece «Te espera»</td></tr>
               <tr><td>Montaje, Render y Revisión</td><td>Monta el vídeo en DaVinci Resolve, lo exporta y revisa el resultado.</td><td>Que DaVinci Resolve esté abierto con su conector</td></tr>
-              <tr><td>Terminado</td><td>Quedan en la carpeta del vídeo el vídeo final, el proyecto de Resolve y la carpeta <code>miniatura</code>.</td><td>Lo revisas, haces las miniaturas y lo subes a YouTube</td></tr>
+              <tr><td>Terminado</td><td>Quedan en la carpeta del vídeo el vídeo final, el proyecto de Resolve y la carpeta <code>miniatura</code>. El vídeo aparece en Producción para que lo veas.</td><td>Lo revisas en EVA (y pides cambios si hace falta), haces las miniaturas y lo subes a YouTube</td></tr>
             </tbody>
           </table>
           </div>
@@ -951,7 +952,18 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
           <figure class="fig" data-callouts='[[56.8, 36.6, "Revisar con sonido", 8, -14, "EVA marca así los clips que no pudo dar por buenos del todo: escúchalos con atención."], [51.4, 44.6, "Rehacer este clip", -14, 10, "Márcalo si el clip falla."], [57.3, 48, "Qué falla", 16, 12, "Escribe qué falla para que se corrija, por ejemplo «no se mueve en la segunda frase»."], [60.6, 95.4, "Rehacer marcados", -16, -12, "Vuelve a pedir a Digen los clips marcados; EVA te avisa cuando lleguen."], [72, 95.4, "Dar el visto bueno y editar", -6, -12, "Acepta los clips tal como están y empieza la edición."]]'>
             <div class="lienzo"><img src="img/revisarclips.webp" width="3200" height="2000" alt="Ventana Revisar clips con los clips de la narración, uno marcado para rehacer" loading="lazy"></div>
           </figure>
-          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>¿No te gusta algo del vídeo final?</b> Pulsa <b>Editar vídeo</b> en su tarjeta: EVA te pregunta si quieres <b>Retocar</b> (le dices qué cambiar y cambia solo eso, sin volver a generar clips) o <b>Editar de nuevo</b> (rehace el montaje desde cero). Si la ventana de ese vídeo sigue abierta, escríbeselo directamente. También puedes retocarlo tú en DaVinci Resolve; si lo haces, exporta tú el vídeo final.</span></div>
+          <h4>Cuando el vídeo está editado: míralo y pide cambios</h4>
+          <p>Al terminar la edición, la tarjeta del vídeo pasa a <b>Editado</b> y, en lugar de la barra de etapas, aparece el <strong>vídeo final</strong> con su línea de tiempo, como en un editor: las miniaturas del vídeo, sus partes (arranque, narración, canción y ovación) y la onda del sonido. Debajo sigue la ventana de Claude Code de ese vídeo.</p>
+          <figure class="fig" data-callouts='[[26.7, 60.8, "Marcar aquí", 6, 16, "Pausa donde quieras cambiar algo y pulsa este botón (o la tecla M): aparece un marcador en ese punto exacto."], [33, 60.8, "Quitar marcador", 6, -16, "La papelera borra el marcador que tengas elegido."], [55.7, 65.1, "Marcadores", 8, -24, "Cada cambio es una bandera numerada. Arrastra sobre la línea de tiempo para marcar un tramo entero."], [46.7, 73.1, "Línea de tiempo", -10, 14, "Miniaturas, partes del vídeo y onda del sonido: toca cualquier punto para ir ahí."], [83.4, 42.7, "Tu nota", -16, -12, "Cada marcador tiene su tarjeta: escribe con tus palabras qué quieres cambiar."], [83.4, 57.9, "Aplicar cambios", -26, -2, "Envía todas las notas juntas a Claude Code, cada una con su minuto exacto."], [86.6, 86.1, "Chat", -22, 5, "Habla con Claude sobre este vídeo cuando quieras, sin marcadores."]]'>
+            <div class="lienzo"><img src="img/revision_render.webp" width="3200" height="2000" alt="Vídeo editado en Producción con su línea de tiempo, tres marcadores numerados y, a la derecha, las notas para Claude y el botón Aplicar 3 cambios" loading="lazy"></div>
+          </figure>
+          <ol class="pasos">
+            <li><span>Reproduce el vídeo. Donde algo no te convenza, páusalo y pulsa <span class="boton-ui">◆ Marcar aquí</span> (o la tecla <b>M</b>). Con las flechas avanzas fotograma a fotograma para afinar el punto exacto.</span></li>
+            <li><span>Escribe en la tarjeta de la derecha qué quieres cambiar: «se oye bajo», «demasiado rato en el mismo plano», «cambia este clip». Si es un trozo entero, arrastra sobre la línea de tiempo para marcar el tramo.</span></li>
+            <li><span>Repite con todo lo que veas. Para quitar un marcador, elígelo y pulsa la papelera.</span></li>
+            <li><span>Pulsa <span class="boton-ui claude">Aplicar cambios</span>. EVA le pasa a Claude Code todas tus notas con su minuto exacto; Claude cambia solo eso, lo comprueba y hace un render nuevo, que verás aquí mismo cuando termine.</span></li>
+          </ol>
+          <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Tus marcadores no se pierden:</b> si cierras EVA o cambias de vídeo antes de aplicarlos, siguen ahí al volver. Y si prefieres explicárselo de palabra, pulsa <b>Chat</b> y escríbele a Claude directamente. También puedes retocar tú el proyecto en DaVinci Resolve; si lo haces, exporta tú el vídeo final.</span></div>
         </article>
 
         <article class="cap" id="claude-code">
@@ -1266,6 +1278,7 @@ footer .ancho{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-co
   document.querySelectorAll(".cap").forEach(c => obs.observe(c));
 })();
 </script>
+
 
 </body>
 </html>
